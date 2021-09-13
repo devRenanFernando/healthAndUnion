@@ -2,14 +2,14 @@
     <div id="footer" class="container-fluid">
         <div class="row mt-4 align-items-center">
             <!-- Logo com Frase -->
-            <div class="col-3">
+            <div class="col-lg-3 mx-auto">
                 <img src="../frontend/assets/img/png/Fibromialgia.png" class="rounded mx-auto d-block w-50 mt-5 mb-4" alt=""> 
                 <p class="text-center fst-italic fs-5 mx-auto">"Quanto mais grave é uma doença, maior tem de ser a esperança. Porque a função da esperança é preencher o que nos falta."</p>
                 <h5 class="text-end fs-6">VERGÍLIO FERREIRA</h5>
             </div>
 
             <!-- Links -->
-            <div class="col-3 text-center">
+            <div class="col-lg-3 text-center">
                 <h3 class="fs-2 mb-4">Links</h3>
                 <a href="#">
                     <h2 class="fs-5 text-dark mb-3">Home</h2>
@@ -26,7 +26,7 @@
             </div>
 
             <!-- Suporte -->
-            <div class="col-3 text-center">
+            <div class="col-lg-3 text-center">
                 <h3 class="fs-2 mb-4">Suporte</h3>
                 <a href="#">
                     <h2 class="fs-5 text-dark mb-3">Perguntas Frequentes</h2>
@@ -38,7 +38,7 @@
                     <h2 class="fs-5 text-dark mb-3">Ajuda</h2>
                 </a>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-lg-3 text-center">
                 <h3 class="fs-2 mb-4">Mantenha-se Conectado</h3>
                 <div class="icones">
                     <span class="pe-3">

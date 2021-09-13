@@ -2,6 +2,8 @@ body, html {
     font-family:'Lato', sans-serif;
 }
 
+/** HEADER */
+
 #header {
     width: 100%;
     background-color: transparent;
@@ -30,6 +32,18 @@ body, html {
 #header .fa-2x {
     color: var(--primary);
 }
+
+/** /HEADER */
+
+/*? CARROUSEL */
+
+#carousel .carousel {
+    background-color: var(--primary);
+}
+
+/*? /CARROUSEL */
+
+/*! FOOTER */
 
 #footer h3 {
     font-family: 'Cormorant Garamond', serif;
@@ -62,3 +76,5 @@ body, html {
 #footer {
         border-top: 3px solid var(--primary)!important;
 }
+
+/*! /FOOTER */
