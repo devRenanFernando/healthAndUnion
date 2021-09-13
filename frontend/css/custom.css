@@ -30,3 +30,35 @@ body, html {
 #header .fa-2x {
     color: var(--primary);
 }
+
+#footer h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    color: var(--primary)!important;
+}
+
+#footer h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+#footer a {
+    text-decoration: none;
+}
+
+#footer .icones a {
+    color: var(--primary);
+}
+
+#footer h5, p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+#footer p {
+    width: 260px;
+}
+
+#footer {
+        border-top: 3px solid var(--primary)!important;
+}

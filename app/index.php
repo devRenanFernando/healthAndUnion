@@ -25,8 +25,7 @@
   <?php
   require_once "../frontend/content/header.php";
   ?>
-
-  <div class="row">
+  
     <!-- Contents -->
     <?php
     @$principal = $_GET['a'];
@@ -36,11 +35,10 @@
       include_once "../frontend/content/main.php";
     }
     ?>
-  </div>
 
-  <div class="row">
     <!-- Footer -->
     <?php
+      require_once "../frontend/content/footer.php";
     ?>
   </div>
 
