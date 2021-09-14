@@ -24,4 +24,18 @@
             </button>
         </div>
     </section>
+
+    <section id="quemSomos">
+        <div class="container-fluid">
+            <div class="row my-5 mx-5 align-items-center">
+                <div class="col-md col-sm text-center">
+                    <h2 class="fs-2 mb-3">Quem somos?</h2>
+                    <p class="mx-auto my-auto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem asperiores animi debitis nam velit libero magni id consectetur, aspernatur consequatur atque minima voluptatum mollitia, quas sapiente at illum nisi et.  Dolorem asperiores animi debitis nam velit libero magni id consectetur, aspernatur consequatur atque minima voluptatum mollitia, quas sapiente at illum nisi et.</p>
+                </div>
+                <div class="col-md col-sm mt-3">
+                    <img src="../frontend/assets/img/svg/Solidarity-bro.svg" class="w-75 mx-auto d-block" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 </main>

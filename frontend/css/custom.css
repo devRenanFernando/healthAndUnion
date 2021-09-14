@@ -43,6 +43,21 @@ body, html {
 
 /*? /CARROUSEL */
 
+/*/ QUEM SOMOS? */
+
+#quemSomos p {
+    font-family:'Lato', sans-serif;
+    font-weight: 400;
+    max-width: 25em;
+
+}
+#quemSomos h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+/*/ /QUEM SOMOS? */
+
 /*! FOOTER */
 
 #footer h3 {
@@ -70,7 +85,7 @@ body, html {
 }
 
 #footer p {
-    width: 260px;
+    width: 13em;
 }
 
 #footer {
