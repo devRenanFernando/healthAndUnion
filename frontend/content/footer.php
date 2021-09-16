@@ -34,13 +34,13 @@
                 <a href="#">
                     <h2 class="fs-5 text-dark mb-3">Reporte um Erro</h2>
                 </a>
-                <a href="#">
+                <a href="#" class="fs-5 text-dark mb-3">
                     <h2 class="fs-5 text-dark mb-3">Ajuda</h2>
                 </a>
             </div>
             <div class="col-lg-3 text-center">
                 <h3 class="fs-2 mb-4">Mantenha-se Conectado</h3>
-                <div class="icones">
+                <div class="icones my-sm-2">
                     <span class="pe-3">
                         <a href="#">
                             <i class="fab fa-facebook fa-2x" aria-hidden="true"></i>
@@ -64,6 +64,6 @@
                 </div>
             </div>
         </div>
-        <h3 class="text-center fs-4">Todos os direitos reservados à Health & Union</h2>
+        <h3 class="text-center fs-4 mt-4">Todos os direitos reservados à Health & Union</h2>
     </div>
 </footer>

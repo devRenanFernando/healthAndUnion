@@ -2,6 +2,11 @@ body, html {
     font-family:'Lato', sans-serif;
 }
 
+::selection {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+}
+
 /** HEADER */
 
 #header {
@@ -49,8 +54,8 @@ body, html {
     font-family:'Lato', sans-serif;
     font-weight: 400;
     max-width: 25em;
-
 }
+
 #quemSomos h2 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
@@ -59,6 +64,30 @@ body, html {
 /*/ /QUEM SOMOS? */
 
 /** CONTATO */
+
+#contato h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+#contato p {
+    font-family:'Lato', sans-serif;
+    font-weight: 400;
+}
+
+#contato .icones {
+    color: var(--primary);
+}
+
+#contato .btn-outline-dark {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+#contato .btn-outline-dark:hover {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+}
 
 /** /CONTATO */
 
@@ -77,6 +106,17 @@ body, html {
 
 #footer a {
     text-decoration: none;
+}
+
+#footer a h2{
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+}
+
+#footer a h2:hover{
+    text-decoration: none;
+    border-bottom: 4px solid var(--primary);
+    color: var(--primary);
 }
 
 #footer .icones a {

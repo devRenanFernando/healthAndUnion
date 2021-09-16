@@ -1,5 +1,5 @@
 <main>
-    <section id="carousel">
+    <section id="carousel" class="mb-4">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -25,41 +25,50 @@
         </div>
     </section>
 
-    <section id="quemSomos">
+    <section id="quemSomos" class="py-4 my-4">
         <div class="container-fluid">
             <div class="row my-5 mx-5 align-items-center">
-                <div class="col-md col-sm text-center">
-                    <h2 class="fs-2 mb-3">Quem somos?</h2>
-                    <p class="mx-auto my-auto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem asperiores animi debitis nam velit libero magni id consectetur, aspernatur consequatur atque minima voluptatum mollitia, quas sapiente at illum nisi et. Dolorem asperiores animi debitis nam velit libero magni id consectetur, aspernatur consequatur atque minima voluptatum mollitia, quas sapiente at illum nisi et.</p>
-                </div>
-                <div class="col-md col-sm mt-3">
+                <div class="col-md-6 col-sm-12 mt-3 order-md-first order-sm-last">
                     <img src="../frontend/assets/img/svg/Solidarity-bro.svg" class="w-75 mx-auto d-block" alt="">
+                </div>
+                <div class="col-md-6 col-sm-12 text-center order-md-last order-sm-first">
+                    <h2 id="quemSomos" class="fs-1 mb-3">Quem somos?</h2>
+                    <p class="mx-auto my-auto fs-5">O <strong><i>Health & Union</i></strong> consiste em um site de apoio, comunicação e transporte de informação para pessoas que apresentam a Fibromialgia e para todo aquele que procura ter mais conhecimento sobre o assunto. Mediante à uma patologia muitas vezes desmoralizada, o <strong><i>H&U</i></strong> pretende criar um laço acolhedor de união para que essas pessoas não se sintam incompreendidas e isoladas da sociedade, proporcionando atualizações e resultados de pesquisas sobre a fibromialgia, mantendo uma comunicação não só entre os pacientes como também entres médicos e pesquisadores.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contato">
-        <h2 class="fs-2 text-center">Contato</h2>
-        <span class="text-center fs-4">
-            <p>Fale conosco pelo <a href="#"><span><i class="fab fa-whatsapp"></i></span></a> ou nos envie um <a href="#"><span><i class="far fa-envelope"></i></span></a></p>
-        </span>
-        <form id="form_registration_news" class="mx-2" action="../backend/classes/news/IncludeNews.php" method="post">
+    <section id="contato" class="my-5 py-4">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-sm-12">
+                    <h2 id="contato" class="fs-1 text-center my-4">Contato</h2>
+                    <span class="text-center fs-5">
+                        <p>Fale conosco pelo <a href="#" class="mx-2 icones"><span><i class="fab fa-whatsapp"></i></span></a> ou nos envie um <a href="#" class="mx-2 icones"><span><i class="far fa-envelope"></i></span></a></p>
+                    </span>
+                    <form id="form_mensagem" class="mx-4" action="#" method="post">
 
-            <!-- Textarea -->
-            <div class="form-group mb-3">
-                <div class="col-md-6 offset-md-3">
-                    <label class="mb-2">Nos escreva uma mensagem</label>
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="mensagem" name="mensagem" style="height: 8em"></textarea>
-                    </div>
+                        <!-- Textarea -->
+                        <div class="form-group mb-3">
+                            <div class="col-md-6 offset-md-3">
+                                <label class="mb-2 fs-5">Nos escreva uma mensagem:</label>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="mensagem" name="mensagem" style="height: 8em"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botão de Enviar -->
+                        <div class="col-md-6 offset-md-3 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-sm btn-outline-dark fw-bold" style=" width: 8em" role="button">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img src="../frontend/assets/img//svg//Contact us-amico.svg" alt="">
                 </div>
             </div>
-
-            <!-- Botão de Enviar -->
-            <div class="col-md-6 offset-md-3 mb-3">
-                <button type="submit" class="btn btn- btn-outline-dark" role="button">Enviar</button>
-            </div>
-        </form>
+        </div>
     </section>
 </main>

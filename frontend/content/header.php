@@ -1,4 +1,4 @@
-<div id="header" class="border-bottom border-2 pb-2">
+<div id="header" class="border-bottom border-2 py-3">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
@@ -16,10 +16,10 @@
                         <a class="nav-link fs-2 text-dark" href="#">Posts</a>
                     </li>
                     <li class="nav-item pe-3">
-                        <a class="nav-link fs-2 text-dark" href="#">Quem somos?</a>
+                        <a class="nav-link fs-2 text-dark" href="#quemSomos">Quem somos?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-2 text-dark" href="#">Contato</a>
+                        <a class="nav-link fs-2 text-dark" href="#contato">Contato</a>
                     </li>
                 </ul>
 
