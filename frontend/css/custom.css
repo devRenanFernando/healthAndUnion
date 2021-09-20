@@ -38,12 +38,30 @@ body, html {
     color: var(--primary);
 }
 
+#header .navbar-toggler {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+#header .navbar-toggler-icon {
+    background-image: url(../assets/img/svg/toggler_icon.svg);
+}
+
 /** /HEADER */
 
 /*? CARROUSEL */
 
-#carousel .carousel {
-    background-color: var(--primary);
+.carousel-control-prev-icon {
+    background-image: url(../assets/img/svg/carousel-control-prev-icon.svg);
+}
+
+.carousel-control-next-icon {
+    background-image: url(../assets/img/svg/carousel-control-next-icon.svg);
+}
+
+#carousel {
+    border-top: .5rem solid var(--primary);
+    border-bottom: .5rem solid var(--primary);
 }
 
 /*? /CARROUSEL */
