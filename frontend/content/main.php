@@ -25,25 +25,25 @@
         </div>
     </section>
 
-    <section id="quemSomos" class="py-4 my-4">
+    <section id="quemSomos" class="my-2">
         <div class="container-fluid">
             <div class="row my-5 mx-5 align-items-center">
-                <div class="col-md-6 col-sm-12 mt-3 order-md-first order-sm-last">
+                <div class="col-md-6 col-12 mt-3 order-md-first order-last">
                     <img src="../frontend/assets/img/svg/Solidarity-bro.svg" class="w-75 mx-auto d-block" alt="">
                 </div>
-                <div class="col-md-6 col-sm-12 text-center order-md-last order-sm-first">
-                    <h2 id="quemSomos" class="fs-1 mb-3">Quem somos?</h2>
+                <div class="col-md-6 col-12 text-center order-md-last order-first">
+                    <h2 id="quemSomosTitle" class="fs-1 mb-3">Quem somos?</h2>
                     <p class="mx-auto my-auto fs-5">O <strong><i>Health & Union</i></strong> consiste em um site de apoio, comunicação e transporte de informação para pessoas que apresentam a Fibromialgia e para todo aquele que procura ter mais conhecimento sobre o assunto. Mediante à uma patologia muitas vezes desmoralizada, o <strong><i>H&U</i></strong> pretende criar um laço acolhedor de união para que essas pessoas não se sintam incompreendidas e isoladas da sociedade, proporcionando atualizações e resultados de pesquisas sobre a fibromialgia, mantendo uma comunicação não só entre os pacientes como também entres médicos e pesquisadores.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="my-5 py-4">
+    <section id="contato" class="my-2">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-md-7 col-sm-12">
-                    <h2 id="contato" class="fs-1 text-center my-4">Contato</h2>
+                <div class="col-md-7 col-12">
+                    <h2 id="contatoTitle" class="fs-1 text-center my-4">Contato</h2>
                     <span class="text-center fs-5">
                         <p>Fale conosco pelo <a href="#" class="mx-2 icones"><span><i class="fab fa-whatsapp"></i></span></a> ou nos envie um <a href="#" class="mx-2 icones"><span><i class="far fa-envelope"></i></span></a></p>
                     </span>
@@ -65,8 +65,8 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-5 col-sm-12">
-                    <img src="../frontend/assets/img//svg//Contact us-amico.svg" alt="">
+                <div class="col-md-5 col-12">
+                    <img class="w-md-100 w-75 d-flex mx-auto" src="../frontend/assets/img//svg//Contact us-amico.svg" alt="">
                 </div>
             </div>
         </div>
