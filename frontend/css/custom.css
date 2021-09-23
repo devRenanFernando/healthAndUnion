@@ -9,8 +9,8 @@ body, html {
 }
 
 ::selection {
-    background-color: var(--secondary);
-    color: var(--tertiary);
+    background-color: var(--melon);
+    color: var(--midnight-blue);
 }
 
 /** HEADER */
@@ -32,21 +32,21 @@ body, html {
 }
 
 #header .nav-link:hover {
-    border-bottom: solid 4px var(--primary);
-    color: var(--primary)!important;
+    border-bottom: solid 4px var(--blue-violet);
+    color: var(--blue-violet)!important;
 }
 
 #header .border-end, .border-bottom {
-    border-color: var(--primary)!important;
+    border-color: var(--blue-violet)!important;
 }
 
 #header .fa-2x {
-    color: var(--primary);
+    color: var(--blue-violet);
 }
 
 #header .navbar-toggler {
-    border-color: var(--primary);
-    color: var(--primary);
+    border-color: var(--blue-violet);
+    color: var(--blue-violet);
 }
 
 #header .navbar-toggler-icon {
@@ -66,8 +66,8 @@ body, html {
 }
 
 #carousel {
-    border-top: .3rem solid var(--primary);
-    border-bottom: .3rem solid var(--primary);
+    border-top: .3rem solid var(--blue-violet);
+    border-bottom: .3rem solid var(--blue-violet);
 }
 
 /*? /CARROUSEL */
@@ -100,17 +100,17 @@ body, html {
 }
 
 #contato .icones {
-    color: var(--primary);
+    color: var(--blue-violet);
 }
 
 #contato .btn-outline-dark {
-    color: var(--primary);
-    border-color: var(--primary);
+    color: var(--blue-violet);
+    border-color: var(--blue-violet);
 }
 
 #contato .btn-outline-dark:hover {
-    background-color: var(--secondary);
-    color: var(--tertiary);
+    background-color: var(--melon);
+    color: var(--midnight-blue);
 }
 
 /** /CONTATO */
@@ -118,15 +118,14 @@ body, html {
 /* ?PROFILE */
 
 #profile {
-    /* background-color: var(--secondary); */
-    background-color: var(--primary) ;
+    background-color: var(--blue-violet) ;
 }
 
 #profile .content{
-    /* ?????????????? */
-    background-color: #ECD4FF;
+    background-color: var(--pink-lace);
     position: relative;
-    border: 3px solid var(--primary);
+    border: 4px solid var(--pink-lace);
+    border-radius: 10px;
 }
 
 #profile h2 {
@@ -136,7 +135,6 @@ body, html {
 
 #profile p {
     font-family:'Lato', sans-serif;
-    font-weight: 400;
 }
 
 #profile .content::before{
@@ -144,7 +142,9 @@ body, html {
     position: absolute;
     width:33%;
     height:100%;
-    background-color: var(--primary);
+    background-color: var(--blue-violet);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
     z-index: 1;
 
 }
@@ -156,15 +156,67 @@ body, html {
 #profile .second-column {
 } */
 
-/* ?/PROFILE */
+#profile .btn {
+    border-radius: 10px;
+}
 
+#profile .btn-outline-primary {
+    border-color: var(--pink-lace);
+    color: var(--pink-lace);
+}
+
+#profile .btn-outline-primary:hover {
+    border-color: var(--blue-violet);
+    color: var(--blue-violet);
+    background-color: var(--pink-lace);
+}
+
+#profile .btn-outline-secondary {
+    border-color: var(--blue-violet);
+    color: var(--blue-violet);
+}
+
+#profile .btn-outline-secondary:hover {
+    border-color: var(--pink-lace);
+    color: var(--pink-lace);
+    background-color: var(--blue-violet);
+}
+
+#profile ul li{
+    border: 1px solid var(--blue-violet);
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    list-style-type: none;
+}
+
+#profile ul li:hover{
+    background-color: var(--blue-violet);
+}
+
+#profile li a{
+    color: var(--blue-violet);
+}
+
+#profile li a:hover{
+    color: var(--pink-lace);
+}
+
+#profile form input {
+    height: 3em;
+    border: none;
+    background-color: var(--pink-lace);
+    
+}
+
+/* ?/PROFILE */
 
 /*! FOOTER */
 
 #footer h3 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
-    color: var(--primary)!important;
+    color: var(--blue-violet)!important;
 }
 
 #footer h2 {
@@ -183,12 +235,12 @@ body, html {
 
 #footer a h2:hover{
     text-decoration: none;
-    border-bottom: 4px solid var(--primary);
-    color: var(--primary);
+    border-bottom: 4px solid var(--blue-violet);
+    color: var(--blue-violet);
 }
 
 #footer .icones a {
-    color: var(--primary);
+    color: var(--blue-violet);
 }
 
 #footer h5, p {
@@ -201,7 +253,7 @@ body, html {
 }
 
 #footer {
-        border-top: 3px solid var(--primary)!important;
+        border-top: 3px solid var(--blue-violet)!important;
 }
 
 /*! /FOOTER */
