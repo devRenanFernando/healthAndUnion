@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body, html {
     font-family:'Lato', sans-serif;
 }
@@ -112,8 +118,43 @@ body, html {
 /* ?PROFILE */
 
 #profile {
-    height: 30em;
+    /* background-color: var(--secondary); */
+    background-color: var(--primary) ;
 }
+
+#profile .content{
+    /* ?????????????? */
+    background-color: #ECD4FF;
+    position: relative;
+    border: 3px solid var(--primary);
+}
+
+#profile h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+#profile p {
+    font-family:'Lato', sans-serif;
+    font-weight: 400;
+}
+
+#profile .content::before{
+    content: "";
+    position: absolute;
+    width:33%;
+    height:100%;
+    background-color: var(--primary);
+    z-index: 1;
+
+}
+
+#profile .first-column {
+    z-index: 2;
+}
+/* 
+#profile .second-column {
+} */
 
 /* ?/PROFILE */
 
