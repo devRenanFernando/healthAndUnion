@@ -29,6 +29,8 @@ body, html {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     border-bottom: solid 4px transparent;
+    transition: color 0.5s;
+    transition: border-bottom 0.5s;
 }
 
 #header .nav-link:hover {
@@ -104,40 +106,42 @@ body, html {
 }
 
 #contato .btn-outline-dark {
-    color: var(--blue-violet);
     border-color: var(--blue-violet);
+    background-color: var(--blue-violet);
+    color: var(--pink-lace);
+    transition: background-color 0.5s;
 }
 
 #contato .btn-outline-dark:hover {
-    background-color: var(--melon);
-    color: var(--midnight-blue);
+    border-color: var(--blue-violet);
+    color: var(--blue-violet);
+    background-color: var(--pink-lace);
 }
-
 /** /CONTATO */
 
-/* ?PROFILE */
+/* ?REGISTRTAION */
 
-#profile {
+#registration, #login {
     background-color: var(--blue-violet) ;
 }
 
-#profile .content{
+#registration .content, #login .content{
     background-color: var(--pink-lace);
     position: relative;
     border: 4px solid var(--pink-lace);
     border-radius: 10px;
 }
 
-#profile h2 {
+#registration h2, #login h2 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
 }
 
-#profile p {
+#registration p, #login p {
     font-family:'Lato', sans-serif;
 }
 
-#profile .content::before{
+#registration .content::before{
     content: "";
     position: absolute;
     width:33%;
@@ -146,58 +150,54 @@ body, html {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     z-index: 1;
-
-
     left: 67%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+#login .content::before{
+    content: "";
+    position: absolute;
+    width:33%;
+    height:100%;
+    background-color: var(--blue-violet);
+    z-index: 1;
+}
 
-/* #profile .first-content {
-} */
-
-#profile .first-column {
+#registration .first-column, #login .first-column {
     z-index: 2;
 }
-/* 
-#profile .second-column {
-}
 
-#profile .second-content {
-    
-} */
-
-#profile .btn {
+#registration .btn, #login .btn {
     border-radius: 10px;
 }
 
-#profile .btn-outline-primary {
+#registration .btn-outline-primary, #login .btn-outline-primary {
     border-color: var(--pink-lace);
     color: var(--pink-lace);
     transition: background-color 1s;
 }
 
-#profile .btn-outline-primary:hover {
+#registration .btn-outline-primary:hover, #login .btn-outline-primary:hover {
     border-color: var(--blue-violet);
     color: var(--blue-violet);
     background-color: var(--pink-lace);
 }
 
-#profile .btn-outline-secondary {
+#registration .btn-outline-secondary, #login .btn-outline-secondary {
     border-color: var(--blue-violet);
     color: var(--blue-violet);
     transition: background-color 1s;
 }
 
-#profile .btn-outline-secondary:hover {
+#registration .btn-outline-secondary:hover, #login .btn-outline-secondary:hover {
     border-color: var(--pink-lace);
     color: var(--pink-lace);
     background-color: var(--blue-violet);
 }
 
-#profile ul li{
+#registration ul li, #login ul li{
     border: 1px solid var(--blue-violet);
     border-radius: 50%;
     width: 2em;
@@ -205,27 +205,27 @@ body, html {
     list-style-type: none;
 }
 
-#profile a li{
+#registration a li, #login a li{
     color: var(--blue-violet);
     transition: background-color .5s;
 }
 
-#profile a li:hover{
+#registration a li:hover, #login a li:hover{
     color: var(--pink-lace);
     background-color: var(--blue-violet);
 }
 
-#profile form input {
+#registration form input, #login form input {
     height: 3em;
     border: none;
     background-color: var(--pink-lace);
 }
 
-#profile .color_icon {
+#registration .color_icon, #login .color_icon {
     color: var(--blue-violet);
 }
 
-/* ?/PROFILE */
+/* ?/REGISTRTAION */
 
 /*! FOOTER */
 
@@ -247,6 +247,10 @@ body, html {
 #footer a h2{
     text-decoration: none;
     border-bottom: 4px solid transparent;
+    color: #212529;
+
+    transition: color 0.5s;
+    transition: border-bottom 0.5s;
 }
 
 #footer a h2:hover{
@@ -257,6 +261,11 @@ body, html {
 
 #footer .icones a {
     color: var(--blue-violet);
+    transition: color 0.5s;
+}
+
+#footer .icones a:hover {
+    color: var(--midnight-blue);
 }
 
 #footer h5, p {

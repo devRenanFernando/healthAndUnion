@@ -12,16 +12,16 @@
             <div class="col-lg-3 col-6 text-center">
                 <h3 class="fs-3 mb-4">Links</h3>
                 <a href="#">
-                    <h2 class="fs-6 text-dark mb-3">Home</h2>
+                    <h2 class="fs-6 mb-3 mx-auto w-25">Home</h2>
                 </a>
                 <a href="#">
-                    <h2 class="fs-6 text-dark mb-3">Posts</h2>
+                    <h2 class="fs-6 mb-3 mx-auto w-25">Posts</h2>
                 </a>
                 <a href="#">
-                    <h2 class="fs-6 text-dark mb-3">Quem somos?</h2>
+                    <h2 class="fs-6 mb-3 mx-auto w-25">Quem somos?</h2>
                 </a>
                 <a href="#">
-                    <h2 class="fs-6 text-dark mb-3">Contato</h2>
+                    <h2 class="fs-6 mb-3 mx-auto w-25">Contato</h2>
                 </a>
             </div>
 
@@ -29,13 +29,13 @@
             <div class="col-lg-3 col-6 text-center">
                 <h3 class="fs-3 mb-4">Suporte</h3>
                 <a href="#">
-                    <h2 class="fs-6 text-dark mb-3">Perguntas Frequentes</h2>
+                    <h2 class="fs-6 mb-3 mx-auto w-25">Perguntas Frequentes</h2>
                 </a>
                 <a href="#">
-                    <h2 class="fs-6 text-dark mb-3">Reporte um Erro</h2>
+                    <h2 class="fs-6 mb-3 mx-auto w-25">Reporte um Erro</h2>
                 </a>
                 <a href="#">
-                    <h2 class="fs-6 text-dark mb-3">Ajuda</h2>
+                    <h2 class="fs-6 mb-3 mx-auto w-25">Ajuda</h2>
                 </a>
             </div>
 

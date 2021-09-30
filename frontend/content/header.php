@@ -19,10 +19,10 @@
                         <a class="nav-link fs-2 text-dark" href="#">Posts</a>
                     </li>
                     <li class="nav-item pe-3">
-                        <a class="nav-link fs-2 text-dark" href="#quemSomosTitle">Quem somos?</a>
+                        <a class="nav-link fs-2 text-dark" href="#quemSomos">Quem somos?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-2 text-dark" href="#contatoTitle">Contato</a>
+                        <a class="nav-link fs-2 text-dark" href="#contato">Contato</a>
                     </li>
                 </ul>
 
@@ -31,7 +31,7 @@
                     <!-- Perfil -->
                     <div class="col-sm-6 px-4 border-end border-3">
                         <span class="p-1">
-                            <a href="index.php?a=<?php echo 'profile.php'; ?>">
+                            <a href="../frontend/content/login.php">
                                 <i class="fas fa-user fa-2x" aria-hidden="true"></i>
                             </a>
                         </span>
