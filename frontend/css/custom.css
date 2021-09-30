@@ -147,13 +147,26 @@ body, html {
     border-bottom-left-radius: 15px;
     z-index: 1;
 
+
+    left: 67%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
+
+/* #profile .first-content {
+} */
 
 #profile .first-column {
     z-index: 2;
 }
 /* 
 #profile .second-column {
+}
+
+#profile .second-content {
+    
 } */
 
 #profile .btn {
@@ -163,6 +176,7 @@ body, html {
 #profile .btn-outline-primary {
     border-color: var(--pink-lace);
     color: var(--pink-lace);
+    transition: background-color 1s;
 }
 
 #profile .btn-outline-primary:hover {
@@ -174,6 +188,7 @@ body, html {
 #profile .btn-outline-secondary {
     border-color: var(--blue-violet);
     color: var(--blue-violet);
+    transition: background-color 1s;
 }
 
 #profile .btn-outline-secondary:hover {
@@ -185,28 +200,29 @@ body, html {
 #profile ul li{
     border: 1px solid var(--blue-violet);
     border-radius: 50%;
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
     list-style-type: none;
 }
 
-#profile ul li:hover{
-    background-color: var(--blue-violet);
-}
-
-#profile li a{
+#profile a li{
     color: var(--blue-violet);
+    transition: background-color .5s;
 }
 
-#profile li a:hover{
+#profile a li:hover{
     color: var(--pink-lace);
+    background-color: var(--blue-violet);
 }
 
 #profile form input {
     height: 3em;
     border: none;
     background-color: var(--pink-lace);
-    
+}
+
+#profile .color_icon {
+    color: var(--blue-violet);
 }
 
 /* ?/PROFILE */
