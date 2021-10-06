@@ -1,4 +1,4 @@
-<div id="header" class="border-bottom border-2 py-3">
+<div id="header" class="border-bottom py-3">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
 
@@ -18,7 +18,7 @@
                     <li class="nav-item px-3 mx-auto w-25">
                         <a class="nav-link fs-2 text-dark" href="#">Posts</a>
                     </li>
-                    <li class="nav-item pe-3 mx-auto w-25">
+                    <li class="nav-item pe-3 mx-auto w-50">
                         <a class="nav-link fs-2 text-dark" href="#quemSomos">Quem somos?</a>
                     </li>
                     <li class="nav-item mx-auto w-25">

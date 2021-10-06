@@ -48,6 +48,10 @@ html {
   color: var(--blue-violet);
 }
 
+#header a {
+    white-space: nowrap;
+}
+
 #header .navbar-toggler {
   border-color: var(--blue-violet);
   color: var(--blue-violet);
@@ -117,6 +121,7 @@ html {
 #carousel {
   border-top: 0.3rem solid var(--blue-violet);
   border-bottom: 0.3rem solid var(--blue-violet);
+  background-color: var(--pink-lace);
 }
 
 /*? /CARROUSEL */
@@ -288,6 +293,51 @@ html {
 }
 
 /* ?/REGISTRATION */
+
+/** FAQ */
+
+#faq {
+    background-color: var(--blue-violet);
+    width: 100%;
+}
+#faq .row{
+    border-radius: 20px;
+    background-color: var(--pink-lace);
+    width: 80%;
+}
+
+#faq .btn-group-vertical > .btn, .btn-group > .btn {
+    white-space: normal;
+}
+
+#faq .button{
+    border-color: var(--blue-violet)!important;
+    background-color: var(--blue-violet);
+    color: white;
+    border-radius: 5px;
+    box-shadow: var(--blue-violet);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+#faq .button:hover{
+    background-color: var(--pink-lace);
+    color: var(--blue-violet);
+}
+
+#faq .btn-primary {
+    background-color: var(--blue-violet);
+    color: white;
+    border-color: var(--blue-violet);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+#faq .btn-primary:hover {
+    background-color: var(--pink-lace);
+    color: var(--blue-violet);
+    border-color: var(--blue-violet);
+}
+
+/** /FAQ */
 
 /*! FOOTER */
 

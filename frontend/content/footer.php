@@ -28,7 +28,7 @@
             <!-- Suporte -->
             <div class="col-lg-3 col-6 text-center">
                 <h3 class="fs-3 mb-4">Suporte</h3>
-                <a href="#">
+                <a href="../frontend/content/faq.php">
                     <h2 class="fs-6 mb-3 mx-auto w-50">Perguntas Frequentes</h2>
                 </a>
                 <a href="#">
