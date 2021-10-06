@@ -30,72 +30,89 @@
 
     <section id="posts">
         <div class="container">
-            <div class="row justify-items-center">
-                <h2 id="postsTitle" class="fs-1 text-center my-4">Posts Recentes</h2>
-                <div class="col-md-6">
-                    <div class="card mb-3" style="max-width: 30em;">
+            <h2 class="fs-1 text-center my-4 pb-2">Posts Recentes</h2>
+            <div class="row mx-0">
+                <div class="col-lg-6">
+                    <div class="card mb-3" style="max-width: 580px;">
                         <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="..." class="img-fluid rounded-start" alt="...">
+                            <div class="col-md-7 d-flex align-items-center">
+                                <img src="../frontend/assets/img/svg/img_posts.svg" class="w-100 rounded-start" alt="...">
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-5">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-3" style="max-width: 30em;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="..." class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <div class="d-flex justify-content-start py-5 ms-3">
+                                    <button type="submit" class="btn btn-sm btn-outline-dark fw-bold" role="button" style="width: 10em;">Leia mais <i class="fas fa-arrow-alt-circle-right ms-3"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card mb-3" style="max-width: 30em;">
+                <div class="col-lg-6">
+                    <div class="card mb-3" style="max-width: 580px;">
                         <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="..." class="img-fluid rounded-start" alt="...">
+                            <div class="col-md-7 d-flex align-items-center">
+                                <img src="../frontend/assets/img/svg/img_posts.svg" class="w-100 rounded-start" alt="...">
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-5">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-3" style="max-width: 30em;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="..." class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <div class="d-flex justify-content-start py-5 ms-3">
+                                    <button type="submit" class="btn btn-sm btn-outline-dark fw-bold" role="button" style="width: 10em;">Leia mais <i class="fas fa-arrow-alt-circle-right ms-3"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col-lg-6">
+                    <div class="card mb-3" style="max-width: 580px;">
+                        <div class="row g-0">
+                            <div class="col-md-7 d-flex align-items-center">
+                                <img src="../frontend/assets/img/svg/img_posts.svg" class="w-100 rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                                <div class="d-flex justify-content-start py-5 ms-3">
+                                    <button type="submit" class="btn btn-sm btn-outline-dark fw-bold" role="button" style="width: 10em;">Leia mais <i class="fas fa-arrow-alt-circle-right ms-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card mb-3" style="max-width: 580px;">
+                        <div class="row g-0">
+                            <div class="col-md-7 d-flex align-items-center">
+                                <img src="../frontend/assets/img/svg/img_posts.svg" class="w-100 rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                                <div class="d-flex justify-content-start py-5 ms-3">
+                                    <button type="submit" class="btn btn-sm btn-outline-dark fw-bold" role="button" style="width: 10em;">Leia mais <i class="fas fa-arrow-alt-circle-right ms-3"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center py-5">
+                <button type="submit" class="btn btn-lg btn-outline-dark fw-bold" style=" width: 15em" role="button">Todos os Posts</button>
             </div>
         </div>
     </section>

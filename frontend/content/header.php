@@ -16,7 +16,7 @@
                         <a class="nav-link fs-2 text-dark" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item px-3 mx-auto w-25">
-                        <a class="nav-link fs-2 text-dark" href="#">Posts</a>
+                        <a class="nav-link fs-2 text-dark" href="#posts">Posts</a>
                     </li>
                     <li class="nav-item pe-3 mx-auto w-50">
                         <a class="nav-link fs-2 text-dark" href="#quemSomos">Quem somos?</a>

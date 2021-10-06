@@ -1,0 +1,23 @@
+<svg id="Image_placeholder_small" data-name="Image placeholder / small" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3d1f75;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #f8f9fa;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="shape" class="cls-1" width="300" height="300" transform="translate(0)"/>
+  <g id="icon_image" data-name="icon/image" transform="translate(123.662 127.48)">
+    <path id="Caminho_580" data-name="Caminho 580" class="cls-2" d="M46.377,4.357H6.627A3.335,3.335,0,0,0,3.314,7.714V41.286a3.335,3.335,0,0,0,3.312,3.357h39.75a3.335,3.335,0,0,0,3.313-3.357V7.714A3.335,3.335,0,0,0,46.377,4.357ZM6.627,1A6.67,6.67,0,0,0,0,7.714V41.286A6.67,6.67,0,0,0,6.627,48h39.75A6.67,6.67,0,0,0,53,41.286V7.714A6.67,6.67,0,0,0,46.377,1H6.627Z" transform="translate(-0.002 -1)"/>
+    <path id="Caminho_581" data-name="Caminho 581" class="cls-3" d="M35.313,8.026a1.761,1.761,0,0,1,2.052-.335L50.8,14.71V30.932H1v-7.21l9.412-8.486a1.761,1.761,0,0,1,2.241-.224L22.116,21.4,35.313,8.03Z" transform="translate(0.599 13.516)"/>
+    <path id="Caminho_582" data-name="Caminho 582" class="cls-2" d="M7.971,14.071A5.036,5.036,0,1,0,3,9.036a5,5,0,0,0,4.969,5.036Z" transform="translate(6.935 6.071)"/>
+  </g>
+</svg>

@@ -108,6 +108,27 @@ html {
 
 /** /HEADER */
 
+/*! POSTS */
+
+#posts h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+}
+
+#posts .btn-outline-dark {
+  border-color: var(--blue-violet);
+  background-color: var(--blue-violet);
+  color: var(--pink-lace);
+  transition: background-color 0.5s;
+}
+
+#posts .btn-outline-dark:hover {
+  border-color: var(--blue-violet);
+  color: var(--blue-violet);
+  background-color: var(--pink-lace);
+}
+/*!/ POSTS */
+
 /*? CARROUSEL */
 
 .carousel-control-prev-icon {
@@ -126,7 +147,7 @@ html {
 
 /*? /CARROUSEL */
 
-/*/ QUEM SOMOS? */
+/*// QUEM SOMOS? */
 
 #quemSomos p {
   font-family: "Lato", sans-serif;
@@ -139,7 +160,7 @@ html {
   font-weight: 700;
 }
 
-/*/ /QUEM SOMOS? */
+/*// /QUEM SOMOS? */
 
 /** CONTATO */
 
