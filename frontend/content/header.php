@@ -12,16 +12,16 @@
 
             <div class="collapse navbar-collapse justify-content-between text-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item pe-3">
+                    <li class="nav-item mx-auto w-25">
                         <a class="nav-link fs-2 text-dark" aria-current="page" href="#">Home</a>
                     </li>
-                    <li class="nav-item pe-3">
+                    <li class="nav-item px-3 mx-auto w-25">
                         <a class="nav-link fs-2 text-dark" href="#">Posts</a>
                     </li>
-                    <li class="nav-item pe-3">
+                    <li class="nav-item pe-3 mx-auto w-25">
                         <a class="nav-link fs-2 text-dark" href="#quemSomos">Quem somos?</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-auto w-25">
                         <a class="nav-link fs-2 text-dark" href="#contato">Contato</a>
                     </li>
                 </ul>
@@ -38,13 +38,15 @@
                     </div>
 
                     <!-- Busca -->
-                    <div class="col-sm-6 px-4">
-                        <span class="p-1">
-                            <a href="#">
+                    <div class="col-sm-6 px-4 d-flex justify-content-center">
+                        <div class="search-box d-flex justify-content-between align-items-center">
+                            <input type="text" class="search-txt text-dark" placeholder="Pesquisar">
+                            <a href="#" class="search-btn d-flex justify-content-center align-items-center">
                                 <i class="fas fa-search fa-2x" aria-hidden="true"></i>
                             </a>
-                        </span>
+                        </div>
                     </div>
+
                 </div>
 
             </div>

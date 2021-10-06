@@ -1,75 +1,122 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    font-family:'Lato', sans-serif;
+body,
+html {
+  font-family: "Lato", sans-serif;
 }
 
 ::selection {
-    background-color: var(--melon);
-    color: var(--midnight-blue);
+  background-color: var(--melon);
+  color: var(--midnight-blue);
 }
 
 /** HEADER */
 
 #header {
-    width: 100%;
-    background-color: transparent;
-    transition: background ease-out 0.2s;
+  width: 100%;
+  background-color: transparent;
+  transition: background ease-out 0.2s;
 }
 
 #header .navbar-collapse {
-    width: auto;
+  width: auto;
 }
 
 #header .nav-link {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    border-bottom: solid 4px transparent;
-    transition: color 0.5s;
-    transition: border-bottom 0.5s;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  border-bottom: solid 4px transparent;
+  transition: color 0.5s;
+  transition: border-bottom 0.5s;
 }
 
 #header .nav-link:hover {
-    border-bottom: solid 4px var(--blue-violet);
-    color: var(--blue-violet)!important;
+  border-bottom: solid 4px var(--blue-violet);
+  color: var(--blue-violet) !important;
 }
 
-#header .border-end, .border-bottom {
-    border-color: var(--blue-violet)!important;
+#header .border-end,
+.border-bottom {
+  border-color: var(--blue-violet) !important;
 }
 
 #header .fa-2x {
-    color: var(--blue-violet);
+  color: var(--blue-violet);
 }
 
 #header .navbar-toggler {
-    border-color: var(--blue-violet);
-    color: var(--blue-violet);
+  border-color: var(--blue-violet);
+  color: var(--blue-violet);
 }
 
 #header .navbar-toggler-icon {
-    background-image: url(../assets/img/svg/toggler_icon.svg);
+  background-image: url(../assets/img/svg/toggler_icon.svg);
 }
+
+#header .search-box {
+  background-color: transparent;
+  height: max-content;
+  width: max-content;
+  padding: 15px;
+  border-radius: 40px;
+}
+
+#header .search-box:hover {
+  background-color: var(--pink-lace);
+}
+
+#header .search-txt {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  line-height: max-content;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  width: 0;
+  transition: width 0.5s;
+}
+
+#header .search-btn {
+  width: max-content;
+  height: max-content;
+  padding: 0.4em;
+  border-radius: 100%;
+  transition: width 0.5s;
+}
+
+#header .search-box:hover > .search-txt {
+  width: max-content;
+  padding: 0 6px;
+}
+/* 
+#header .search-box:hover > .search-btn {
+  background-color: var(--blue-violet);
+}
+
+#header .search-box:hover > .fa-2x {
+  color: var(--pink-lace);
+} */
 
 /** /HEADER */
 
 /*? CARROUSEL */
 
 .carousel-control-prev-icon {
-    background-image: url(../assets/img/svg/carousel-control-prev-icon.svg);
+  background-image: url(../assets/img/svg/carousel-control-prev-icon.svg);
 }
 
 .carousel-control-next-icon {
-    background-image: url(../assets/img/svg/carousel-control-next-icon.svg);
+  background-image: url(../assets/img/svg/carousel-control-next-icon.svg);
 }
 
 #carousel {
-    border-top: .3rem solid var(--blue-violet);
-    border-bottom: .3rem solid var(--blue-violet);
+  border-top: 0.3rem solid var(--blue-violet);
+  border-bottom: 0.3rem solid var(--blue-violet);
 }
 
 /*? /CARROUSEL */
@@ -77,14 +124,14 @@ body, html {
 /*/ QUEM SOMOS? */
 
 #quemSomos p {
-    font-family:'Lato', sans-serif;
-    font-weight: 400;
-    max-width: 25em;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  max-width: 25em;
 }
 
 #quemSomos h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
 }
 
 /*/ /QUEM SOMOS? */
@@ -92,193 +139,209 @@ body, html {
 /** CONTATO */
 
 #contato h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
 }
 
 #contato p {
-    font-family:'Lato', sans-serif;
-    font-weight: 400;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 #contato .icones {
-    color: var(--blue-violet);
+  color: var(--blue-violet);
 }
 
 #contato .btn-outline-dark {
-    border-color: var(--blue-violet);
-    background-color: var(--blue-violet);
-    color: var(--pink-lace);
-    transition: background-color 0.5s;
+  border-color: var(--blue-violet);
+  background-color: var(--blue-violet);
+  color: var(--pink-lace);
+  transition: background-color 0.5s;
 }
 
 #contato .btn-outline-dark:hover {
-    border-color: var(--blue-violet);
-    color: var(--blue-violet);
-    background-color: var(--pink-lace);
+  border-color: var(--blue-violet);
+  color: var(--blue-violet);
+  background-color: var(--pink-lace);
 }
 /** /CONTATO */
 
-/* ?REGISTRTAION */
+/* ?REGISTRATION */
 
-#registration, #login {
-    background-color: var(--blue-violet) ;
+#registration,
+#login {
+  background-color: var(--blue-violet);
 }
 
-#registration .content, #login .content{
-    background-color: var(--pink-lace);
-    position: relative;
-    border: 4px solid var(--pink-lace);
-    border-radius: 10px;
+#registration .content,
+#login .content {
+  background-color: var(--pink-lace);
+  position: relative;
+  border: 4px solid var(--pink-lace);
+  border-radius: 10px;
 }
 
-#registration h2, #login h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
+#registration h2,
+#login h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
 }
 
-#registration p, #login p {
-    font-family:'Lato', sans-serif;
+#registration p,
+#login p {
+  font-family: "Lato", sans-serif;
 }
 
-#registration .content::before{
-    content: "";
-    position: absolute;
-    width:33%;
-    height:100%;
-    background-color: var(--blue-violet);
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    z-index: 1;
-    left: 67%;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+#registration .content::before {
+  content: "";
+  position: absolute;
+  width: 33%;
+  height: 100%;
+  background-color: var(--blue-violet);
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  z-index: 1;
+  left: 67%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
-#login .content::before{
-    content: "";
-    position: absolute;
-    width:33%;
-    height:100%;
-    background-color: var(--blue-violet);
-    z-index: 1;
-}
-
-#registration .first-column, #login .first-column {
-    z-index: 2;
+#login .content::before {
+  content: "";
+  position: absolute;
+  width: 33%;
+  height: 100%;
+  background-color: var(--blue-violet);
+  z-index: 1;
 }
 
-#registration .btn, #login .btn {
-    border-radius: 10px;
+#registration .first-column,
+#login .first-column {
+  z-index: 2;
 }
 
-#registration .btn-outline-primary, #login .btn-outline-primary {
-    border-color: var(--pink-lace);
-    color: var(--pink-lace);
-    transition: background-color 1s;
+#registration .btn,
+#login .btn {
+  border-radius: 10px;
 }
 
-#registration .btn-outline-primary:hover, #login .btn-outline-primary:hover {
-    border-color: var(--blue-violet);
-    color: var(--blue-violet);
-    background-color: var(--pink-lace);
+#registration .btn-outline-primary,
+#login .btn-outline-primary {
+  border-color: var(--pink-lace);
+  color: var(--pink-lace);
+  transition: background-color 1s;
 }
 
-#registration .btn-outline-secondary, #login .btn-outline-secondary {
-    border-color: var(--blue-violet);
-    color: var(--blue-violet);
-    transition: background-color 1s;
+#registration .btn-outline-primary:hover,
+#login .btn-outline-primary:hover {
+  border-color: var(--blue-violet);
+  color: var(--blue-violet);
+  background-color: var(--pink-lace);
 }
 
-#registration .btn-outline-secondary:hover, #login .btn-outline-secondary:hover {
-    border-color: var(--pink-lace);
-    color: var(--pink-lace);
-    background-color: var(--blue-violet);
+#registration .btn-outline-secondary,
+#login .btn-outline-secondary {
+  border-color: var(--blue-violet);
+  color: var(--blue-violet);
+  transition: background-color 1s;
 }
 
-#registration ul li, #login ul li{
-    border: 1px solid var(--blue-violet);
-    border-radius: 50%;
-    width: 2em;
-    height: 2em;
-    list-style-type: none;
+#registration .btn-outline-secondary:hover,
+#login .btn-outline-secondary:hover {
+  border-color: var(--pink-lace);
+  color: var(--pink-lace);
+  background-color: var(--blue-violet);
 }
 
-#registration a li, #login a li{
-    color: var(--blue-violet);
-    transition: background-color .5s;
+#registration ul li,
+#login ul li {
+  border: 1px solid var(--blue-violet);
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  list-style-type: none;
 }
 
-#registration a li:hover, #login a li:hover{
-    color: var(--pink-lace);
-    background-color: var(--blue-violet);
+#registration a li,
+#login a li {
+  color: var(--blue-violet);
+  transition: background-color 0.5s;
 }
 
-#registration form input, #login form input {
-    height: 3em;
-    border: none;
-    background-color: var(--pink-lace);
+#registration a li:hover,
+#login a li:hover {
+  color: var(--pink-lace);
+  background-color: var(--blue-violet);
 }
 
-#registration .color_icon, #login .color_icon {
-    color: var(--blue-violet);
+#registration form input,
+#login form input {
+  height: 3em;
+  border: none;
+  background-color: var(--pink-lace);
 }
 
-/* ?/REGISTRTAION */
+#registration .color_icon,
+#login .color_icon {
+  color: var(--blue-violet);
+}
+
+/* ?/REGISTRATION */
 
 /*! FOOTER */
 
 #footer h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
-    color: var(--blue-violet)!important;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  color: var(--blue-violet) !important;
 }
 
 #footer h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
 }
 
 #footer a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-#footer a h2{
-    text-decoration: none;
-    border-bottom: 4px solid transparent;
-    color: #212529;
+#footer a h2 {
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+  color: #212529;
 
-    transition: color 0.5s;
-    transition: border-bottom 0.5s;
+  transition: color 0.5s;
+  transition: border-bottom 0.5s;
 }
 
-#footer a h2:hover{
-    text-decoration: none;
-    border-bottom: 4px solid var(--blue-violet);
-    color: var(--blue-violet);
+#footer a h2:hover {
+  text-decoration: none;
+  border-bottom: 4px solid var(--blue-violet);
+  color: var(--blue-violet);
 }
 
 #footer .icones a {
-    color: var(--blue-violet);
-    transition: color 0.5s;
+  color: var(--blue-violet);
+  transition: color 0.5s;
 }
 
 #footer .icones a:hover {
-    color: var(--midnight-blue);
+  color: var(--midnight-blue);
 }
 
-#footer h5, p {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 700;
+#footer h5,
+p {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
 }
 
 #footer p {
-    width: 13em;
+  width: 13em;
 }
 
 #footer {
-        border-top: 3px solid var(--blue-violet)!important;
+  border-top: 3px solid var(--blue-violet) !important;
 }
 
 /*! /FOOTER */

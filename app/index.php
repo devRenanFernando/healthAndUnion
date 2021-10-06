@@ -25,21 +25,21 @@
   <?php
   require_once "../frontend/content/header.php";
   ?>
-  
-    <!-- Contents -->
-    <?php
-    @$principal = $_GET['a'];
-    if (isset($principal)) {
-      include_once('../frontend/content/' . $principal);
-    } else {
-      include_once "../frontend/content/main.php";
-    }
-    ?>
 
-    <!-- Footer -->
-    <?php
-      require_once "../frontend/content/footer.php";
-    ?>
+  <!-- Contents -->
+  <?php
+  @$principal = $_GET['a'];
+  if (isset($principal)) {
+    include_once('../frontend/content/' . $principal);
+  } else {
+    include_once "../frontend/content/main.php";
+  }
+  ?>
+
+  <!-- Footer -->
+  <?php
+  require_once "../frontend/content/footer.php";
+  ?>
   </div>
 
   <!-- JavaScript: Separate Popper and Bootstrap JS -->

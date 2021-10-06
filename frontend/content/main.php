@@ -10,9 +10,12 @@
                 <div class="carousel-item active">
                     <img src="../frontend/assets/img/svg/img_carrousel01.svg" class="d-block w-75 mx-auto" alt="...">
                 </div>
-                <!-- <div class="carousel-item">
-                    <img src="../frontend/assets/img/svg/" class="d-block w-75 mx-auto" alt="...">
-                </div> -->
+                <div class="carousel-item">
+                    <img src="../frontend/assets/img/svg/img_carrousel02.svg" class="d-block w-75 mx-auto" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../frontend/assets/img/svg/img_carrousel03.svg" class="d-block w-75 mx-auto" alt="...">
+                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -28,7 +31,7 @@
     <section id="posts">
         <div class="container">
             <div class="row justify-items-center">
-            <h2 id="postsTitle" class="fs-1 text-center my-4">Posts</h2>
+                <h2 id="postsTitle" class="fs-1 text-center my-4">Posts Recentes</h2>
                 <div class="col-md-6">
                     <div class="card mb-3" style="max-width: 30em;">
                         <div class="row g-0">
