@@ -1,9 +1,9 @@
-<div id="header" class="border-bottom py-3">
+<div id="header" class="py-3">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
 
             <a class="navbar-brand" href="#">
-                <img src="../frontend/assets/img/svg/logo.svg" class="img-fluid" width="60" height="auto" alt="">
+                <img src="../frontend/assets/svg/logo.svg" class="img-fluid" width="60" height="auto" alt="">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,16 +13,19 @@
             <div class="collapse navbar-collapse justify-content-between text-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-auto w-25">
-                        <a class="nav-link fs-2 text-dark" aria-current="page" href="#">Home</a>
+                        <a class="nav-link fs-3 text-dark" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item px-3 mx-auto w-25">
-                        <a class="nav-link fs-2 text-dark" href="#posts">Posts</a>
+                        <a class="nav-link fs-3 text-dark" href="#posts">Posts</a>
                     </li>
                     <li class="nav-item pe-3 mx-auto w-50">
-                        <a class="nav-link fs-2 text-dark" href="#quemSomos">Quem somos?</a>
+                        <a class="nav-link fs-3 text-dark" href="#quemSomos">Quem somos?</a>
+                    </li>
+                    <li class="nav-item pe-3 mx-auto w-50">
+                        <a class="nav-link fs-3 text-dark" href="#depoimentos">Depoimentos</a>
                     </li>
                     <li class="nav-item mx-auto w-25">
-                        <a class="nav-link fs-2 text-dark" href="#contato">Contato</a>
+                        <a class="nav-link fs-3 text-dark" href="#contato">Contato</a>
                     </li>
                 </ul>
 

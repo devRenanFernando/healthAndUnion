@@ -3,7 +3,7 @@
         <div class="row mt-4 align-items-center">
             <!-- Logo com Frase -->
             <div class="col-lg-3 col-12 mx-auto">
-                <img src="../frontend/assets/img/png/Fibromialgia.png" class="rounded mx-auto d-block w-50 mx-4" alt="">
+                <img src="../frontend/assets/png/Fibromialgia.png" class="rounded mx-auto d-block w-50 mx-4" alt="">
                 <p class="text-center fst-italic fs-5 mx-auto">"Quanto mais grave é uma doença, maior tem de ser a esperança. Porque a função da esperança é preencher o que nos falta."</p>
                 <h5 class="text-end fs-6">VERGÍLIO FERREIRA</h5>
             </div>
@@ -19,6 +19,9 @@
                 </a>
                 <a href="#">
                     <h2 class="fs-6 mb-3 mx-auto w-50">Quem somos?</h2>
+                </a>
+                <a href="#">
+                    <h2 class="fs-6 mb-3 mx-auto w-50">Depoimentos</h2>
                 </a>
                 <a href="#">
                     <h2 class="fs-6 mb-3 mx-auto w-25">Contato</h2>

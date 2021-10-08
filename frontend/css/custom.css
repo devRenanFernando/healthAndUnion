@@ -19,7 +19,14 @@ html {
 #header {
   width: 100%;
   background-color: transparent;
-  transition: background ease-out 0.2s;
+  transition: background ease-out 0.4s;
+}
+
+#header.active {
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  z-index: 9999;
 }
 
 #header .navbar-collapse {
@@ -49,7 +56,7 @@ html {
 }
 
 #header a {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 #header .navbar-toggler {
@@ -58,7 +65,7 @@ html {
 }
 
 #header .navbar-toggler-icon {
-  background-image: url(../assets/img/svg/toggler_icon.svg);
+  background-image: url(../assets/svg/toggler_icon.svg);
 }
 
 #header .search-box {
@@ -78,35 +85,48 @@ html {
   background: transparent;
   outline: none;
   padding: 0;
+  width: max-content;
   line-height: max-content;
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
   width: 0;
-  transition: width 0.5s;
+  transition: 0.5s;
 }
 
 #header .search-btn {
   width: max-content;
-  height: max-content;
   padding: 0.4em;
   border-radius: 100%;
-  transition: width 0.5s;
 }
 
 #header .search-box:hover > .search-txt {
   width: max-content;
   padding: 0 6px;
 }
-/* 
-#header .search-box:hover > .search-btn {
+
+/** /HEADER */
+
+/*? CARROUSEL */
+
+.carousel-control-prev-icon {
+  background-image: url(../assets/svg/carousel-control-prev-icon.svg);
+}
+
+.carousel-control-next-icon {
+  background-image: url(../assets/svg/carousel-control-next-icon.svg);
+}
+
+#carousel {
+  border-top: 0.3rem solid var(--blue-violet);
+  border-bottom: 0.3rem solid var(--blue-violet);
+  background-color: var(--pink-lace);
+}
+
+#carousel .carousel-indicators [data-bs-target] {
   background-color: var(--blue-violet);
 }
 
-#header .search-box:hover > .fa-2x {
-  color: var(--pink-lace);
-} */
-
-/** /HEADER */
+/*? /CARROUSEL */
 
 /*! POSTS */
 
@@ -127,25 +147,55 @@ html {
   color: var(--blue-violet);
   background-color: var(--pink-lace);
 }
+
+#posts .btn-outline-dark:focus,
+.btn:focus {
+  box-shadow: none;
+}
+
+#posts .card {
+  border: none;
+}
+
+#posts .card-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+#posts .badge {
+  font-weight: 400;
+}
+
+#posts .element-item img {
+  border-radius: 5px;
+  transition: all ease-out 0.2s;
+}
+
+#posts .element-item img:hover {
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.4);
+}
+
+#posts .button-group button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#posts .button-group button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#posts .button-group button + button {
+  margin-left: 1em;
+}
+
+#posts .button-group button.active {
+  color: var(--melon);
+}
+
 /*!/ POSTS */
-
-/*? CARROUSEL */
-
-.carousel-control-prev-icon {
-  background-image: url(../assets/img/svg/carousel-control-prev-icon.svg);
-}
-
-.carousel-control-next-icon {
-  background-image: url(../assets/img/svg/carousel-control-next-icon.svg);
-}
-
-#carousel {
-  border-top: 0.3rem solid var(--blue-violet);
-  border-bottom: 0.3rem solid var(--blue-violet);
-  background-color: var(--pink-lace);
-}
-
-/*? /CARROUSEL */
 
 /*// QUEM SOMOS? */
 
@@ -162,7 +212,47 @@ html {
 
 /*// /QUEM SOMOS? */
 
+/*? DEPOIMENTOS  */
+
+#depoimentos p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  max-width: 25em;
+}
+
+#depoimentos h2,
+h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+}
+
+#depoimentos .depoimento {
+  background-color: var(--pink-lace);
+  border-radius: 5px;
+  display: flex;
+  padding: 30px;
+}
+
+#depoimentos .depoimento .quote {
+  max-width: 35px;
+}
+
+#depoimentos .depoimento .name {
+  color: #aaaaaa;
+}
+
+#depoimentos .depoimento .name span {
+  color: #000;
+  font-weight: 700;
+}
+
+/*? /DEPOIMENTOS  */
+
 /** CONTATO */
+
+#contato {
+  background-color: var(--pink-lace);
+}
 
 #contato h2 {
   font-family: "Cormorant Garamond", serif;
@@ -189,6 +279,10 @@ html {
   border-color: var(--blue-violet);
   color: var(--blue-violet);
   background-color: var(--pink-lace);
+}
+
+#contato #mensagem {
+  height: 10em;
 }
 /** /CONTATO */
 
@@ -318,44 +412,54 @@ html {
 /** FAQ */
 
 #faq {
-    background-color: var(--blue-violet);
-    width: 100%;
+  background-color: var(--blue-violet);
+  width: 100%;
 }
-#faq .row{
-    border-radius: 20px;
-    background-color: var(--pink-lace);
-    width: 80%;
-}
-
-#faq .btn-group-vertical > .btn, .btn-group > .btn {
-    white-space: normal;
+#faq .row {
+  border-radius: 20px;
+  background-color: var(--pink-lace);
+  width: 80%;
 }
 
-#faq .button{
-    border-color: var(--blue-violet)!important;
-    background-color: var(--blue-violet);
-    color: white;
-    border-radius: 5px;
-    box-shadow: var(--blue-violet);
-    transition: background-color 0.5s, color 0.5s;
+#faq .btn-group-vertical > .btn,
+.btn-group > .btn {
+  white-space: normal;
 }
 
-#faq .button:hover{
-    background-color: var(--pink-lace);
-    color: var(--blue-violet);
+#faq .button {
+  border-color: var(--blue-violet) !important;
+  background-color: var(--blue-violet);
+  color: white;
+  border-radius: 5px;
+  box-shadow: var(--blue-violet);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+#faq .button:hover {
+  background-color: var(--pink-lace);
+  color: var(--blue-violet);
 }
 
 #faq .btn-primary {
-    background-color: var(--blue-violet);
-    color: white;
-    border-color: var(--blue-violet);
-    transition: background-color 0.5s, color 0.5s;
+  background-color: var(--blue-violet);
+  color: white;
+  border-color: var(--blue-violet);
+  transition: background-color 0.5s, color 0.5s;
 }
 
 #faq .btn-primary:hover {
-    background-color: var(--pink-lace);
-    color: var(--blue-violet);
-    border-color: var(--blue-violet);
+  background-color: var(--pink-lace);
+  color: var(--blue-violet);
+  border-color: var(--blue-violet);
+}
+
+#faq #resposta1,
+#resposta2,
+#resposta3,
+#resposta4,
+#resposta5,
+#resposta6 {
+  display: none;
 }
 
 /** /FAQ */

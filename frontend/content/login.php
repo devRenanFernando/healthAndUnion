@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Links -->
-    <link rel="shortcut icon" href="../assets/img/svg/logo_preenchida.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/svg/logo_preenchida.svg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
