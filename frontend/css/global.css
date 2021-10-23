@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+::selection {
+  background-color: var(--melon);
+  color: var(--midnight-blue);
+}
+
+/* ? FONTS */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+
+/* ? /FONTS */
+
+/* !BUTTONS */
+
+.btn-outline-dark {
+  border-color: var(--blue-violet);
+  background-color: var(--blue-violet);
+  color: var(--pink-lace);
+  transition: background-color 0.5s;
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--blue-violet);
+  color: var(--blue-violet);
+  background-color: var(--pink-lace);
+}
+
+.btn-outline-dark:focus,
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: var(--blue-violet);
+  color: white;
+  border-color: var(--blue-violet);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.btn-primary:hover {
+  background-color: var(--pink-lace);
+  color: var(--blue-violet);
+  border-color: var(--blue-violet);
+}
+
+.btn-outline-primary {
+  border-color: var(--pink-lace);
+  color: var(--pink-lace);
+  transition: background-color 1s;
+}
+
+.btn-outline-primary:hover {
+  border-color: var(--blue-violet);
+  color: var(--blue-violet);
+  background-color: var(--pink-lace);
+}
+.btn-outline-secondary {
+  border-color: var(--blue-violet);
+  color: var(--blue-violet);
+  border: 1px solid var(--blue-violet);
+  transition: background-color 1s;
+}
+
+.btn-outline-secondary:hover {
+  border-color: var(--pink-lace);
+  color: var(--pink-lace);
+  background-color: var(--blue-violet);
+}
+
+/* ! /BUTTONS */
+
+/** ÍCONES */
+
+.icones, .icones a {
+  color: var(--blue-violet);
+  transition: color 0.5s;
+}
+
+.icones a:hover {
+  color: var(--pink-lace)!important;
+}
+
+/** /ÍCONES */

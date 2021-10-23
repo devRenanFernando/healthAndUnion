@@ -3,15 +3,18 @@ jQuery(document).ready(function ($) {
   window.onscroll = function () {
     if (window.scrollY > 140) {
       $("#header").addClass("active");
+      $("#header").addClass("fixed-top");
       $("#header").removeClass("py-3");
     } else {
       $("#header").removeClass("active");
+      $("#header").removeClass("fixed-top");
       $("#header").addClass("py-3");
     }
   };
 
   // ISOTOPE
   let btns = $("#posts .button-group button");
+  let active_a = $("#header .navbar-nav a");
 
   btns.click(function (e) {
     $("#posts .button-group button").removeClass("active");
@@ -21,6 +24,11 @@ jQuery(document).ready(function ($) {
     $("#posts .grid").isotope({
       filter: selector,
     });
+  });
+
+  active_a.click(function (e) {
+    $("#header .navbar-nav a").removeClass("active_a");
+    e.target.classList.add("active_a");
   });
 
   $(window).on("load", function () {

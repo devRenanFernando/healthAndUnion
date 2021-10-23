@@ -3,7 +3,7 @@
         <div class="row mt-4 align-items-center">
             <!-- Logo com Frase -->
             <div class="col-lg-3 col-12 mx-auto">
-                <img src="../frontend/assets/png/Fibromialgia.png" class="rounded mx-auto d-block w-50 mx-4" alt="">
+                <img id="logo_footer" src="../frontend/assets/png/Fibromialgia.png" class="rounded mx-auto d-block w-50 mx-4" alt="">
                 <p class="text-center fst-italic fs-5 mx-auto">"Quanto mais grave é uma doença, maior tem de ser a esperança. Porque a função da esperança é preencher o que nos falta."</p>
                 <h5 class="text-end fs-6">VERGÍLIO FERREIRA</h5>
             </div>
@@ -11,21 +11,54 @@
             <!-- Links -->
             <div class="col-lg-3 col-6 text-center">
                 <h3 class="fs-3 mb-4">Links</h3>
-                <a href="#">
+                <a href="index.php">
                     <h2 class="fs-6 mb-3 mx-auto w-25">Home</h2>
                 </a>
-                <a href="#">
+                <a href="index.php?pg=posts">
                     <h2 class="fs-6 mb-3 mx-auto w-25">Posts</h2>
                 </a>
-                <a href="#">
+                <a href="index.php?pg=default/#quemSomos">
                     <h2 class="fs-6 mb-3 mx-auto w-50">Quem somos?</h2>
                 </a>
-                <a href="#">
+                <a href="index.php?pg=default/#depoimentos">
                     <h2 class="fs-6 mb-3 mx-auto w-50">Depoimentos</h2>
                 </a>
-                <a href="#">
+                <a href="index.php?pg=default/#contato">
                     <h2 class="fs-6 mb-3 mx-auto w-25">Contato</h2>
                 </a>
+                <?php
+                if (!isset($_SESSION['Type'])) {
+                    // SESSION VAZIA
+
+                    echo '
+                                    <a href="../frontend/content/login.php">
+                                    <h2 class="fs-6 mb-3 mx-auto w-25">Perfil</h2>
+                                    </a>';
+                } else {
+                    // SESSION ATIVA
+
+                    // VERIFICAÇÃO DO TIPO DE USER
+                    switch ($_SESSION['Type']) {
+                            // ADM
+                        case '0':
+                            $page = 'adm';
+                            break;
+                            // CONTRIBUTORS
+                        case '1':
+                            $page = 'contributors';
+                            break;
+                            // USER
+                        default:
+                            $page = 'user';
+                    }
+
+                    // REDIRECIONAMENTO PARA PÁGINA DE ACORDO COM O TYPE USER
+                    echo "
+                                        <a href='index.php?pg={$page}'>
+                                        <h2 class='fs-6 mb-3 mx-auto w-25'>Perfil</h2>
+                                        </a>";
+                }
+                ?>
             </div>
 
             <!-- Suporte -->

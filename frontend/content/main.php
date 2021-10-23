@@ -124,8 +124,8 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-6 mb-4 element-item principais_posts">
-                    <div class="card mb-3" style="max-width: 580px;" class="popup-link">
-                        <a href="../frontend/assets/svg/img_posts.svg">
+                    <div class="card mb-3" style="max-width: 580px;">
+                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link">
                             <img src="../frontend/assets/svg/img_posts.svg" class="mx-auto rounded-start img-fluid" alt="...">
                         </a>
                         <div class="card-body">
@@ -162,7 +162,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center py-3">
-                <a href="#">
+                <a href="index.php?pg=posts">
                     <button type="button" class="btn btn-lg btn-outline-dark fw-bold" style=" width: 15em" role="button">Todos os Posts</button>
                 </a>
             </div>
@@ -305,11 +305,12 @@
         </div>
     </section>
 
-    <section id="contato" class="mt-4 py-5">
+    <!-- CONTATO -->
+    <section id="contato" class="my-5 py-5">
         <div class="container-fluid">
             <div class="row position-relative mx-5">
                 <img src="../frontend/assets/svg/paperplane.svg" class="position-absolute translate-middle ms-4" alt="" style="width: 10em; top: -1em;">
-                <div class="col-md-7 align-self-center">
+                <div class="col-lg-7 align-self-center">
                     <h2 id="contatoTitle" class="fs-1 text-center my-4">Contato</h2>
                     <span class="text-center fs-5">
                         <p>Fale conosco pelo WhatsApp <a href="#" class="mx-2 icones"><span><i class="fab fa-whatsapp"></i></span></a> ou nos envie um email <a href="#" class="mx-2 icones"><span><i class="far fa-envelope"></i></span></a></p>
@@ -333,7 +334,7 @@
                     </form>
                 </div>
 
-                <div class="col-md-5 align-self-center">
+                <div id="img_contactUs" class="col-lg-5 align-self-center">
                     <img class="img-fluid" src="../frontend/assets/svg/Contact us-amico.svg" alt="">
                 </div>
             </div>

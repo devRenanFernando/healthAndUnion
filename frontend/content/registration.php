@@ -1,3 +1,8 @@
+<?php
+session_start();
+ob_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,20 +28,22 @@
 <body>
 
     <section id="login" class="container-flex min-vh-100 d-flex align-items-center justify-content-center ">
-        <div class="w-75">
-            <div id="first-content" class="row content py-5 w-75 d-flex align-items-center mx-auto">
+        <div id="larger">
+            <div id="first-content" class="row content py-5 w-75 d-flex align-items-center mx-auto my-lg-0 my-5">
 
-                <div class="first-column col-lg-4 col-12 text-center text-light">
+                <div class="first-column col-lg-4 col-12 text-center text-light mb-lg-0 mb-5">
                     <h2 class="fs-2 text-capitalize">Bem vindo de volta!</h2>
                     <p class="fw-light">Para manter conectado conosco</p>
                     <p class="fw-light">Por favor, faça o login com suas informações pessoais </p>
-                    <a href="login.php">
-                        <button id="signin" class="btn btn-outline-primary fw-bold px-5">Sign in</button>
-                    </a>
+                    <div class="btn-group-vertical d-flex align-items-center">
+                        <a href="login.php">
+                            <button id="signin" class="btn btn-outline-primary fw-bold px-5">Entrar</button>
+                        </a>
 
-                    <a href="../../app/index.php">
-                        <button id="signin" class="btn btn-outline-primary fw-bold mt-3 px-5">Voltar</button>
-                    </a>
+                        <a href="../../app/index.php">
+                            <button id="signin" class="btn btn-outline-primary fw-bold mt-3 px-5">Voltar</button>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="second-column col-lg-8 col-12 text-center text-dark">
@@ -60,24 +67,31 @@
                             </a>
                         </ul>
                     </div>
-                    <p class="fw-light">Ou use seu e-mail para entrar:</p>
-                    <form class="form d-flex flex-column">
-                        <label class="label-input" for="">
-                            <i class="far fa-user color_icon"></i>
-                            <input type="text" placeholder="Nome" class="w-50 mx-auto ps-3">
+                    <p class="fw-light">Ou use seu e-mail para cadastrar:</p>
+                    <?php
+
+                    if (isset($_SESSION['msg'])) {
+                        echo "<p>{$_SESSION['msg']}</p>";
+                        unset($_SESSION['msg']);
+                    }
+                    ?>
+                    <form id="form_registration" action="../../backend/class/users/IncludeUser.php" method="post" class="form d-flex flex-column">
+                        <label class="label-input" for="inputName">
+                            <i class=" far fa-user color_icon"></i>
+                            <input id="inputName" name="inputName" type="text" placeholder="Nome" class="w-50 mx-auto ps-3">
                         </label>
 
-                        <label class="label-input" for="">
+                        <label class="label-input" for="inputEmail">
                             <i class="far fa-envelope color_icon"></i>
-                            <input type="email" placeholder="Email" class="w-50 mx-auto ps-3">
+                            <input id="inputEmail" name="inputEmail" type="email" placeholder="Email" class="w-50 mx-auto ps-3">
                         </label>
 
-                        <label class="label-input" for="">
-                            <i class="fas fa-lock color_icon"></i>
-                            <input type="password" placeholder="Senha" class="w-50 mx-auto ps-3">
+                        <label class="label-input" for="inputPassword">
+                            <i class=" fas fa-lock color_icon"></i>
+                            <input id="inputPassword" type="password" name="inputPassword" autocomplete="off" placeholder="Senha" class="w-50 mx-auto ps-3">
                         </label>
 
-                        <button class="btn btn-outline-secondary fw-bold w-50 mx-auto mt-4">Sign up</button>
+                        <input type="submit" value="Cadastrar" name="SendRegistration" class="btn btn-outline-secondary fw-bold w-50 mx-auto mt-4">
                     </form>
                 </div>
             </div>

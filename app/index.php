@@ -1,5 +1,11 @@
+<?php
+session_start();
+ob_start();
+// print_r($_SESSION);
+?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html dir="ltr" lang="pt-br">
 
 <head>
   <!-- Required meta tags -->
@@ -8,7 +14,7 @@
 
   <!-- Links -->
   <link rel="shortcut icon" href="../frontend/assets/svg/logo_preenchida.svg" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
@@ -24,26 +30,36 @@
 </head>
 
 <body>
-  <!-- Header Line -->
   <?php
+  // Header Line
   require_once "../frontend/content/header.php";
-  ?>
 
-  <!-- Contents -->
-  <?php
-  @$principal = $_GET['a'];
-  if (isset($principal)) {
-    include_once('../frontend/content/' . $principal);
-  } else {
-    include_once "../frontend/content/main.php";
+  // Contents
+  $pg = "";
+  if (isset($_GET['pg']) && !empty($_GET['pg'])) {
+    $pg = addslashes($_GET['pg']);
   }
-  ?>
 
-  <!-- Footer -->
-  <?php
+  switch ($pg) {
+    case 'posts':
+      require_once "../frontend/content/{$pg}.php";
+      break;
+    case 'adm':
+      require_once "../frontend/content/page/{$pg}.php";
+      break;
+    case 'contributors':
+      require_once "../frontend/content/page/{$pg}.php";
+      break;
+    case 'user':
+      require_once "../frontend/content/page/{$pg}.php";
+      break;
+    default:
+      require_once "../frontend/content/main.php";
+  }
+
+  // Footer
   require_once "../frontend/content/footer.php";
   ?>
-  </div>
 
   <!-- JavaScript: Separate Popper and Bootstrap JS -->
 
@@ -53,6 +69,15 @@
   <script src="../frontend/js/owl.carousel.min.js"></script>
   <script src="../frontend/js/isotope.pkgd.min.js"></script>
   <script src="../frontend/js/jquery.magnific-popup.min.js"></script>
+  <script>
+    function openSearch() {
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch() {
+      document.getElementById("myOverlay").style.display = "none";
+    }
+  </script>
   <script src="../frontend/js/main.js"></script>
 
 </body>
