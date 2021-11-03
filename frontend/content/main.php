@@ -48,9 +48,9 @@
 
             <div class="row grid mx-0">
                 <div class="col-lg-4 col-6 mb-4 element-item doenca pandemia">
-                    <div class="card mb-3" style="max-width: 580px;">
-                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link">
-                            <img src="../frontend/assets/svg/img_posts.svg" class="mx-auto rounded-start img-fluid" alt="...">
+                    <div class="card mb-3 " style="max-width: 580px;">
+                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link mx-auto">
+                            <img src="../frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -67,9 +67,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-6 mb-4 element-item posts_recentes pandemia">
-                    <div class="card mb-3" style="max-width: 580px;">
-                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link">
-                            <img src="../frontend/assets/svg/img_posts.svg" class="mx-auto rounded-start img-fluid" alt="...">
+                    <div class="card mb-3 " style="max-width: 580px;">
+                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link mx-auto">
+                            <img src="../frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -86,9 +86,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-6 mb-4 element-item vacinacao pandemia">
-                    <div class="card mb-3" style="max-width: 580px;">
-                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link">
-                            <img src="../frontend/assets/svg/img_posts.svg" class="mx-auto rounded-start img-fluid" alt="...">
+                    <div class="card mb-3 " style="max-width: 580px;">
+                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link mx-auto">
+                            <img src="../frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -105,9 +105,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-6 mb-4 element-item vacinacao posts_recentes">
-                    <div class="card mb-3" style="max-width: 580px;">
-                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link">
-                            <img src="../frontend/assets/svg/img_posts.svg" class="mx-auto rounded-start img-fluid" alt="...">
+                    <div class="card mb-3 " style="max-width: 580px;">
+                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link mx-auto">
+                            <img src="../frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -124,9 +124,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-6 mb-4 element-item principais_posts">
-                    <div class="card mb-3" style="max-width: 580px;">
-                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link">
-                            <img src="../frontend/assets/svg/img_posts.svg" class="mx-auto rounded-start img-fluid" alt="...">
+                    <div class="card mb-3 " style="max-width: 580px;">
+                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link mx-auto">
+                            <img src="../frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -142,9 +142,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-6 mb-4 element-item vacinacao principais_posts">
-                    <div class="card mb-3" style="max-width: 580px;">
-                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link">
-                            <img src="../frontend/assets/svg/img_posts.svg" class="mx-auto rounded-start img-fluid" alt="...">
+                    <div class="card mb-3 " style="max-width: 580px;">
+                        <a href="../frontend/assets/svg/img_posts.svg" class="popup-link mx-auto">
+                            <img src="../frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>

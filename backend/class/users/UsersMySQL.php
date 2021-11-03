@@ -1,22 +1,17 @@
 <?php
-session_start();
-require_once '../Connection.php';
-require_once './User.php';
+require_once 'User.php';
 interface InterfaceUsers
 {
     public function registrationUser($user);
-    public function deleteUser($Id);
-    public function updateUser($user);
-    public function searchUser($Id);
     public function loginUser($dados);
-    public function validationEmail($email);
-    public function getTableUsers();
+    public function updateUser($dados, $new_photo);
+    public function usersView();
 }
 
 class UsersMySQL implements InterfaceUsers
 {
     // Attributes
-    private $connection;
+    private $connect;
 
     // Construct
     public function __construct()
@@ -25,15 +20,6 @@ class UsersMySQL implements InterfaceUsers
         $user = 'root';
         $password = '';
         $db = 'tcc_site';
-
-        // Aqui foi o jeito de conectar com o banco de dados que meu professor ensinou
-        $this->connection = new Connection($host, $user, $password, $db);
-        $this->connection->connect();
-        if ($this->connection->connect() == false) {
-            echo "Erro: "; //. mysqli_error();
-        } else {
-            // echo 'Conectado ao servidor!!! ' . '<b>' . $db . '</b>';
-        }
 
         // Aqui foi usando PHP PDO; Vi num vídeo para conseguir fazer a página de login...
         try {
@@ -47,6 +33,8 @@ class UsersMySQL implements InterfaceUsers
     // Methods
     public function registrationUser($user)
     {
+        session_start();
+        ob_start();
         if (!empty($user['SendRegistration'])) {
             $empty_input = false;
 
@@ -70,6 +58,7 @@ class UsersMySQL implements InterfaceUsers
                 $user["inputName"],
                 $user['inputEmail'],
                 $user['inputPassword'],
+                $user['inputGender'],
                 2,
                 0,
                 $user["SendRegistration"]
@@ -120,54 +109,10 @@ class UsersMySQL implements InterfaceUsers
         }
     }
 
-    public function deleteUser($Id)
-    {
-        $sql = "DELETE FROM users WHERE Id = '$Id'";
-
-        $this->connection->executeQuery($sql);
-    }
-
-    public function updateUser($user)
-    {
-        $name = $user->getName();
-        $email = $user->getEmail();
-        $password = md5($user->getPassword());
-        $phone = $user->getPhone();
-        $gender = $user->getGender();
-        $birth = $user->getBirth();
-        $occupation = $user->getOccupation();
-        $photo = $user->getPhoto();
-        $type = $user->getType();
-        $blocked = $user->getBlocked();
-
-        $sql =  "UPDATE users SET Name = '$name', Email = '$email', Password = '$password', Phone = '$phone', Gender = '$gender', Birth = '$birth', Occupation = '$occupation', Photo = '$photo',  Type = '$type', Blocked = '$blocked'";
-
-        $this->connection->executeQuery($sql);
-    }
-
-    public function searchUser($Id)
-    {
-        $query = "SELECT * FROM users WHERE Id = '$Id'";
-        $lines = $this->connection->FirstRegister($query);
-        $user = new User(
-            $lines['Id'],
-            $lines['Name'],
-            $lines['Email'],
-            $lines['Password'],
-            $lines['Phone'],
-            $lines['Gender'],
-            $lines['Birth'],
-            $lines['Occupation'],
-            $lines['Photo'],
-            $lines['Type'],
-            $lines['Blocked']
-        );
-
-        return $user;
-    }
-
     public function loginUser($dados)
     {
+        session_start();
+        ob_start();
         if (empty($dados['Sendlogin'])) {
             // echo '<pre>';
             // echo 'Seus dados:';
@@ -185,6 +130,7 @@ class UsersMySQL implements InterfaceUsers
                 // echo '<pre>';
                 // var_dump($row_user);
                 // echo '</pre>';
+                // exit;
 
                 $password = md5($dados['inputPassword']);
                 $hash = $row_user['Password'];
@@ -194,6 +140,7 @@ class UsersMySQL implements InterfaceUsers
                     $_SESSION['Name'] = $row_user['Name'];
                     $_SESSION['Email'] = $row_user['Email'];
                     $_SESSION['Phone'] = $row_user['Phone'];
+                    $_SESSION['Gender'] = $row_user['Gender'];
                     $_SESSION['Birth'] = $row_user['Birth'];
                     $_SESSION['Occupation'] = $row_user['Occupation'];
                     $_SESSION['Photo'] = $row_user['Photo'];
@@ -201,49 +148,18 @@ class UsersMySQL implements InterfaceUsers
                     $_SESSION['Blocked'] = $row_user['Blocked'];
 
                     // print_r($_SESSION);
-                    // echo $_SESSION['Blocked'];
                     // exit;
 
-                    // Redireciona para determinada página com base no Type User
-                    switch ($_SESSION['Type']) {
-                            // ADM
-                        case '0':
-                            if ($_SESSION['Blocked'] == 0) {
-                                // echo $_SESSION['Blocked'];
-                                header("Location: ../../../app/index.php?pg=adm");
-                                exit;
-                            } else {
-                                $_SESSION['msg'] = "<p class='text-danger'>Sua conta foi bloqueada! Em caso de dúvida entre em contato com os administradores.</p>";
-                                // echo $_SESSION['msg'];
-                                header("Location: ../../../frontend/content/login.php");
-                                exit;
-                            }
-                            break;
-                            // Contributors
-                        case '1':
-                            if ($_SESSION['Blocked'] == 0) {
-                                // echo $_SESSION['Blocked'];
-                                header("Location: ../../../app/index.php?pg=contributors");
-                                exit;
-                            } else {
-                                $_SESSION['msg'] = "<p class='text-danger'>Sua conta foi bloqueada! Em caso de dúvida entre em contato com os administradores.</p>";
-                                // echo $_SESSION['msg'];
-                                header("Location: ../../../frontend/content/login.php");
-                                exit;
-                            }
-                            break;
-                            // User
-                        default:
-                            if ($_SESSION['Blocked'] == 0) {
-                                // echo $_SESSION['Blocked'];
-                                header("Location: ../../../app/index.php?pg=user");
-                                exit;
-                            } else {
-                                $_SESSION['msg'] = "<p class='text-danger'>Sua conta foi bloqueada! Em caso de dúvida entre em contato com os administradores.</p>";
-                                // echo $_SESSION['msg'];
-                                header("Location: ../../../frontend/content/login.php");
-                                exit;
-                            }
+                    // Redireciona para página de perfil
+                    if ($_SESSION['Blocked'] == 0) {
+                        // echo $_SESSION['Blocked'];
+                        header("Location: ../../../app/index.php?pg=profile");
+                        exit;
+                    } else {
+                        $_SESSION['msg'] = "<p class='text-danger'>Sua conta foi bloqueada! Em caso de dúvida entre em contato com os administradores.</p>";
+                        // echo $_SESSION['msg'];
+                        header("Location: ../../../frontend/content/login.php");
+                        exit;
                     }
                 } else {
                     $_SESSION['msg'] = "<p class='text-danger'>Senha inválida!</p>";
@@ -260,35 +176,178 @@ class UsersMySQL implements InterfaceUsers
         }
     }
 
-    public function validationEmail($email)
+    public function updateUser($dados, $new_photo)
     {
-        $query = "SELECT * FROM tbl_users WHERE email_user = '$email'";
-        $lines = $this->connection->validationUser($query);
+        session_start();
+        ob_start();
+        if (!empty($dados['inputSendEdit'])) {
+            $empty_input = false;
 
-        return $lines;
-    }
+            $user_st = array_map('strip_tags', $dados);
+            $user = array_map('trim', $user_st);
 
-    public function getTableUsers()
-    {
-        $sql = "SELECT * FROM users";
-        $list = $this->connection->executeQuery($sql);
-        $arrayUsers = array();
-        while ($lines = mysqli_fetch_array($list)) {
-            $user = new User(
-                $lines['Id'],
-                $lines['Name'],
-                $lines['Email'],
-                $lines['Password'],
-                $lines['Phone'],
-                $lines['Gender'],
-                $lines['Birth'],
-                $lines['Occupation'],
-                $lines['Photo'],
-                $lines['Type'],
-                $lines['Blocked']
-            );
-            array_push($arrayUsers, $user);
+            $_SESSION['Name'] = $dados['inputName'];
+            $_SESSION['Email'] = $dados['inputEmail'];
+            $_SESSION['Phone'] = $dados['inputPhone'];
+            $_SESSION['Gender'] = $dados['gridRadios'];
+            $_SESSION['Birth'] = $dados['inputBirth'];
+            $_SESSION['Occupation'] = $dados['inputOccupation'];
+
+            if (!$empty_input) {
+                if (!empty($new_photo)) {
+                    $_SESSION['Photo'] = $new_photo;
+                    $sql = "UPDATE users SET Name = :name, Email = :email, Phone = :phone, Gender = :gender, Birth = :birth, Occupation = :occupation, Photo = :photo WHERE  Id = {$_SESSION['Id']}";
+                } else {
+                    $sql = "UPDATE users SET Name = :name, Email = :email, Phone = :phone, Gender = :gender, Birth = :birth, Occupation = :occupation WHERE  Id = {$_SESSION['Id']}";
+                }
+
+                $result_user = $this->connect->prepare($sql);
+
+                $result_user->bindParam(':name', $_SESSION['Name'], PDO::PARAM_STR);
+                $result_user->bindParam(':email', $_SESSION['Email'], PDO::PARAM_STR);
+                $result_user->bindParam(':phone', $_SESSION['Phone'], PDO::PARAM_INT);
+                $result_user->bindParam(':gender', $_SESSION['Gender'], PDO::PARAM_STR);
+                $result_user->bindParam(':birth', $_SESSION['Birth'], PDO::PARAM_INT);
+                $result_user->bindParam(':occupation', $_SESSION['Occupation'], PDO::PARAM_STR);
+                if (!empty($new_photo)) {
+                    $result_user->bindParam(':photo', $_SESSION['Photo'], PDO::PARAM_STR);
+                }
+
+                $result_user->execute();
+
+                $_SESSION['msg'] = "<p class='text-info text-center'>Usuário editado com sucesso!</p>";
+                unset($user);
+                header("Location: ../../../app/index.php?pg=profile");
+                exit;
+            }
         }
-        return $arrayUsers;
     }
-}
+
+    public function usersView()
+    {
+
+        $queryUsers = "SELECT Id, Name, Email, Phone, Gender, Birth, Occupation, Photo, Type, Blocked FROM users";
+
+        $resultUsers = $this->connect->prepare($queryUsers);
+        $resultUsers->execute();
+
+        if (($resultUsers) and ($resultUsers->rowCount() != 0)) {
+
+            echo "
+            <main>
+                <section id='usersView'>
+                    <div class='container-flex m-4 p-4'>
+                        <table class='table align-middle'>
+                            <thead>
+                                <tr>
+                                    <th scope='col' class='fs-2 text-center'>#</th>
+                                    <th scope='col' class='fs-2 text-center'>Nome</th>
+                                    <th scope='col' class='fs-2 text-center'>Tipo de Usuário</th>
+                                    <th scope='col' class='fs-2 text-center'>Bloqueado</th>
+                                    <th scope='col'></th>
+                                    <th scope='col'></th>
+                                </tr>
+                            </thead>
+                            <tbody class='fs-5 text-center'>
+        ";
+
+            while ($row_user = $resultUsers->fetch(PDO::FETCH_ASSOC)) {
+                extract($row_user);
+
+                // Formtação do Número de Telefone
+                $code = substr($Phone, 0, 2);
+                $part1 = substr($Phone, 2, 5);
+                $part2 = substr($Phone, 7, 10);
+
+                // <td>$Email</td>
+                //             <td>({$code}) {$part1}-{$part2}</td>
+                //             <td>$Gender</td>
+                //             <td>$Birth</td>
+                //             <td>$Occupation</td>
+
+                // Formatação da data de Aniversário
+                $d = strtotime($Birth);
+                $Birth = date("d-m-Y", $d);
+                $age = date('Y') - date("Y", $d);
+                
+                // Formatação do Tipo de Usuário
+                switch ($Type) {
+                    case '0':
+                        $Type = "Administrador";
+                        break;
+
+                    case '1':
+                        $Type  = "Colaborador";
+                        break;
+
+                    default:
+                        $Type  = "Usuário";
+                        break;
+                }
+
+                // Formatação do Bloqueio
+                switch ($Blocked) {
+                    case '0':
+                        $Blocked = "Negativo";
+                        break;
+
+                    default:
+                        $Blocked = "Bloqueado";
+                        break;
+                }
+                echo "
+                                <tr>
+                                    <th scope='row'>$Id</th>
+                                    <td>$Name</td>
+                                    <td>$Type</td>
+                                    <td>$Blocked</td>
+                                    <td><button type='button' data-bs-toggle='modal' data-bs-target='#exampleModal' class='btn btn-outline-primary fw-bold mt-3 px-5'>Ver Detalhes</button></td>
+                                    <td><button id='myBtn' class='btn btn-outline-primary fw-bold mt-3 px-5'>Bloquear</button></td>
+                                </tr> ";
+
+                echo '
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="exampleModalLabel">' . $Name . ' - ' . $age . ' anos</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img id="output" class="perfil-foto d-flex mx-auto" src=" ';
+
+                if ($Photo == null) {
+                    if ($Gender == 'Masculino') {
+                        echo '../frontend/assets/svg/user.svg';
+                    } else if ($Gender == 'Feminino') {
+                        $random = random_int(1, 3);
+                        echo "../frontend/assets/svg/userFemale0{$random}.svg";
+                    } else {
+                        echo '#';
+                    }
+                } else {
+                    echo "../frontend/assets/upload/$Photo";
+                } ?>" alt="Foto de <?= $Name;
+                    echo ' ">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+            ';
+                                                                                                        }
+                                                                                                        echo '
+                            </tbody>
+                        </table>
+                    </section>
+                </main>
+            </div>';
+                                                                                                    } else {
+                                                                                                        echo "<p class='text-danger'>Nenhum usuário encontrado!</p>";
+                                                                                                    }
+                                                                                                }
+                                                                                            }

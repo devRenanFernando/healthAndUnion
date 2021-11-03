@@ -45,10 +45,6 @@
 .border-bottom {
   border-color: var(--blue-violet) !important;
 }
-/* 
-#header .fa-2x {
-  color: var(--blue-violet);
-} */
 
 #header a {
   white-space: nowrap;
@@ -76,20 +72,16 @@
   cursor: pointer;
 }
 
-#header .openBtn:hover {
-  background: var(--pink-lace);
-}
-
 #header .overlay {
   height: 100%;
   width: 100%;
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 #header .overlay-content {
@@ -114,41 +106,39 @@
   color: var(--blue-violet);
 }
 
-#header .overlay input[type=text] {
-  padding: 15px;
+#header .overlay input[type="text"] {
   font-size: 18px;
   border: none;
+  border-radius: 40px;
   float: left;
   width: 80%;
   background: var(--pink-lace);
 }
 
-#header .overlay input[type=text]:focus {
+#header .overlay input[type="text"]:focus {
   box-shadow: none;
   outline: none;
 }
 
 #header .overlay button {
   float: left;
-  width: 20%;
-  padding: 0.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+  color: var(--blue-violet);
   background: var(--pink-lace);
   font-size: 17px;
   border: none;
+  border-radius: 50%;
   cursor: pointer;
   transition: ease-in-out background-color 0.3s;
 }
 
 #header .overlay button:hover {
   background-color: var(--blue-violet);
-}
-
-#header .overlay button .icones:hover {
-  background-color: var(--pink-lace)!important;
-}
-
-#header button.icones:hover {
-    color: var(--pink-lace);
+  color: var(--pink-lace);
 }
 
 /* ! /FULLSCREEN SEARCH  */
@@ -176,24 +166,6 @@
 /*? /CARROUSEL */
 
 /*! POSTS */
-
-/* #posts .btn-outline-dark {
-  border-color: var(--blue-violet);
-  background-color: var(--blue-violet);
-  color: var(--pink-lace);
-  transition: background-color 0.5s;
-}
-
-#posts .btn-outline-dark:hover {
-  border-color: var(--blue-violet);
-  color: var(--blue-violet);
-  background-color: var(--pink-lace);
-}
-
-#posts .btn-outline-dark:focus,
-.btn:focus {
-  box-shadow: none;
-} */
 
 #posts .card {
   border: none;
@@ -284,19 +256,6 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* #contato .btn-outline-dark {
-  border-color: var(--blue-violet);
-  background-color: var(--blue-violet);
-  color: var(--pink-lace);
-  transition: background-color 0.5s;
-}
-
-#contato .btn-outline-dark:hover {
-  border-color: var(--blue-violet);
-  color: var(--blue-violet);
-  background-color: var(--pink-lace);
-} */
-
 #contato #mensagem {
   height: 10em;
   background: transparent;
@@ -365,40 +324,6 @@
   border-radius: 10px;
 }
 
-/* #registration .btn-outline-primary,
-#login .btn-outline-primary {
-  border-color: var(--pink-lace);
-  color: var(--pink-lace);
-  transition: background-color 1s;
-}
-
-#registration .btn-outline-primary:hover,
-#login .btn-outline-primary:hover {
-  border-color: var(--blue-violet);
-  color: var(--blue-violet);
-  background-color: var(--pink-lace);
-}
-
-#registration .btn-outline-secondary,
-#login .btn-outline-secondary {
-  border-color: var(--blue-violet);
-  color: var(--blue-violet);
-  border: 1px solid var(--blue-violet);
-  transition: background-color 1s;
-}
-
-#registration .btn-outline-secondary:hover,
-#login .btn-outline-secondary:hover {
-  border-color: var(--pink-lace);
-  color: var(--pink-lace);
-  background-color: var(--blue-violet);
-}
-
-#registration .btn-outline-secondary,
-#login .btn-outline-secondary {
-  border: 1px solid var(--blue-violet);
-} */
-
 #registration ul li,
 #login ul li {
   border: 1px solid var(--blue-violet);
@@ -427,7 +352,13 @@
   background-color: var(--pink-lace);
 }
 
-/* ?/REGISTRATION */
+input#inlineRadio1, input#inlineRadio2, input#inlineRadio3 {
+  background-color: var(--blue-violet)!important;
+  height: 1em!important;
+  border: 1px solid rgba(0, 0, 0, 0.25)!important;
+}
+
+/* ?/REGISTRATION & LOGIN*/
 
 /** FAQ */
 
@@ -460,19 +391,6 @@
   color: var(--blue-violet);
 }
 
-/* #faq .btn-primary {
-  background-color: var(--blue-violet);
-  color: white;
-  border-color: var(--blue-violet);
-  transition: background-color 0.5s, color 0.5s;
-}
-
-#faq .btn-primary:hover {
-  background-color: var(--pink-lace);
-  color: var(--blue-violet);
-  border-color: var(--blue-violet);
-} */
-
 #faq #resposta1,
 #resposta2,
 #resposta3,
@@ -484,44 +402,48 @@
 
 /** /FAQ */
 
-/*TODO | PAGE PERFIL */
+/*TODO | PAGE PROFILE */
 
-#perfilPage .footerPerfil p {
+#profilePage .footerProfile p,
+#editProfile .footerProfile p {
   color: black;
 }
 
-#perfilPage .footerPerfil strong {
+#profilePage .footerProfile strong,
+#editProfile .footerProfile strong {
   color: var(--blue-violet);
 }
 
-#perfilPage .content{
+#editProfile .content {
   position: relative;
-  width: 50%;
 }
 
-#perfilPage .perfil-foto {
+#profilePage .perfil-foto,
+#editProfile .perfil-foto {
   width: 50%;
   border-radius: 50%;
 }
 
-#perfilPage .overlay {
+#editProfile .overlay {
   position: absolute;
   bottom: 100%;
   left: 0;
   right: 0;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   background-color: var(--blue-violet);
   overflow: hidden;
   width: 100%;
-  height:0;
-  transition: .5s ease;
+  height: 0;
+  transition: 0.5s ease;
 }
 
-#perfilPage .content:hover .overlay {
+#editProfile .content:hover .overlay {
   bottom: 0;
   height: 100%;
 }
 
-#perfilPage .text {
+#editProfile .text {
   color: white;
   font-size: 20px;
   position: absolute;
@@ -533,15 +455,62 @@
   text-align: center;
 }
 
-#perfilPage #alterarFoto {
-    color: var(--pink-lace);
-    text-decoration: none;
+#editProfile #alterarFoto {
+  color: var(--pink-lace);
+  text-decoration: none;
 }
 
-#perfilPage hr {
+#profilePage hr,
+#editProfile hr {
   border: solid 2px var(--blue-violet);
 }
+
+#editProfile input#inputFile {
+    border-radius: 50px;
+    background: var(--pink-lace);
+    outline: none;
+    width: auto;
+}
+
+#editProfile input#inputFile::-webkit-file-upload-button {
+  color: white;
+  background-color: var(--blue-violet);
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+}
+
+#editProfile .form-check-input:checked {
+    background-color: var(--blue-violet);
+    border-color: var(--blue-violet);
+}
+#editProfile .form-check-input:focus {
+    box-shadow: none;
+}
+
+#editProfile .col-form-label {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 1.25rem!important;
+}
+
 /*TODO | /PAGE PERFIL */
+
+/* ? USERS VIEW */
+#usersView {
+  background-color: var(--blue-violet);
+}
+
+#usersView table.table{
+  height: 60vh;
+  color: #fff;
+  /* color: #dee2e6; */
+}
+#usersView table th{
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+}
+/* ? /USERS VIEW */
 
 /*! FOOTER */
 
@@ -575,3 +544,62 @@
 }
 
 /*! /FOOTER */
+
+/** ÍCONES */
+
+.wrapper .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.wrapper .icon span {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: var(--pink-lace);
+  background-color: var(--blue-violet);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .icon .tooltip {
+  top: 0px;
+  background-color: var(--blue-violet);
+  border-radius: 25px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  color: var(--pink-lace);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: 70px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wrapper .icon .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: var(--blue-violet);
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1 0px rgba(0, 0, 0, 0.4);
+}
+
+/** /ÍCONES */

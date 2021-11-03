@@ -1,16 +1,26 @@
 <?php
 session_start();
 ob_start();
-unset(
-    $_SESSION['Id'],
-    $_SESSION['Name'],
-    $_SESSION['Email'],
-    $_SESSION['Phone'],
-    $_SESSION['Birth'],
-    $_SESSION['Occupation'],
-    $_SESSION['Photo'],
-    $_SESSION['Type'],
-    $_SESSION['Blocked']
-);
+// Apaga todas as variáveis da sessão
+$_SESSION = array();
+
+// Se é preciso matar a sessão, então os cookies de sessão também devem ser apagados.
+// Nota: Isto destruirá a sessão, e não apenas os dados!
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(
+        session_name(),
+        '',
+        time() - 42000,
+        $params["path"],
+        $params["domain"],
+        $params["secure"],
+        $params["httponly"]
+    );
+}
+
+// Por último, destrói a sessão
+session_destroy();
+
 $_SESSION['msg'] = "<p style:'color: green';>Deslogado com sucesso!</p>";
 header("Location: ../../../app/index.php");

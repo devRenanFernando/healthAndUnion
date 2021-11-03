@@ -1,5 +1,4 @@
 <?php
-
 class User
 {
 
@@ -7,12 +6,13 @@ class User
     private $Id, $Name, $Email, $Password, $Phone, $Gender, $Birth, $Occupation, $Photo, $Type, $Blocked, $SendRegistration;
 
     // Construct
-    public function __construct($Id, $Name, $Email, $Password, $Type, $Blocked, $SendRegistration)
+    public function __construct($Id, $Name, $Email, $Password, $Gender, $Type, $Blocked, $SendRegistration)
     {
         $this->Id = $Id;
         $this->Name = $Name;
         $this->Email = $Email;
         $this->Password = $Password;
+        $this->Gender = $Gender;
         $this->Type = $Type;
         $this->Blocked = $Blocked;
         $this->SendRegistration = $SendRegistration;

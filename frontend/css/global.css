@@ -69,29 +69,24 @@ p {
   background-color: var(--pink-lace);
 }
 .btn-outline-secondary {
-  border-color: var(--blue-violet);
+  border-color: var(--blue-violet)!important;
   color: var(--blue-violet);
-  border: 1px solid var(--blue-violet);
+  border: 1px solid var(--blue-violet)!important;
   transition: background-color 1s;
 }
 
 .btn-outline-secondary:hover {
-  border-color: var(--pink-lace);
+  border-color: var(--pink-lace)!important;
   color: var(--pink-lace);
-  background-color: var(--blue-violet);
+  background-color: var(--blue-violet)!important;
 }
 
 /* ! /BUTTONS */
 
 /** ÍCONES */
 
-.icones, .icones a {
+.icones {
   color: var(--blue-violet);
   transition: color 0.5s;
 }
-
-.icones a:hover {
-  color: var(--pink-lace)!important;
-}
-
 /** /ÍCONES */

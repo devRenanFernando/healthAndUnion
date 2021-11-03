@@ -76,8 +76,27 @@
 
     </section>
 
+    <!-- JavaScript: Separate Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="../frontend/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <!--  jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="../js/owl.carousel.min.js"></script>
+
+    <!-- Isotope -->
+    <script src="../js/isotope.pkgd.min.js"></script>
+
+    <!-- Masks -->
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+
+    <!-- Magnific -->
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+
+    <!-- Main File Js -->
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
