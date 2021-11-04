@@ -15,17 +15,17 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
             <div class="row d-flex align-items-center justify-content-center mt-5">
                 <div class="col-lg-4 col-12 d-flex justify-content-center">
                     <img class="perfil-foto w-75 mx-auto" src="<?php if ($_SESSION['Photo'] == null) {
-                                                                if ($_SESSION['Gender'] == 'Masculino') {
-                                                                    echo '../frontend/assets/svg/user.svg';
-                                                                } else if ($_SESSION['Gender'] == 'Feminino') {
-                                                                    $random = random_int(1, 3);
-                                                                    echo "../frontend/assets/svg/userFemale0{$random}.svg";
+                                                                    if ($_SESSION['Gender'] == 'Masculino') {
+                                                                        echo '../frontend/assets/svg/user.svg';
+                                                                    } else if ($_SESSION['Gender'] == 'Feminino') {
+                                                                        $random = random_int(1, 3);
+                                                                        echo "../frontend/assets/svg/userFemale0{$random}.svg";
+                                                                    } else {
+                                                                        echo '#';
+                                                                    }
                                                                 } else {
-                                                                    echo '#';
-                                                                }
-                                                            } else {
                                                                     echo "../frontend/assets/upload/{$_SESSION['Photo']}";
-                                                            } ?>" alt="Foto de <?= $_SESSION['Name']; ?>">
+                                                                } ?>" alt="Foto de <?= $_SESSION['Name']; ?>">
                 </div>
 
                 <div class="col-lg-6 col-12 text-center mt-xll-0 mt-4">

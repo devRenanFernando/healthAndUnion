@@ -260,7 +260,7 @@ class UsersMySQL implements InterfaceUsers
                 $part2 = substr($Phone, 7, 10);
 
                 // <td>$Email</td>
-                //             <td>({$code}) {$part1}-{$part2}</td>
+                //             <td></td>
                 //             <td>$Gender</td>
                 //             <td>$Birth</td>
                 //             <td>$Occupation</td>
@@ -295,28 +295,31 @@ class UsersMySQL implements InterfaceUsers
                         $Blocked = "Bloqueado";
                         break;
                 }
+
                 echo "
                                 <tr>
                                     <th scope='row'>$Id</th>
                                     <td>$Name</td>
                                     <td>$Type</td>
                                     <td>$Blocked</td>
-                                    <td><button type='button' data-bs-toggle='modal' data-bs-target='#exampleModal' class='btn btn-outline-primary fw-bold mt-3 px-5'>Ver Detalhes</button></td>
+                                    <td><button type='button' data-bs-toggle='modal' data-bs-target='#exampleModal$Id' class='btn btn-outline-primary fw-bold mt-3 px-5'>Ver Detalhes</button></td>
                                     <td><button id='myBtn' class='btn btn-outline-primary fw-bold mt-3 px-5'>Bloquear</button></td>
                                 </tr> ";
 
                 echo '
+                
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="exampleModal'. $Id .'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" id="exampleModalLabel">' . $Name . ' - ' . $age . ' anos</h4>
+                                            <h3 class="modal-title" id="exampleModalLabel">' . $Name . ' - ' . $age . ' anos</h3>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <img id="output" class="perfil-foto d-flex mx-auto" src=" ';
-
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-5">
+                                                <img id="output" class="perfil-foto w-100 d-flex mx-auto" src=" ';
                 if ($Photo == null) {
                     if ($Gender == 'Masculino') {
                         echo '../frontend/assets/svg/user.svg';
@@ -328,8 +331,17 @@ class UsersMySQL implements InterfaceUsers
                     }
                 } else {
                     echo "../frontend/assets/upload/$Photo";
-                } ?>" alt="Foto de <?= $Name;
-                    echo ' ">
+                }
+                echo '" alt="Foto de <?= $Name"> 
+                                            </div>
+                                                <div class="col-7">
+                                                    <p class="fs-5"><strong>Email: </strong>'. $Name . '</p>
+                                                    <p class="fs-5"><strong>Telefone: </strong>('.$code .') '. $part1 .' - '. $part2 . '</p>
+                                                    <p class="fs-5"><strong>Gênero: </strong>'. $Gender .'</p>
+                                                </div>
+                                            </div>
+                                            ';
+                    echo '
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
@@ -343,9 +355,9 @@ class UsersMySQL implements InterfaceUsers
                                                                                                         echo '
                             </tbody>
                         </table>
-                    </section>
-                </main>
-            </div>';
+                    </div>
+                </section>
+            </main>';
                                                                                                     } else {
                                                                                                         echo "<p class='text-danger'>Nenhum usuário encontrado!</p>";
                                                                                                     }
