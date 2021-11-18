@@ -37,10 +37,6 @@
   color: var(--blue-violet) !important;
 }
 
-#header .dropdown-menu-dark {
-  background-color: var(--blue-violet);
-}
-
 #header .border-end,
 .border-bottom {
   border-color: var(--blue-violet) !important;
@@ -209,6 +205,23 @@
   color: var(--melon);
 }
 
+#registrationPosts label {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+}
+
+#registrationPosts #inputScope{
+  height: 12em;
+}
+
+#myPosts .card-body > p, #posts .card-body > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 /*!/ POSTS */
 
 /*// QUEM SOMOS? */
@@ -258,8 +271,15 @@
 
 #contato #mensagem {
   height: 10em;
+}
+
+#contato .form-control {
   background: transparent;
   border: 2px solid var(--blue-violet);
+}
+
+#contato .form-control:focus {
+  box-shadow: 0 0 0 0.15rem var(--blue-violet);
 }
 
 /** /CONTATO */
@@ -352,10 +372,12 @@
   background-color: var(--pink-lace);
 }
 
-input#inlineRadio1, input#inlineRadio2, input#inlineRadio3 {
-  background-color: var(--blue-violet)!important;
-  height: 1em!important;
-  border: 1px solid rgba(0, 0, 0, 0.25)!important;
+input#inlineRadio1,
+input#inlineRadio2,
+input#inlineRadio3 {
+  background-color: var(--blue-violet) !important;
+  height: 1em !important;
+  border: 1px solid rgba(0, 0, 0, 0.25) !important;
 }
 
 /* ?/REGISTRATION & LOGIN*/
@@ -466,10 +488,10 @@ input#inlineRadio1, input#inlineRadio2, input#inlineRadio3 {
 }
 
 #editProfile input#inputFile {
-    border-radius: 50px;
-    background: var(--pink-lace);
-    outline: none;
-    width: auto;
+  border-radius: 50px;
+  background: var(--pink-lace);
+  outline: none;
+  width: auto;
 }
 
 #editProfile input#inputFile::-webkit-file-upload-button {
@@ -481,17 +503,17 @@ input#inlineRadio1, input#inlineRadio2, input#inlineRadio3 {
 }
 
 #editProfile .form-check-input:checked {
-    background-color: var(--blue-violet);
-    border-color: var(--blue-violet);
+  background-color: var(--blue-violet);
+  border-color: var(--blue-violet);
 }
 #editProfile .form-check-input:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 #editProfile .col-form-label {
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 700;
-    font-size: 1.25rem!important;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 1.25rem !important;
 }
 
 /*TODO | /PAGE PERFIL */
@@ -501,16 +523,25 @@ input#inlineRadio1, input#inlineRadio2, input#inlineRadio3 {
   background-color: var(--blue-violet);
 }
 
-#usersView table.table{
+#usersView table.table {
   height: 60vh;
   color: #fff;
   /* color: #dee2e6; */
 }
-#usersView table th{
+#usersView table th {
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
 }
 /* ? /USERS VIEW */
+
+/** CONTACT VIEW */
+
+#contactView table th {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+}
+
+/** /CONTACT VIEW */
 
 /*! FOOTER */
 

@@ -1,7 +1,23 @@
 <?php
 session_start();
 ob_start();
-// print_r($_SESSION);
+
+require_once "../../vendor/autoload.php";
+require_once "../../helpers/whoops.php";
+require_once '../../backend/class/users/UsersMySQL.php';
+
+
+// Recebe os valores do form login.php
+$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+if (isset($dados['SendLogin'])) {
+
+    // Novo Repositório
+    $usersMySQL = new UsersMySQL();
+
+    // Método para logar/entrar
+    $usersMySQL->loginUser($dados);
+}
 ?>
 
 <!DOCTYPE html>
@@ -79,16 +95,28 @@ ob_start();
                         unset($_SESSION['msg']);
                     }
                     ?>
-                    <form id="form_login" action="../../backend/class/users/LoginUser.php" method="post" class="form d-flex flex-column">
+                    <form id="form_login" action="" method="post" class="form d-flex flex-column">
 
                         <label class="label-input" for="inputEmail">
                             <i class="far fa-envelope icones"></i>
-                            <input id="inputEmail" name="inputEmail" type="email" placeholder="Email" required class="w-50 mx-auto ps-3">
+                            <input id="inputEmail" name="inputEmail" type="email" placeholder="Email" class="w-50 mx-auto ps-3" value="<?php
+                                                                                                                                        if (isset($dados['inputEmail'])) {
+                                                                                                                                            echo $dados['inputEmail'];
+                                                                                                                                        } ?>">
                         </label>
 
                         <label class="label-input" for="inputPassword">
                             <i class="fas fa-lock icones"></i>
-                            <input id="inputPassword" type="password" name="inputPassword" autocomplete="off" required placeholder="Senha" class="w-50 mx-auto ps-3">
+                            <input id="inputPassword" type="password" name="inputPassword" autocomplete="off" placeholder="Senha" class="w-50 mx-auto ps-3" value="<?php
+                                                                                                                                                                    if (isset($dados['inputPassword'])) {
+                                                                                                                                                                        echo $dados['inputPassword'];
+                                                                                                                                                                    } ?>">
+                            <span id="eyeSlash" onclick="ShowPassword()" style="cursor: pointer;">
+                                <i class="fas fa-eye-slash icones"></i>
+                            </span>
+                            <span id="eye" onclick="ShowPassword()" class="d-none" style="cursor: pointer;">
+                                <i class="fas fa-eye icones"></i>
+                            </span>
                         </label>
 
                         <a style="color: var(--blue-violet);" href="#" class="mt-2">Esqueceu a senha?</a>
@@ -121,6 +149,26 @@ ob_start();
 
     <!-- Main File Js -->
     <script src="../js/main.js"></script>
+
+    <!-- Show Password -->
+    <script>
+        function ShowPassword() {
+            var type = document.querySelector("#inputPassword");
+            var eye = document.querySelector("#eye");
+            var eyeSlash = document.querySelector("#eyeSlash");
+
+            if (type.type == "password") {
+                type.type = "text";
+                eye.classList.remove("d-none");
+                eyeSlash.classList.add("d-none");
+
+            } else {
+                type.type = "password";
+                eye.classList.add("d-none");
+                eyeSlash.classList.remove("d-none");
+            }
+        }
+    </script>
 
 </body>
 

@@ -81,6 +81,42 @@ p {
   background-color: var(--blue-violet)!important;
 }
 
+
+.btn-secondary,
+.dropdown-menu-dark {
+  color: #fff;
+  background-color: transparent;
+  border-color: var(--pink-lace);
+  width: 10em;
+}
+
+a.dropdown-item:active {
+  background-color: var(--pink-lace)!important;
+  border-color: var(--blue-violet);
+}
+
+.btn-secondary:hover {
+  background: var(--pink-lace);
+  border: solid 2px var(--blue-violet);
+  color: var(--blue-violet);
+}
+
+.btn-secondary:focus {
+  background: var(--pink-lace);
+  border: solid 2px var(--blue-violet);
+  color: var(--blue-violet);
+}
+
+ul.dropdown-menu.dropdown-menu-start, .dropdown-menu-dark {
+  background: var(--blue-violet);
+  width: 13em;
+  border: solid 2px var(--pink-lace);
+}
+
+hr.dropdown-divider, hr.dropdown-menu-dark {
+  background-color: var(--pink-lace);
+}
+
 /* ! /BUTTONS */
 
 /** ÍCONES */

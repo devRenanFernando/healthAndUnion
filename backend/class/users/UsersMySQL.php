@@ -5,7 +5,12 @@ interface InterfaceUsers
     public function registrationUser($user);
     public function loginUser($dados);
     public function updateUser($dados, $new_photo);
-    public function usersView();
+    public function blockUser($idUser, $blockedUser);
+    public function deleteUser($idUser);
+    public function becameUserAdm($idUser);
+    public function becameUserCol($idUser);
+    public function becameUserCommon($idUser);
+    public function contact($dados);
 }
 
 class UsersMySQL implements InterfaceUsers
@@ -28,13 +33,12 @@ class UsersMySQL implements InterfaceUsers
         } catch (PDOException $err) {
             // echo "ERRO: Conexão com o banco de dados não realizada com sucesso. Erro gerado " . $err->getMessage();
         }
+
     }
 
     // Methods
     public function registrationUser($user)
     {
-        session_start();
-        ob_start();
         if (!empty($user['SendRegistration'])) {
             $empty_input = false;
 
@@ -42,14 +46,54 @@ class UsersMySQL implements InterfaceUsers
             $user = array_map('trim', $user_st);
             if (in_array('', $user)) {
                 $empty_input = true;
-                $_SESSION['msg'] = "<p class='text-danger'>Erro: Necessário prencher todos os campos!</p>";
-                header("Location: ../../../frontend/content/registration.php");
+                $_SESSION['msg'] = '<div class="alert alert-warning d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Necessário prencher todos os campos!
+                                    </div>
+                                </div>';
+                                return $user;
+                header("Location: ../../frontend/content/registration.php");
                 exit;
             } else if (strlen($user['inputPassword']) < 6) {
                 $empty_input = true;
-                $_SESSION['msg'] = "<p class='text-danger'>A senha deve ter no minímo 6 caracteres!</p>";
-                header("Location: ../../../frontend/content/registration.php");
+                $_SESSION['msg'] = '<div class="alert alert-warning d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        A senha deve ter no minímo 6 caracteres!
+                                    </div>
+                                </div>';
+                return $user;
+                header("Location: ../../frontend/content/registration.php");
                 exit;
+            } else if (!filter_var($user['inputEmail'], FILTER_VALIDATE_EMAIL)) {
+                $empty_input = true;
+                $_SESSION['msg'] = '<div class="alert alert-warning d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Endereço de email não é válido! Tente novamente com base nesse formato: <strong>email@email.com</strong>
+                                    </div>
+                                </div>';
+                return $user;
+                header("Location: ../../frontend/content/registration.php");
+                exit;
+            } else {
+                $sql = "SELECT Id FROM users WHERE Email ='" . $user['inputEmail'] ."'";
+                $result_user = $this->connect->prepare($sql);
+                $result_user->execute();
+
+                if (($result_user) AND ($result_user->rowCount() != 0)) {
+                    $empty_input = true;
+                    $_SESSION['msg'] = '<div class="alert alert-warning d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Endereço de email já existe! Tente novamente com outro.
+                                    </div>
+                                </div>';
+                    return $user;
+                    header("Location: ../../frontend/content/registration.php");
+                    exit;
+                }
             }
 
             // Novo Usuário
@@ -96,13 +140,24 @@ class UsersMySQL implements InterfaceUsers
                 $result_user->execute();
 
                 if ($result_user->rowCount()) {
-                    $_SESSION['msg'] = "<p class='text-info'>Usuário cadastrado com sucesso!</p>";
+                    $_SESSION['msg'] = '<div class="alert alert-primary d-flex align-items-center" role="alert">
+                                            <span><i class="fas fa-info-circle fa-2x"></i></span>
+                                            <div class="ms-2">
+                                                Usuário cadastrado com sucesso!
+                                            </div>
+                                        </div>';
                     unset($user);
-                    header("Location: ../../../frontend/content/login.php");
+                    header("Location: ../../frontend/content/login.php");
                     exit;
                 } else {
-                    $_SESSION['msg'] = "<p class='text-danger'>Erro: Usuário não foi cadastrado!</p>";
-                    header("Location: ../../../frontend/content/registration.php");
+                    $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário não foi cadastrado!
+                                    </div>
+                                </div>';
+                                return $user;
+                    header("Location: ../../frontend/content/registration.php");
                     exit;
                 }
             }
@@ -111,14 +166,22 @@ class UsersMySQL implements InterfaceUsers
 
     public function loginUser($dados)
     {
-        session_start();
-        ob_start();
         if (empty($dados['Sendlogin'])) {
-            // echo '<pre>';
-            // echo 'Seus dados:';
-            // print_r($dados);
-            // echo '</pre>';
-            // exit;
+
+            $dados_st = array_map('strip_tags', $dados);
+            $dados = array_map('trim', $dados_st);
+            if (in_array('', $dados)) {
+                $empty_input = true;
+                $_SESSION['msg'] = '<div class="alert alert-warning d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Necessário prencher todos os campos!
+                                    </div>
+                                </div>';
+                return $dados;
+                header("Location: ../../frontend/content/login.php");
+                exit;
+            }
 
             $sql = "SELECT * FROM users WHERE Email =:inputEmail  LIMIT 1";
             $result_user = $this->connect->prepare($sql);
@@ -153,24 +216,39 @@ class UsersMySQL implements InterfaceUsers
                     // Redireciona para página de perfil
                     if ($_SESSION['Blocked'] == 0) {
                         // echo $_SESSION['Blocked'];
-                        header("Location: ../../../app/index.php?pg=profile");
+                        header("Location: ../../app/index.php?pg=profile");
                         exit;
                     } else {
-                        $_SESSION['msg'] = "<p class='text-danger'>Sua conta foi bloqueada! Em caso de dúvida entre em contato com os administradores.</p>";
-                        // echo $_SESSION['msg'];
-                        header("Location: ../../../frontend/content/login.php");
+                        $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Sua conta foi bloqueada! Em caso de dúvida entre em contato com os administradores.
+                                    </div>
+                                </div>';
+                        return $dados;
+                        header("Location: ../../frontend/content/login.php");
                         exit;
                     }
                 } else {
-                    $_SESSION['msg'] = "<p class='text-danger'>Senha inválida!</p>";
-                    // echo $_SESSION['msg'];
-                    header("Location: ../../../frontend/content/login.php");
+                    $_SESSION['msg'] = '<div class="alert alert-warning d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Senha incorreta! Tente novamente ou clique em "Esqueceu a senha?" para redefini-la.
+                                    </div>
+                                </div>';
+                    return $dados;
+                    header("Location: ../../frontend/content/login.php");
                     exit;
                 }
             } else {
-                $_SESSION['msg'] = "<p class='text-danger'>Usuário ou senha inválido!</p>";
-                // echo $_SESSION['msg'];
-                header("Location: ../../../frontend/content/login.php");
+                $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário ou senha incorretos!
+                                    </div>
+                                </div>';
+                return $dados;
+                header("Location: ../../frontend/content/login.php");
                 exit;
             }
         }
@@ -215,7 +293,12 @@ class UsersMySQL implements InterfaceUsers
 
                 $result_user->execute();
 
-                $_SESSION['msg'] = "<p class='text-info text-center'>Usuário editado com sucesso!</p>";
+                $_SESSION['msg'] = '<div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-check-circle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário editado com sucesso!
+                                    </div>
+                                </div>';
                 unset($user);
                 header("Location: ../../../app/index.php?pg=profile");
                 exit;
@@ -223,143 +306,205 @@ class UsersMySQL implements InterfaceUsers
         }
     }
 
-    public function usersView()
+    public function becameUserAdm($idUser)
     {
+        session_start();
+        ob_start();
 
-        $queryUsers = "SELECT Id, Name, Email, Phone, Gender, Birth, Occupation, Photo, Type, Blocked FROM users";
+        $sql = "UPDATE users SET Type = 0 WHERE  Id = $idUser";
+        $result_user = $this->connect->prepare($sql);
+        $result_user->execute();
 
-        $resultUsers = $this->connect->prepare($queryUsers);
-        $resultUsers->execute();
+        $sqlSelect = "SELECT Name FROM users WHERE Id = $idUser";
+        $select_user = $this->connect->prepare($sqlSelect);
+        $select_user->execute();
 
-        if (($resultUsers) and ($resultUsers->rowCount() != 0)) {
+        $row_user = $select_user->fetch(PDO::FETCH_ASSOC);
+        extract($row_user);
 
-            echo "
-            <main>
-                <section id='usersView'>
-                    <div class='container-flex m-4 p-4'>
-                        <table class='table align-middle'>
-                            <thead>
-                                <tr>
-                                    <th scope='col' class='fs-2 text-center'>#</th>
-                                    <th scope='col' class='fs-2 text-center'>Nome</th>
-                                    <th scope='col' class='fs-2 text-center'>Tipo de Usuário</th>
-                                    <th scope='col' class='fs-2 text-center'>Bloqueado</th>
-                                    <th scope='col'></th>
-                                    <th scope='col'></th>
-                                </tr>
-                            </thead>
-                            <tbody class='fs-5 text-center'>
-        ";
-
-            while ($row_user = $resultUsers->fetch(PDO::FETCH_ASSOC)) {
-                extract($row_user);
-
-                // Formtação do Número de Telefone
-                $code = substr($Phone, 0, 2);
-                $part1 = substr($Phone, 2, 5);
-                $part2 = substr($Phone, 7, 10);
-
-                // <td>$Email</td>
-                //             <td></td>
-                //             <td>$Gender</td>
-                //             <td>$Birth</td>
-                //             <td>$Occupation</td>
-
-                // Formatação da data de Aniversário
-                $d = strtotime($Birth);
-                $Birth = date("d-m-Y", $d);
-                $age = date('Y') - date("Y", $d);
-                
-                // Formatação do Tipo de Usuário
-                switch ($Type) {
-                    case '0':
-                        $Type = "Administrador";
-                        break;
-
-                    case '1':
-                        $Type  = "Colaborador";
-                        break;
-
-                    default:
-                        $Type  = "Usuário";
-                        break;
-                }
-
-                // Formatação do Bloqueio
-                switch ($Blocked) {
-                    case '0':
-                        $Blocked = "Negativo";
-                        break;
-
-                    default:
-                        $Blocked = "Bloqueado";
-                        break;
-                }
-
-                echo "
-                                <tr>
-                                    <th scope='row'>$Id</th>
-                                    <td>$Name</td>
-                                    <td>$Type</td>
-                                    <td>$Blocked</td>
-                                    <td><button type='button' data-bs-toggle='modal' data-bs-target='#exampleModal$Id' class='btn btn-outline-primary fw-bold mt-3 px-5'>Ver Detalhes</button></td>
-                                    <td><button id='myBtn' class='btn btn-outline-primary fw-bold mt-3 px-5'>Bloquear</button></td>
-                                </tr> ";
-
-                echo '
-                
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal'. $Id .'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h3 class="modal-title" id="exampleModalLabel">' . $Name . ' - ' . $age . ' anos</h3>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                        <div class="row d-flex align-items-center">
-                                            <div class="col-5">
-                                                <img id="output" class="perfil-foto w-100 d-flex mx-auto" src=" ';
-                if ($Photo == null) {
-                    if ($Gender == 'Masculino') {
-                        echo '../frontend/assets/svg/user.svg';
-                    } else if ($Gender == 'Feminino') {
-                        $random = random_int(1, 3);
-                        echo "../frontend/assets/svg/userFemale0{$random}.svg";
-                    } else {
-                        echo '#';
-                    }
-                } else {
-                    echo "../frontend/assets/upload/$Photo";
-                }
-                echo '" alt="Foto de <?= $Name"> 
-                                            </div>
-                                                <div class="col-7">
-                                                    <p class="fs-5"><strong>Email: </strong>'. $Name . '</p>
-                                                    <p class="fs-5"><strong>Telefone: </strong>('.$code .') '. $part1 .' - '. $part2 . '</p>
-                                                    <p class="fs-5"><strong>Gênero: </strong>'. $Gender .'</p>
-                                                </div>
-                                            </div>
-                                            ';
-                    echo '
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
-                                        </div>
-                                        </div>
+        $_SESSION['msg'] = '<div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-check-circle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário ' . $Name . ' promovido a Administrador com sucesso!
                                     </div>
-                                </div>
-                
-            ';
-                                                                                                        }
-                                                                                                        echo '
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </main>';
-                                                                                                    } else {
-                                                                                                        echo "<p class='text-danger'>Nenhum usuário encontrado!</p>";
-                                                                                                    }
-                                                                                                }
-                                                                                            }
+                                </div>';
+        header("Location: ../../../app/index.php?pg=usersView");
+        exit;
+    }
+
+    public function becameUserCol($idUser)
+    {
+        session_start();
+        ob_start();
+
+        $sql = "UPDATE users SET Type = 1 WHERE  Id = $idUser";
+        $result_user = $this->connect->prepare($sql);
+        $result_user->execute();
+
+        $sqlSelect = "SELECT Name FROM users WHERE Id = $idUser";
+        $select_user = $this->connect->prepare($sqlSelect);
+        $select_user->execute();
+
+        $row_user = $select_user->fetch(PDO::FETCH_ASSOC);
+        extract($row_user);
+
+        $_SESSION['msg'] = '<div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-check-circle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário ' . $Name . ' promovido a Colaborador com sucesso!
+                                    </div>
+                                </div>';
+        header("Location: ../../../app/index.php?pg=usersView");
+        exit;
+    }
+
+    public function becameUserCommon($idUser)
+    {
+        session_start();
+        ob_start();
+
+        $sql = "UPDATE users SET Type = 2 WHERE  Id = $idUser";
+        $result_user = $this->connect->prepare($sql);
+        $result_user->execute();
+
+        $sqlSelect = "SELECT Name FROM users WHERE Id = $idUser";
+        $select_user = $this->connect->prepare($sqlSelect);
+        $select_user->execute();
+
+        $row_user = $select_user->fetch(PDO::FETCH_ASSOC);
+        extract($row_user);
+
+        $_SESSION['msg'] = '<div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-check-circle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário ' . $Name . ' promovido a Usuário comum com sucesso!
+                                    </div>
+                                </div>';
+        header("Location: ../../../app/index.php?pg=usersView");
+        exit;
+    }
+
+    public function blockUser($idUser, $blockedUser)
+    {
+        session_start();
+        ob_start();
+
+        $sqlSelect = "SELECT Name FROM users WHERE Id = $idUser";
+        $select_user = $this->connect->prepare($sqlSelect);
+        $select_user->execute();
+
+        $row_user = $select_user->fetch(PDO::FETCH_ASSOC);
+        extract($row_user);
+
+        if ($blockedUser == "Bloqueado") {
+            $sql = "UPDATE users SET Blocked = 0 WHERE  Id = $idUser";
+            $_SESSION['msg'] = '<div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-check-circle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário ' . $Name . ' desbloqueado com sucesso!
+                                    </div>
+                                </div>';
+        } else {
+            $sql = "UPDATE users SET Blocked = 1 WHERE  Id = $idUser";
+            $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário ' . $Name . ' bloqueado com sucesso!
+                                    </div>
+                                </div>';
+        }
+        $result_user = $this->connect->prepare($sql);
+        $result_user->execute();
+
+        header("Location: ../../../app/index.php?pg=usersView");
+        exit;
+    }
+
+    public function deleteUser($idUser)
+    {
+        session_start();
+        ob_start();
+
+        $sqlSelect = "SELECT Name FROM users WHERE Id = $idUser";
+        $select_user = $this->connect->prepare($sqlSelect);
+        $select_user->execute();
+
+        $row_user = $select_user->fetch(PDO::FETCH_ASSOC);
+        extract($row_user);
+
+        $sql = "DELETE FROM users WHERE  Id = $idUser";
+        $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Usuário ' . $Name . ' foi deletado!
+                                    </div>
+                                </div>';
+
+        $result_user = $this->connect->prepare($sql);
+        $result_user->execute();
+
+        header("Location: ../../../app/index.php?pg=usersView");
+        exit;
+    }
+
+    public function contact($dados)
+    {
+        session_start();
+        ob_start();
+
+        if (!empty($dados['SendRegistration'])) {
+            $empty_input = false;
+
+            $dados_st = array_map('strip_tags', $dados);
+            $dados = array_map('trim', $dados_st);
+            if (in_array('', $dados)) {
+                $empty_input = true;
+                $_SESSION['msg'] = '<div class="alert alert-warning d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Necessário prencher todos os campos!
+                                    </div>
+                                </div>';
+                header("Location: ../../../app/index.php?pg=default/#contato");
+                exit;
+            }
+
+            $name = ucwords($dados['inputName']);
+            $email = $dados['inputEmail'];
+            $mensage = $dados['inputMensage'];
+
+            if (!$empty_input) {
+                $sql =  "INSERT INTO contact (Name, Email, Mensage) VALUES (:name, :email, :mensage)";
+
+                $result_user = $this->connect->prepare($sql);
+
+                $result_user->bindParam(':name', $name, PDO::PARAM_STR);
+                $result_user->bindParam(':email', $email, PDO::PARAM_STR);
+                $result_user->bindParam(':mensage', $mensage, PDO::PARAM_STR);
+
+                $result_user->execute();
+
+                if ($result_user->rowCount()) {
+                    $_SESSION['msg'] = '<div class="alert alert-primary d-flex align-items-center" role="alert">
+                                            <span><i class="fas fa-info-circle fa-2x"></i></span>
+                                            <div class="ms-2">
+                                                Mensagem enviada com sucesso. Iremos responder o mais breve possível!
+                                            </div>
+                                        </div>';
+                    unset($dados);
+                    header("Location: ../../../app/index.php?pg=default/#contato");
+                    exit;
+                } else {
+                    $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Não foi possível enviar a mensagem!
+                                    </div>
+                                </div>';
+                    header("Location: ../../../app/index.php?pg=default/#contato");
+                    exit;
+                }
+            }
+        }
+    }
+}

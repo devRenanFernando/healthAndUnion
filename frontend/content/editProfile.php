@@ -1,6 +1,18 @@
 <?php
 session_start();
 ob_start();
+
+if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
+    $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        É preciso realizar o login para acessar a página!
+                                    </div>
+                                </div>';
+    header("Location: ../content/login.php");
+    exit;
+}
+
 // echo "<pre>";
 // print_r($_SESSION);
 // echo "</pre>";
@@ -38,12 +50,6 @@ ob_start();
         <div id="larger">
             <div class="container shadow p-5 my-5 bg-body rounded">
                 <h1 class="fs-1 text-center mb-2">Editar Perfil</h1>
-                <?php
-                if (isset($_SESSION['msg'])) {
-                    echo $_SESSION['msg'];
-                    unset($_SESSION['msg']);
-                }
-                ?>
 
                 <form action="../../backend/class/users/UpdateUser.php" method="post" enctype="multipart/form-data">
                     <div class="row align-items-center justify-content-center mb-3">
@@ -117,12 +123,7 @@ ob_start();
                             <div class="row mb-3">
                                 <label for="inputBirth" class="col-sm-3 col-form-label">Nascimento:</label>
                                 <div class="col-sm-9">
-                                    <?php
-                                $Y = substr($_SESSION['Birth'], 0, 4);
-                                $M = substr($_SESSION['Birth'], 4, 2);
-                                $D = substr($_SESSION['Birth'], 6, 2);
-                                    echo '<input type="date" class="form-control"  id="inputBirth" name="inputBirth" value="'.$Y.'-'.$M.'-'.$D.'">';
-                                    ?>
+                                    <input type="date" class="form-control" id="inputBirth" name="inputBirth" value="<?=$_SESSION['Birth']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -212,7 +213,7 @@ ob_start();
             numericOnly: true
         });
     </script>
-    
+
     <script>
         var loadFile = function(event) {
             var output = document.getElementById('output');

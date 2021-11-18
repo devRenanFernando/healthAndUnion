@@ -69,4 +69,13 @@ jQuery(document).ready(function ($) {
       },
     },
   });
+
+  // DELETE
+  $("a.delete").click(function (e) {
+    if (!confirm("Você tem certeza que deseja excluir?")) {
+      e.preventDefault();
+      return false;
+    }
+    return true;
+  });
 });

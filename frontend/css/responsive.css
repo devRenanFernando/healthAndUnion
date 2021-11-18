@@ -1,6 +1,7 @@
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-  #first-content, #second-content {
+  #first-content,
+  #second-content {
     width: 100% !important;
   }
 }
@@ -42,8 +43,12 @@
   }
 
   #perfilPage .perfil-foto {
-  width: 100%;
-}
+    width: 100%;
+  }
+
+  #Blog-post-bro {
+    display: none;
+  }
 }
 
 /* Large devices (desktops, less than 1200px) */

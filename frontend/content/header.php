@@ -3,7 +3,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-xl navbar-light">
 
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="./index.php">
                     <img src="../frontend/assets/svg/logo.svg" class="img-fluid" width="60" height="auto" alt="">
                 </a>
 
@@ -19,7 +19,7 @@
 
                             if ($_SESSION['Type'] == '0') {
                                 echo '
-                        <!-- HOME ADM -->
+                        <!-- MENU HOME -->
                         <li class="nav-item px-3 mx-auto w-50 dropdown">
                             <a class="nav-link fs-3 text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Home
@@ -29,10 +29,19 @@
                                     <a class="dropdown-item" href="index.php?pg=default/#posts">Últimos Posts</a>
                                 </li>
                                 <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
                                     <a class="dropdown-item" href="index.php?pg=default/#quemSomos">Quem somos?</a>
                                 </li>
                                 <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
                                     <a class="dropdown-item" href="index.php?pg=default/#depoimentos">Depoimentos</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="index.php?pg=default/#contato">Contato</a>
@@ -54,12 +63,35 @@
                                     <a class="dropdown-item " href="index.php?pg=posts">Todos Posts</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item " href="index.php?pg=usersView">Usuários</a>
-                                </li>
-                                <!-- <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                                <li>
+                                    <a class="dropdown-item " href="index.php?pg=usersView">Usuários</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item " href="index.php?pg=contactView">Mensagens do Contato</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- MENU POSTS -->
+                        <li class="nav-item px-3 mx-auto w-50 dropdown">
+                            <a class="nav-link fs-3 text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Posts
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item " href="index.php?pg=myPosts">Meus Posts</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item " href="../frontend/content/registrationPosts.php">Novo Post</a>
+                                </li>
                             </ul>
                         </li>
 ';
@@ -67,18 +99,32 @@
                                 echo '
                             
                         <!-- MENU HOME -->
-                        <li class="nav-item mx-auto w-25">
-                            <a class="nav-link fs-3 text-dark" aria-current="page" href="index.php">Home</a>
-                        </li>
-
-                        <!-- MENU POSTS -->
-                        <li class="nav-item px-3 mx-auto w-25 dropdown">
+                        <li class="nav-item px-3 mx-auto w-50 dropdown">
                             <a class="nav-link fs-3 text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Posts
+                                Home
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item " href="index.php?pg=default/#posts">Últimos Posts</a></li>
-                                <li><a class="dropdown-item " href="index.php?pg=posts">Todos Posts</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="index.php?pg=default/#posts">Últimos Posts</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="index.php?pg=default/#quemSomos">Quem somos?</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="index.php?pg=default/#depoimentos">Depoimentos</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="index.php?pg=default/#contato">Contato</a>
+                                </li>
                                 <!-- <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -86,21 +132,23 @@
                             </ul>
                         </li>
 
-                        <!-- MENU QUEM SOMOS -->
-                        <li class="nav-item pe-3 mx-auto w-50">
-                            <a class="nav-link fs-3 text-dark" href="index.php?pg=default/#quemSomos">Quem somos?</a>
+                        <!-- MENU POSTS -->
+                        <li class="nav-item px-3 mx-auto w-50 dropdown">
+                            <a class="nav-link fs-3 text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Posts
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item " href="index.php?pg=myPosts">Meus Posts</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item " href="../frontend/content/registrationPosts.php">Novo Post</a>
+                                </li>
+                            </ul>
                         </li>
-
-                        <!-- MENU DEPOIMENTOS -->
-                        <li class="nav-item pe-3 mx-auto w-50">
-                            <a class="nav-link fs-3 text-dark" href="index.php?pg=default/#depoimentos">Depoimentos</a>
-                        </li>
-
-                        <!-- MENU CONTATO -->
-                        <li class="nav-item mx-auto w-25">
-                            <a class="nav-link fs-3 text-dark" href="index.php?pg=default/#contato">Contato</a>
-                        </li>
-                    </ul>
                     ';
                             } else {
                                 echo '<!-- MENU HOME -->
@@ -242,10 +290,10 @@
                                             } else {
                                                 echo '6';
                                             }  ?> col-<?php if (isset($_SESSION['Type'])) {
-                                                                echo "12";
-                                                            } else {
-                                                                echo '6';
-                                                            }  ?> px-4 mt-xl-0 mt-4 d-flex justify-content-center">
+                                                            echo "12";
+                                                        } else {
+                                                            echo '6';
+                                                        }  ?> px-4 mt-xl-0 mt-4 d-flex justify-content-center">
                             <div id="myOverlay" class="overlay">
                                 <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
                                 <div class="overlay-content">

@@ -22,5 +22,10 @@ if (ini_get("session.use_cookies")) {
 // Por último, destrói a sessão
 session_destroy();
 
-$_SESSION['msg'] = "<p style:'color: green';>Deslogado com sucesso!</p>";
+$_SESSION['msg'] = '<div class="alert alert-success d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-check-circle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        Deslogado com sucesso!
+                                    </div>
+                                </div>';
 header("Location: ../../../app/index.php");

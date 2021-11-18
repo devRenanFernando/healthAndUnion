@@ -2,6 +2,27 @@
 session_start();
 ob_start();
 // print_r($_SESSION);
+
+require_once "../vendor/autoload.php";
+require_once "../helpers/whoops.php";
+
+  $host = 'localhost';
+  $user = 'root';
+  $password = '';
+  $db = 'tcc_site';
+
+  // Aqui foi usado PHP PDO;
+  try {
+    $connect = new PDO("mysql:host=$host;dbname=" . $db, $user, $password);
+    // echo "Conexão com o banco de dados realizada com sucesso!";
+  } catch (PDOException $err) {
+    // echo "ERRO: Conexão com o banco de dados não realizada com sucesso. Erro gerado " . $err->getMessage();
+  }
+
+  $queryPosts = "SELECT * FROM posts";
+  $resultPosts = $connect->prepare($queryPosts);
+  $resultPosts->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +68,15 @@ ob_start();
     case 'usersView':
       require_once "../frontend/content/{$pg}.php";
       break;
+    case 'contactView':
+      require_once "../frontend/content/{$pg}.php";
+      break;
+    case 'myPosts':
+      require_once "../frontend/content/{$pg}.php";
+      break;
+    case 'post':
+      require_once "../frontend/content/{$pg}.php";
+      break;
     default:
       require_once "../frontend/content/main.php";
   }
@@ -85,6 +115,28 @@ ob_start();
 
     function closeSearch() {
       document.getElementById("myOverlay").style.display = "none";
+    }
+  </script>
+
+  <!-- SearchUser -->
+  <script>
+    function searchUser() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("inputSearchUSer");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
     }
   </script>
 

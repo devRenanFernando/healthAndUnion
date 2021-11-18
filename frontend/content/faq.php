@@ -25,39 +25,64 @@
     <section id="faq" class="container-flex min-vh-100 d-flex align-items-center justify-content-center">
 
         <div class="row d-flex align-items-center justify-content-center my-4">
-
             <div class="col-lg-7 text-center order-2">
                 <div class="btn-group-vertical w-75 my-3">
-                    <button id="pergunta1" type="button" class="btn dropdown-toggle border-4 button">
-                        Perdi minha conta, como posso recuperá-la?
-                    </button>
-                    <p id="resposta1">A resposta da primeira pergunta</p>
 
-                    <button id="pergunta2" type="button" class="btn dropdown-toggle border-4 button my-3">
+                    <button type="button" class="btn border-4 button mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#quest01" aria-expanded="false" aria-controls="quest01">
+                        Perdi minha conta, como posso recupera - lá?
+                    </button>
+                    <div class="collapse mb-3 w-100" id="quest01">
+                        <div class="card card-body">
+                            A resposta da primeira pergunta
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn border-4 button mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#quest02" aria-expanded="false" aria-controls="quest02">
                         Como faço para me tornar um Colaborador?
                     </button>
-                    <p id="resposta2">A resposta da segunda pergunta</p>
+                    <div class="collapse mb-3 w-100" id="quest02">
+                        <div class="card card-body">
+                            Entre em contato com os administradores pelo Email e esclareça sua dúvida no título da mensagem da texto.
+                        </div>
+                    </div>
 
-                    <button id="pergunta3" type="button" class="btn dropdown-toggle border-4 button my-3">
-                        Gostaria de ajudar com novas notícias sobre a patologia, entretanto não tenho acesso a postagem de posts. Vocês poderiam me ajudar?
+                    <button type="button" class="btn border-4 button mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#quest03" aria-expanded="false" aria-controls="quest03">
+                        Gostaria de ajudar com novas notícias sobre a patologia, entretanto não tenho acesso aos posts. Vocês poderiam me ajudar?
                     </button>
-                    <p id="resposta3">A resposta da terceira pergunta</p>
+                    <div class="collapse mb-3 w-100" id="quest03">
+                        <div class="card card-body">
+                            Para que um usuário possa publicar posts ele tem que se tornar um Colaborador. Para isso entre em contato conosco pelo Email.
+                        </div>
+                    </div>
 
-                    <button id="pergunta4" type="button" class="btn dropdown-toggle border-4 button my-3">
-                        Perdi minha conta, como posso recuperá-la?
+                    <button type="button" class="btn border-4 button mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#quest04" aria-expanded="false" aria-controls="quest04">
+                        Vocês possuem indicações de especialistas da saúde?
                     </button>
-                    <p id="resposta4">A resposta da quarta pergunta</p>
+                    <div class="collapse mb-3 w-100" id="quest04">
+                        <div class="card card-body">
+                            O objetivo do site é promover a transferência de informações sobre a Fibromialgia, no entanto não possuímos nenhuma parceria com profissionais de saúde.
+                        </div>
+                    </div>
 
-                    <button id="pergunta5" type="button" class="btn dropdown-toggle border-4 button my-3">
-                        Como faço para me tornar um Colaborador?
+                    <button type="button" class="btn border-4 button mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#quest05" aria-expanded="false" aria-controls="quest05">
+                        Como alterar minhas informações de perfil?
                     </button>
-                    <p id="resposta5">A resposta da quinta pergunta</p>
+                    <div class="collapse mb-3 w-100" id="quest05">
+                        <div class="card card-body">
+                            Para isso é necessário acessar sua página de usuário clicando no ícone de perfil. Lá você encontrará todos os seus dados.
+                        </div>
+                    </div>
 
-                    <button id="pergunta6" type="button" class="btn dropdown-toggle border-4 button my-3">
-                        Gostaria de ajudar com novas notícias sobre a patologia, entretanto não tenho acesso a postagem de posts. Vocês poderiam me ajudar?
+                    <button type="button" class="btn border-4 button mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#quest06" aria-expanded="false" aria-controls="quest06">
+                        Sexta pergunta
                     </button>
-                    <p id="resposta6">A resposta da sexta pergunta</p>
+                    <div class="collapse mb-3 w-100" id="quest06">
+                        <div class="card card-body">
+                            A resposta da sexta pergunta
+                        </div>
+                    </div>
                 </div>
+
 
                 <div class="text-center">
                     <a href="../../app/index.php">

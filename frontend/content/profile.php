@@ -1,8 +1,14 @@
 <?php
 
 if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
-    $_SESSION['msg'] = "<p style=' color: red;'>É preciso realizar o login para acessar a página!</p>";
-    header("Location: ../ftontend/content/login.php");
+    $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                                    <div class="fw-bold ms-3">
+                                        É preciso realizar o login para acessar a página!
+                                    </div>
+                                </div>';
+    header("Location: ../frontend/content/login.php");
+    exit;
 }
 ?>
 
@@ -10,6 +16,13 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
     <div id="profilePage" class="my-4">
         <div class="container shadow p-5 my-5 bg-body rounded">
             <h1 class="fs-1 text-center mb-2">Meu Perfil</h1>
+
+            <?php
+            if (isset($_SESSION['msg'])) {
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
+            }
+            ?>
 
             <!-- Header profile -->
             <div class="row d-flex align-items-center justify-content-center mt-5">
@@ -38,17 +51,24 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
                 <p class="fs-4"><strong>Email:</strong> <?= $_SESSION['Email']; ?></p>
                 <hr>
                 <?php
-                $code = substr($_SESSION['Phone'], 0, 2);
-                $part1 = substr($_SESSION['Phone'], 2, 5);
-                $part2 = substr($_SESSION['Phone'], 7, 10);
-                echo "<p class='fs-4'><strong>Telefone: </strong>({$code}) {$part1}-{$part2}</p>"
+                if ($_SESSION['Phone'] != null) {
+                    $code = substr($_SESSION['Phone'], 0, 2);
+                    $part1 = substr($_SESSION['Phone'], 2, 5);
+                    $part2 = substr($_SESSION['Phone'], 7, 10);
+                    echo "<p class='fs-4'><strong>Telefone: </strong>({$code}) {$part1}-{$part2}</p>";
+                } else {
+                    echo "<p class='fs-4'><strong>Telefone:</p>";
+                    }
                 ?>
                 <hr>
                 <p class="fs-4"><strong>Gênero:</strong> <?= $_SESSION['Gender']; ?></p>
                 <hr>
-                <p class="fs-4"><strong>Data de Nascimento:</strong> <?php $d = strtotime($_SESSION['Birth']);
-                                                                        echo
-                                                                        date("d-m-Y", $d); ?></p>
+                <p class="fs-4"><strong>Data de Nascimento:</strong> <?php 
+                if ($_SESSION['Birth'] != null) {
+                    $d = strtotime($_SESSION['Birth']);
+                    echo
+                    date("d-m-Y", $d); 
+                } ?></p>
                 <hr>
                 <p class="fs-4"><strong>Ocupação:</strong> <?= $_SESSION['Occupation']; ?></p>
                 <hr>
