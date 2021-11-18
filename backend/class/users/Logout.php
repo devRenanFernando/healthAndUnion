@@ -28,4 +28,4 @@ $_SESSION['msg'] = '<div class="alert alert-success d-flex align-items-center" r
                                         Deslogado com sucesso!
                                     </div>
                                 </div>';
-header("Location: ../../../app/index.php");
+header("Location: ../../../index.php");

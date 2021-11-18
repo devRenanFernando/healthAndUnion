@@ -7,7 +7,7 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
                                             É preciso realizar o login para acessar a página!
                                         </div>
                                     </div>';
-    header("Location: ../frontend/content/login.php");
+    header("Location: ./frontend/content/login.php");
     exit;
 }
 // require "reposidld"
@@ -44,8 +44,8 @@ $resultMyPosts->execute();
 
                         <div class="col-lg-4 col-6 mb-4 element-item doenca pandemia">
                             <div class="card mb-3 " style="max-width: 580px;">
-                                <a href="../frontend/assets/svg/img_posts.svg" class="popup-link mx-auto my-3">
-                                    <img src="../frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
+                                <a href="./frontend/assets/svg/img_posts.svg" class="popup-link mx-auto my-3">
+                                    <img src="./frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-center"><?= $Title ?></h5>
@@ -127,7 +127,7 @@ $resultMyPosts->execute();
                                     </p>
                                 </div>
                                 <div class="d-flex justify-content-start ms-3 mb-2">
-                                    <a href="http://localhost/www/tcc_site/app/index.php?pg=post&Id=<?= $Id ?>&Author=<?= $Author?>">
+                                    <a href="http://localhost/www/tcc_site.1/index.php?pg=post&Id=<?= $Id ?>&Author=<?= $Author?>">
                                         <button class="btn btn-sm btn-outline-dark fw-bold" role="button" style="width: 10em;">Leia mais <i class="fas fa-arrow-alt-circle-right ms-3"></i></button>
                                     </a>
                                 </div>

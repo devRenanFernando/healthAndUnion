@@ -8,13 +8,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../frontend/assets/svg/img_carrousel01.svg" class="d-block w-75 mx-auto" alt="...">
+                    <img src="./frontend/assets/svg/img_carrousel01.svg" class="d-block w-75 mx-auto" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../frontend/assets/svg/img_carrousel02.svg" class="d-block w-75 mx-auto" alt="...">
+                    <img src="./frontend/assets/svg/img_carrousel02.svg" class="d-block w-75 mx-auto" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../frontend/assets/svg/img_carrousel03.svg" class="d-block w-75 mx-auto" alt="...">
+                    <img src="./frontend/assets/svg/img_carrousel03.svg" class="d-block w-75 mx-auto" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -67,8 +67,8 @@
 
                         <div class="col-lg-4 col-6 mb-4 element-item doenca pandemia">
                             <div class="card mb-3 " style="max-width: 580px;">
-                                <a href="../frontend/assets/svg/img_posts.svg" class="popup-link mx-auto my-3">
-                                    <img src="../frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
+                                <a href="./frontend/assets/svg/img_posts.svg" class="popup-link mx-auto my-3">
+                                    <img src="./frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-center"><?= $Title ?></h5>
@@ -150,7 +150,7 @@
                                     </p>
                                 </div>
                                 <div class="d-flex justify-content-start ms-3 mb-2">
-                                    <a href="http://localhost/www/tcc_site/app/index.php?pg=post&Id=<?= $Id ?>&Author=<?= $Author ?>">
+                                    <a href="http://localhost/www/tcc_site.1/index.php?pg=post&Id=<?= $Id ?>&Author=<?= $Author ?>">
                                         <button class="btn btn-sm btn-outline-dark fw-bold" role="button" style="width: 10em;">Leia mais <i class="fas fa-arrow-alt-circle-right ms-3"></i></button>
                                     </a>
                                 </div>
@@ -176,7 +176,7 @@
         <div class="container-fluid">
             <div class="row my-5 mx-5 align-items-center">
                 <div class="col-lg-6 col-12 mt-3 order-lg-first order-last">
-                    <img src="../frontend/assets/svg/Solidarity-bro.svg" class="w-75 mx-auto d-block" alt="">
+                    <img src="./frontend/assets/svg/Solidarity-bro.svg" class="w-75 mx-auto d-block" alt="">
                 </div>
                 <div class="col-lg-6 col-12 text-center order-lg-last order-first">
                     <h2 id="quemSomosTitle" class="fs-1 mb-3">Quem somos?</h2>
@@ -197,7 +197,7 @@
                 <div class="owl-carousel owl-theme owl-loaded">
                     <div>
                         <div class="depoimento">
-                            <img src="../frontend/assets/svg/user.svg" />
+                            <img src="./frontend/assets/svg/user.svg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -208,14 +208,14 @@
                                     <span>Maikel Neris</span> / Diretor da Decode Web
                                 </p>
                                 <p class="mb-0">
-                                    <img src="../frontend/assets/svg/quote.svg" class="quote float-right" />
+                                    <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="../frontend/assets/svg/user.svg" />
+                            <img src="./frontend/assets/svg/user.svg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -226,14 +226,14 @@
                                     <span>Maikel Neris</span> / Diretor da Decode Web
                                 </p>
                                 <p class="mb-0">
-                                    <img src="../frontend/assets/svg/quote.svg" class="quote float-right" />
+                                    <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="../frontend/assets/svg/user.svg" />
+                            <img src="./frontend/assets/svg/user.svg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -244,14 +244,14 @@
                                     <span>Maikel Neris</span> / Diretor da Decode Web
                                 </p>
                                 <p class="mb-0">
-                                    <img src="../frontend/assets/svg/quote.svg" class="quote float-right" />
+                                    <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="../frontend/assets/svg/user.svg" />
+                            <img src="./frontend/assets/svg/user.svg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -262,14 +262,14 @@
                                     <span>Maikel Neris</span> / Diretor da Decode Web
                                 </p>
                                 <p class="mb-0">
-                                    <img src="../frontend/assets/svg/quote.svg" class="quote float-right" />
+                                    <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="../frontend/assets/svg/user.svg" />
+                            <img src="./frontend/assets/svg/user.svg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -280,14 +280,14 @@
                                     <span>Maikel Neris</span> / Diretor da Decode Web
                                 </p>
                                 <p class="mb-0">
-                                    <img src="../frontend/assets/svg/quote.svg" class="quote float-right" />
+                                    <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="../frontend/assets/svg/user.svg" />
+                            <img src="./frontend/assets/svg/user.svg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
                                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -298,7 +298,7 @@
                                     <span>Maikel Neris</span> / Diretor da Decode Web
                                 </p>
                                 <p class="mb-0">
-                                    <img src="../frontend/assets/svg/quote.svg" class="quote float-right" />
+                                    <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
                         </div>
@@ -312,7 +312,7 @@
     <section id="contato" class="my-5 py-5">
         <div class="container-fluid">
             <div class="row position-relative mx-5">
-                <img src="../frontend/assets/svg/paperplane.svg" class="position-absolute translate-middle ms-4" alt="" style="width: 10em; top: -1em;">
+                <img src="./frontend/assets/svg/paperplane.svg" class="position-absolute translate-middle ms-4" alt="" style="width: 10em; top: -1em;">
                 <div class="col-lg-7 align-self-center">
                     <h2 id="contatoTitle" class="fs-1 text-center my-4">Contato</h2>
                     <span class="text-center fs-5">
@@ -324,7 +324,7 @@
                         unset($_SESSION['msg']);
                     }
                     ?>
-                    <form id="form_mensagem" class="mx-4" action="../backend/class/users/Contact.php" method="post">
+                    <form id="form_mensagem" class="mx-4" action="./backend/class/users/Contact.php" method="post">
 
                         <!-- Input Name -->
                         <div class="row mt-lg-0 align-items-center mt-3">
@@ -360,7 +360,7 @@
                 </div>
 
                 <div id="img_contactUs" class="col-lg-5 align-self-center">
-                    <img class="img-fluid" src="../frontend/assets/svg/Contact us-amico.svg" alt="">
+                    <img class="img-fluid" src="./frontend/assets/svg/Contact us-amico.svg" alt="">
                 </div>
             </div>
         </div>

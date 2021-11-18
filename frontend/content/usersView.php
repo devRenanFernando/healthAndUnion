@@ -7,7 +7,7 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
                                             É preciso realizar o login para acessar a página!
                                         </div>
                                     </div>';
-    header("Location: ../frontend/content/login.php");
+    header("Location: ./frontend/content/login.php");
     exit;
 }
 // require "reposidld"
@@ -126,7 +126,7 @@ $resultUsers->execute();
                                                 <hr class='dropdown-divider'>
                                             </li>
                                             <li>
-                                                <a href='../backend/class/users/BlockUser.php?Id=<?= $Id ?>&Blocked=<?= $Blocked ?>' class='dropdown-item btn btn-primary fw-bold'>
+                                                <a href='./backend/class/users/BlockUser.php?Id=<?= $Id ?>&Blocked=<?= $Blocked ?>' class='dropdown-item btn btn-primary fw-bold'>
                                                     <?php
                                                     if ($Blocked == "Bloqueado") {
                                                         echo "Desbloquear";
@@ -141,7 +141,7 @@ $resultUsers->execute();
                                                 <hr class='dropdown-divider'>
                                             </li>
                                             <li>
-                                                <a href='../backend/class/users/DeleteUser.php?Id=<?= $Id ?>' class='dropdown-item btn btn-primary fw-bold delete'>Delete</a>
+                                                <a href='./backend/class/users/DeleteUser.php?Id=<?= $Id ?>' class='dropdown-item btn btn-primary fw-bold delete'>Delete</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -153,19 +153,19 @@ $resultUsers->execute();
                                         </button>
                                         <ul class='dropdown-menu dropdown-menu-start text-center px-3' aria-labelledby='dropdownMenuButton1'>
                                             <li>
-                                                <a href='../backend/class/users/BecomeUserAdm.php?Id=<?= $Id ?>' class='dropdown-item btn btn-primary fw-bold'>Administrador</a>
+                                                <a href='./backend/class/users/BecomeUserAdm.php?Id=<?= $Id ?>' class='dropdown-item btn btn-primary fw-bold'>Administrador</a>
                                             </li>
                                             <li>
                                                 <hr class='dropdown-divider'>
                                             </li>
                                             <li>
-                                                <a href='../backend/class/users/BecomeUserCol.php?Id=<?= $Id ?>' class='dropdown-item btn btn-primary fw-bold'>Colaborador</a>
+                                                <a href='./backend/class/users/BecomeUserCol.php?Id=<?= $Id ?>' class='dropdown-item btn btn-primary fw-bold'>Colaborador</a>
                                             </li>
                                             <li>
                                                 <hr class='dropdown-divider'>
                                             </li>
                                             <li>
-                                                <a href='../backend/class/users/BecomeUserCommon.php?Id=<?= $Id ?>' class='dropdown-item btn btn-primary fw-bold'>Usuário Comum</a>
+                                                <a href='./backend/class/users/BecomeUserCommon.php?Id=<?= $Id ?>' class='dropdown-item btn btn-primary fw-bold'>Usuário Comum</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -187,15 +187,15 @@ $resultUsers->execute();
                                                 <?php
                                                 if ($Photo == null) {
                                                     if ($Gender == 'Masculino') {
-                                                        echo '../frontend/assets/svg/user.svg';
+                                                        echo './frontend/assets/svg/user.svg';
                                                     } else if ($Gender == 'Feminino') {
                                                         $random = random_int(1, 3);
-                                                        echo '../frontend/assets/svg/userFemale0{$random}.svg';
+                                                        echo './frontend/assets/svg/userFemale0{$random}.svg';
                                                     } else {
                                                         echo '#';
                                                     }
                                                 } else {
-                                                    echo "../frontend/assets/upload/$Photo";
+                                                    echo "./frontend/assets/upload/$Photo";
                                                 }
                                                 ?>
                                                " alt="Foto de <?= $Name ?>">

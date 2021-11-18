@@ -177,7 +177,7 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
 
                     <!-- Button Group -->
                     <div class="d-flex justify-content-center mt-3">
-                        <a href="../../app/index.php?pg=profile">
+                        <a href="../../index.php?pg=profile">
                             <button type="button" class="btn btn-lg btn-outline-dark fw-bold mx-4" style=" width: 10em" role="button">Cancelar</button>
                         </a>
                         <input type="submit" class="btn btn-lg btn-outline-dark fw-bold mx-4" name="inputSendEdit" style=" width: 10em" role="button" value="Salvar"></input>

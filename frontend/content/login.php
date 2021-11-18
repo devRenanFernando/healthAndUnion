@@ -57,7 +57,7 @@ if (isset($dados['SendLogin'])) {
                             <button id="signin" class="btn btn-outline-primary fw-bold px-5">Cadastrar</button>
                         </a>
 
-                        <a href="../../app/index.php">
+                        <a href="../../index.php">
                             <button id="signin" class="btn btn-outline-primary fw-bold mt-3 px-5">Voltar</button>
                         </a>
                     </div>

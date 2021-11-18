@@ -95,7 +95,7 @@ if (!empty($dados['SendRegistration'])) {
 
                         <input type="submit" name="SendRegistration" class="btn btn-primary fw-bold mt-3 px-5" value="Postar">
                     </form>
-                    <a href="../../app/index.php">
+                    <a href="../../index.php">
                         <button id="signin" class="btn btn-primary fw-bold mt-3 px-5">Home</button>
                     </a>
                 </div>

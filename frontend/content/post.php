@@ -35,15 +35,15 @@ $m = $date->format('m');
                 <div class="col-lg-1 col-2">
                     <img class="perfil-foto w-100 mx-auto" src="<?php if ($Gender == null) {
                                                                     if ($Gender == 'Masculino') {
-                                                                        echo '../frontend/assets/svg/user.svg';
+                                                                        echo 'frontend/assets/svg/user.svg';
                                                                     } else if ($Gender == 'Feminino') {
                                                                         $random = random_int(1, 3);
-                                                                        echo "../frontend/assets/svg/userFemale0{$random}.svg";
+                                                                        echo "frontend/assets/svg/userFemale0{$random}.svg";
                                                                     } else {
                                                                         echo '#';
                                                                     }
                                                                 } else {
-                                                                    echo "../frontend/assets/upload/$Photo";
+                                                                    echo "frontend/assets/upload/$Photo";
                                                                 } ?>" alt="Foto de <?= $Name; ?>">
                 </div>
                 <div class="col-lg-11 col-10">

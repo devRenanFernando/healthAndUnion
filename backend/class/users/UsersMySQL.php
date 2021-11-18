@@ -216,7 +216,7 @@ class UsersMySQL implements InterfaceUsers
                     // Redireciona para página de perfil
                     if ($_SESSION['Blocked'] == 0) {
                         // echo $_SESSION['Blocked'];
-                        header("Location: ../../app/index.php?pg=profile");
+                        header("Location: ../../index.php?pg=profile");
                         exit;
                     } else {
                         $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -300,7 +300,7 @@ class UsersMySQL implements InterfaceUsers
                                     </div>
                                 </div>';
                 unset($user);
-                header("Location: ../../../app/index.php?pg=profile");
+                header("Location: ../../../index.php?pg=profile");
                 exit;
             }
         }
@@ -328,7 +328,7 @@ class UsersMySQL implements InterfaceUsers
                                         Usuário ' . $Name . ' promovido a Administrador com sucesso!
                                     </div>
                                 </div>';
-        header("Location: ../../../app/index.php?pg=usersView");
+        header("Location: ../../../index.php?pg=usersView");
         exit;
     }
 
@@ -354,7 +354,7 @@ class UsersMySQL implements InterfaceUsers
                                         Usuário ' . $Name . ' promovido a Colaborador com sucesso!
                                     </div>
                                 </div>';
-        header("Location: ../../../app/index.php?pg=usersView");
+        header("Location: ../../../index.php?pg=usersView");
         exit;
     }
 
@@ -380,7 +380,7 @@ class UsersMySQL implements InterfaceUsers
                                         Usuário ' . $Name . ' promovido a Usuário comum com sucesso!
                                     </div>
                                 </div>';
-        header("Location: ../../../app/index.php?pg=usersView");
+        header("Location: ../../../index.php?pg=usersView");
         exit;
     }
 
@@ -416,7 +416,7 @@ class UsersMySQL implements InterfaceUsers
         $result_user = $this->connect->prepare($sql);
         $result_user->execute();
 
-        header("Location: ../../../app/index.php?pg=usersView");
+        header("Location: ../../../index.php?pg=usersView");
         exit;
     }
 
@@ -443,7 +443,7 @@ class UsersMySQL implements InterfaceUsers
         $result_user = $this->connect->prepare($sql);
         $result_user->execute();
 
-        header("Location: ../../../app/index.php?pg=usersView");
+        header("Location: ../../../index.php?pg=usersView");
         exit;
     }
 
@@ -465,7 +465,7 @@ class UsersMySQL implements InterfaceUsers
                                         Necessário prencher todos os campos!
                                     </div>
                                 </div>';
-                header("Location: ../../../app/index.php?pg=default/#contato");
+                header("Location: ../../../index.php?pg=default/#contato");
                 exit;
             }
 
@@ -492,7 +492,7 @@ class UsersMySQL implements InterfaceUsers
                                             </div>
                                         </div>';
                     unset($dados);
-                    header("Location: ../../../app/index.php?pg=default/#contato");
+                    header("Location: ../../../index.php?pg=default/#contato");
                     exit;
                 } else {
                     $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">
@@ -501,7 +501,7 @@ class UsersMySQL implements InterfaceUsers
                                         Não foi possível enviar a mensagem!
                                     </div>
                                 </div>';
-                    header("Location: ../../../app/index.php?pg=default/#contato");
+                    header("Location: ../../../index.php?pg=default/#contato");
                     exit;
                 }
             }

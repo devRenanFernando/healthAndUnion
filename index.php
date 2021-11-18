@@ -3,8 +3,8 @@ session_start();
 ob_start();
 // print_r($_SESSION);
 
-require_once "../vendor/autoload.php";
-require_once "../helpers/whoops.php";
+require_once "./vendor/autoload.php";
+require_once "./helpers/whoops.php";
 
   $host = 'localhost';
   $user = 'root';
@@ -34,7 +34,7 @@ require_once "../helpers/whoops.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Links -->
-  <link rel="shortcut icon" href="../frontend/assets/svg/logo_preenchida.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="./frontend/assets/svg/logo_preenchida.svg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -42,7 +42,7 @@ require_once "../helpers/whoops.php";
   <script src="https://kit.fontawesome.com/6827d460af.js" crossorigin="anonymous"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../frontend/css/main.css">
+  <link rel="stylesheet" href="./frontend/css/main.css">
 
   <title>Bem-vindo à Health & Union - Seu site especializado em Fibromialgia</title>
 </head>
@@ -50,7 +50,7 @@ require_once "../helpers/whoops.php";
 <body>
   <?php
   // Header Line
-  require_once "../frontend/content/header.php";
+  require_once "./frontend/content/header.php";
 
   // Contents
   $pg = "";
@@ -60,52 +60,52 @@ require_once "../helpers/whoops.php";
 
   switch ($pg) {
     case 'posts':
-      require_once "../frontend/content/{$pg}.php";
+      require_once "./frontend/content/{$pg}.php";
       break;
     case 'profile':
-      require_once "../frontend/content/{$pg}.php";
+      require_once "./frontend/content/{$pg}.php";
       break;
     case 'usersView':
-      require_once "../frontend/content/{$pg}.php";
+      require_once "./frontend/content/{$pg}.php";
       break;
     case 'contactView':
-      require_once "../frontend/content/{$pg}.php";
+      require_once "./frontend/content/{$pg}.php";
       break;
     case 'myPosts':
-      require_once "../frontend/content/{$pg}.php";
+      require_once "./frontend/content/{$pg}.php";
       break;
     case 'post':
-      require_once "../frontend/content/{$pg}.php";
+      require_once "./frontend/content/{$pg}.php";
       break;
     default:
-      require_once "../frontend/content/main.php";
+      require_once "./frontend/content/main.php";
   }
 
   // Footer
-  require_once "../frontend/content/footer.php";
+  require_once "./frontend/content/footer.php";
   ?>
 
   <!-- JavaScript: Separate Popper and Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <script src="../frontend/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="./frontend/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
   <!--  jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <!-- Owl Carousel -->
-  <script src="../frontend/js/owl.carousel.min.js"></script>
+  <script src="./frontend/js/owl.carousel.min.js"></script>
 
   <!-- Isotope -->
-  <script src="../frontend/js/isotope.pkgd.min.js"></script>
+  <script src="./frontend/js/isotope.pkgd.min.js"></script>
 
   <!-- Masks -->
   <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
 
   <!-- Magnific -->
-  <script src="../frontend/js/jquery.magnific-popup.min.js"></script>
+  <script src="./frontend/js/jquery.magnific-popup.min.js"></script>
 
   <!-- Main File Js -->
-  <script src="../frontend/js/main.js"></script>
+  <script src="./frontend/js/main.js"></script>
 
   <!-- Search -->
   <script>

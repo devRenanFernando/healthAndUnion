@@ -72,7 +72,7 @@ class PostsMySQL implements InterfacePosts
                                             </div>
                                         </div>';
                     unset($dados);
-                    header("Location: ../../app/index.php?pg=myPosts");
+                    header("Location: ../../index.php?pg=myPosts");
                     exit;
                 } else {
                     $_SESSION['msg'] = '<div class="alert alert-danger d-flex align-items-center" role="alert">

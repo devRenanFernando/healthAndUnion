@@ -4,7 +4,7 @@
             <nav class="navbar navbar-expand-xl navbar-light">
 
                 <a class="navbar-brand" href="./index.php">
-                    <img src="../frontend/assets/svg/logo.svg" class="img-fluid" width="60" height="auto" alt="">
+                    <img src="./frontend/assets/svg/logo.svg" class="img-fluid" width="60" height="auto" alt="">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +90,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
-                                    <a class="dropdown-item " href="../frontend/content/registrationPosts.php">Novo Post</a>
+                                    <a class="dropdown-item " href="./frontend/content/registrationPosts.php">Novo Post</a>
                                 </li>
                             </ul>
                         </li>
@@ -145,7 +145,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li>
-                                    <a class="dropdown-item " href="../frontend/content/registrationPosts.php">Novo Post</a>
+                                    <a class="dropdown-item " href="./frontend/content/registrationPosts.php">Novo Post</a>
                                 </li>
                             </ul>
                         </li>
@@ -242,7 +242,7 @@
                                 // SESSION VAZIA
                                 echo
                                 '
-            <a class="icon p-1" href="../frontend/content/login.php">
+            <a class="icon p-1" href="./frontend/content/login.php">
                 <span>
                     <i class="fas fa-user fa-2x" aria-hidden="true"></i>
                 </span>
@@ -273,7 +273,7 @@
                             echo
                             "
     <div id='iconLogout' class='col-xl-4 col-6 px-4'>
-        <a class='icon p-1 ' href='../backend/class/users/Logout.php '>
+        <a class='icon p-1 ' href='./backend/class/users/Logout.php '>
             <span>
                 <i class='fas fa-sign-out-alt fa-2x' aria-hidden='true'></i>
              </span>

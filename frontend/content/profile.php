@@ -7,7 +7,7 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
                                         É preciso realizar o login para acessar a página!
                                     </div>
                                 </div>';
-    header("Location: ../frontend/content/login.php");
+    header("Location: ./frontend/content/login.php");
     exit;
 }
 ?>
@@ -29,15 +29,15 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
                 <div class="col-lg-4 col-12 d-flex justify-content-center">
                     <img class="perfil-foto w-75 mx-auto" src="<?php if ($_SESSION['Photo'] == null) {
                                                                     if ($_SESSION['Gender'] == 'Masculino') {
-                                                                        echo '../frontend/assets/svg/user.svg';
+                                                                        echo './frontend/assets/svg/user.svg';
                                                                     } else if ($_SESSION['Gender'] == 'Feminino') {
                                                                         $random = random_int(1, 3);
-                                                                        echo "../frontend/assets/svg/userFemale0{$random}.svg";
+                                                                        echo "./frontend/assets/svg/userFemale0{$random}.svg";
                                                                     } else {
                                                                         echo '#';
                                                                     }
                                                                 } else {
-                                                                    echo "../frontend/assets/upload/{$_SESSION['Photo']}";
+                                                                    echo "./frontend/assets/upload/{$_SESSION['Photo']}";
                                                                 } ?>" alt="Foto de <?= $_SESSION['Name']; ?>">
                 </div>
 
@@ -76,7 +76,7 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
 
             <!-- Button Group -->
             <div class="d-flex justify-content-center py-3">
-                <a href="../frontend/content/editProfile.php">
+                <a href="./frontend/content/editProfile.php">
                     <button type="button" class="btn btn-lg btn-outline-dark fw-bold mx-4" style=" width: 10em" role="button">Editar Perfil</button>
                 </a>
                 <a href="index.php?pg=posts">
