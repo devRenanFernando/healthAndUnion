@@ -8,13 +8,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./frontend/assets/svg/img_carrousel01.svg" class="d-block w-75 mx-auto" alt="...">
+                    <img src="./frontend/assets/svg/img_carrousel01.svg" class="d-block w-75 mx-auto" alt="Imagem do carrousel #Fribromialgia">
                 </div>
                 <div class="carousel-item">
-                    <img src="./frontend/assets/svg/img_carrousel02.svg" class="d-block w-75 mx-auto" alt="...">
+                    <img src="./frontend/assets/svg/img_carrousel02.svg" class="d-block w-75 mx-auto" alt="Imagem do carrousel #VacineJá">
                 </div>
                 <div class="carousel-item">
-                    <img src="./frontend/assets/svg/img_carrousel03.svg" class="d-block w-75 mx-auto" alt="...">
+                    <img src="./frontend/assets/svg/img_carrousel03.svg" class="d-block w-75 mx-auto" alt="Imagem do carrousel Pontos de Dores">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -36,14 +36,13 @@
                 <h4 class="fs-4 text-center mb-4">Veja algumas das nossas publicações</h4>
             </div>
 
-            <div class="button-group mb-3">
-                <button type="button" data-filter="*" class="active btn btn-sm fw-bold text-uppercase">Todos</button>
-                <button type="button" data-filter=".posts_recentes" class="btn btn-sm fw-bold text-uppercase">Últimos Posts</button>
+            <!-- <div class="button-group mb-3">
+                <button type="button" data-filter="*" class="active btn btn-sm fw-bold text-uppercase">Últimos Posts</button>
                 <button type="button" data-filter=".principais_posts" class="btn btn-sm fw-bold text-uppercase">Principais Posts</button>
                 <button type="button" data-filter=".pandemia" class="btn btn-sm fw-bold text-uppercase">Pandemia</button>
                 <button type="button" data-filter=".vacinacao" class="btn btn-sm fw-bold text-uppercase">Vacinação</button>
                 <button type="button" data-filter=".doenca" class="btn btn-sm fw-bold text-uppercase">Doença</button>
-            </div>
+            </div> -->
 
             <!-- //Recentes -->
             <div class="row grid mx-0">
@@ -65,10 +64,18 @@
                         $m = $date->format('m');
                 ?>
 
-                        <div class="col-lg-4 col-6 mb-4 element-item doenca pandemia">
+                        <div class="col-lg-4 col-sm-6 col-12 mb-4 element-item doenca pandemia" data-mh="posts">
                             <div class="card mb-3 " style="max-width: 580px;">
-                                <a href="./frontend/assets/svg/img_posts.svg" class="popup-link mx-auto my-3">
-                                    <img src="./frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
+                                <a href="./frontend/assets/<?php if (isset($Img)) {
+                                                                echo "upload/$Img";
+                                                            } else {
+                                                                echo "svg/img_posts.svg";
+                                                            } ?>" class="popup-link mx-auto my-3">
+                                    <img src="./frontend/assets/<?php if (isset($Img)) {
+                                                                    echo "upload/$Img";
+                                                                } else {
+                                                                    echo "svg/img_posts.svg";
+                                                                } ?>" class="rounded-start img-fluid" alt="<?= $Caption?>">
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-center"><?= $Title ?></h5>
@@ -150,7 +157,7 @@
                                     </p>
                                 </div>
                                 <div class="d-flex justify-content-start ms-3 mb-2">
-                                    <a href="http://localhost/www/tcc_site.1/index.php?pg=post&Id=<?= $Id ?>&Author=<?= $Author ?>">
+                                    <a href="http://localhost/www/tcc_site/index.php?pg=post&Id=<?= $IdPost ?>&Author=<?= $Author ?>">
                                         <button class="btn btn-sm btn-outline-dark fw-bold" role="button" style="width: 10em;">Leia mais <i class="fas fa-arrow-alt-circle-right ms-3"></i></button>
                                     </a>
                                 </div>
@@ -176,7 +183,7 @@
         <div class="container-fluid">
             <div class="row my-5 mx-5 align-items-center">
                 <div class="col-lg-6 col-12 mt-3 order-lg-first order-last">
-                    <img src="./frontend/assets/svg/Solidarity-bro.svg" class="w-75 mx-auto d-block" alt="">
+                    <img src="./frontend/assets/svg/Solidarity-bro.svg" class="w-75 mx-auto d-block" alt="Três pessoas representando os criadores do site">
                 </div>
                 <div class="col-lg-6 col-12 text-center order-lg-last order-first">
                     <h2 id="quemSomosTitle" class="fs-1 mb-3">Quem somos?</h2>
@@ -191,23 +198,21 @@
             <div class="container">
                 <h2 class="title text-center">Depoimentos</h2>
                 <h4 class="subtitle text-center mb-4">
-                    Et sumi kapa namur aondeai rocus pocus
+                    Alguns depoimentos de pessoas que sofrem de fibromialgia
                 </h4>
 
                 <div class="owl-carousel owl-theme owl-loaded">
                     <div>
                         <div class="depoimento">
-                            <img src="./frontend/assets/svg/user.svg" />
+                            <img class="w-25 rounded-circle" src="./frontend/assets/jpeg/RosildaGomes.jpg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium dolorem que laudantium, totam rem aperiam, eaque
-                                    ipsa quae ab illo inventore veritatis.
+                                    Sofro dessa síndrome a mais de 15 anos, durmo e acordo com muitas dores, estou no olho do furacão. Tenho tido muita insônia e sempre acordo com muita dor de cabeça. Faço o tratamento com antidepressivo.
                                 </p>
-                                <p class="name">
-                                    <span>Maikel Neris</span> / Diretor da Decode Web
+                                <p class="name text-end">
+                                    <span class="me-1">Rosilda Gomes da Silva Rodrigues </span> / Advogada
                                 </p>
-                                <p class="mb-0">
+                                <p class="mb-0 d-flex justify-content-end">
                                     <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
@@ -215,17 +220,15 @@
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="./frontend/assets/svg/user.svg" />
+                            <img class="w-25 rounded-circle" src="./frontend/assets/jpeg/EdnaRodrigues.jpg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium dolorem que laudantium, totam rem aperiam, eaque
-                                    ipsa quae ab illo inventore veritatis.
+                                    Sofro com a fibromialgia a 3 anos, e sinto incapacidade até mesmo para fazer os movimentos mais simples. Não consigo ter uma noite de sono tranquila faz tempo e ultimamente não estou mais saindo de casa porque não consigo andar. Espero um dia um milagre acontecer em minha vida, para que eu possa voltar a ter uma vida livre das dores.
                                 </p>
-                                <p class="name">
-                                    <span>Maikel Neris</span> / Diretor da Decode Web
+                                <p class="name text-end">
+                                    <span>Edna Rodrigues Vieira</span> | Dona de casa
                                 </p>
-                                <p class="mb-0">
+                                <p class="mb-0 d-flex justify-content-end">
                                     <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
@@ -233,17 +236,15 @@
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="./frontend/assets/svg/user.svg" />
+                            <img class="w-25 rounded-circle" src="./frontend/assets/jpeg/ThiagoPrado.jpg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium dolorem que laudantium, totam rem aperiam, eaque
-                                    ipsa quae ab illo inventore veritatis.
+                                    Desde a infância já tinha vestígios da doença, porém só aos 21 anos, após uma crise muito forte de dores por todo o corpo, passei por uma bateria de exames e fui ao reumatologista, que diagnosticou a fibromialgia. A doença não só te faz sofrer, mas também te faz enxergar o mundo de uma outra forma. Como Nelson Mandela falou "eu sou o mestre do meu destino e o capitão da minha alma". A acupuntura surtiu efeito em relação à dor, e o psicólogo ajudou a aliviar a carga emocional.
                                 </p>
-                                <p class="name">
-                                    <span>Maikel Neris</span> / Diretor da Decode Web
+                                <p class="name text-end">
+                                    <span>Thiago Prado</span> / Empresário
                                 </p>
-                                <p class="mb-0">
+                                <p class="mb-0 d-flex justify-content-end">
                                     <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
@@ -251,17 +252,16 @@
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="./frontend/assets/svg/user.svg" />
+                            <img class="w-25 rounded-circle" src="./frontend/assets/jpeg/AnaliceAmarrilho.jpg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium dolorem que laudantium, totam rem aperiam, eaque
-                                    ipsa quae ab illo inventore veritatis.
+                                    Desde criança sinto dores. Hoje, tenho 37 anos, mas lembro de ter fortes dores nas pernas quando criança e os médicos falarem que era dor de crescimento. Em 2001, em Belém (PA), tive o diagnóstico de fibromialgia. Comecei a tomar o remédio da época, que era a amitriptilina, um antidepressivo que engorda e não ajuda muito.
+                                    Acho que por ela fazer parte do meu dia a dia, procuro fazer todas as minhas atividades no meu ritmo, descansando quando a fadiga chega.
                                 </p>
-                                <p class="name">
-                                    <span>Maikel Neris</span> / Diretor da Decode Web
+                                <p class="name text-end">
+                                    <span>Analice Amarrilho </span> / Consultora
                                 </p>
-                                <p class="mb-0">
+                                <p class="mb-0 d-flex justify-content-end">
                                     <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
@@ -269,17 +269,15 @@
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="./frontend/assets/svg/user.svg" />
+                            <img class="w-25 rounded-circle" src="./frontend/assets/jpeg/LeahTyler.jpg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium dolorem que laudantium, totam rem aperiam, eaque
-                                    ipsa quae ab illo inventore veritatis.
+                                    Eu adoeci em 2005, com 28 anos, após sofrer um problema de pâncreas. Foi frustrante e devastador. Viajei para fora do estado, para uma clínica especializada, que usa uma combinação da medicina moderna e remédios holísticos. Eu ainda estava com dor, e, então, veio o diagnóstico de fibromialgia. A qualidade de vida lentamente voltou e hoje eu sou capaz de gerir a minha saúde com muito cuidado e atenção.
                                 </p>
-                                <p class="name">
-                                    <span>Maikel Neris</span> / Diretor da Decode Web
+                                <p class="name text-end">
+                                    <span>Leah Tyler</span> / Diretora de Marketing
                                 </p>
-                                <p class="mb-0">
+                                <p class="mb-0 d-flex justify-content-end">
                                     <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
@@ -287,17 +285,31 @@
                     </div>
                     <div>
                         <div class="depoimento">
-                            <img src="./frontend/assets/svg/user.svg" />
+                            <img class="w-25 rounded-circle" src="./frontend/assets/jpeg/OtavioGuimaraes.jpg" />
                             <div class="depoimento-texto ps-3">
                                 <p>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium dolorem que laudantium, totam rem aperiam, eaque
-                                    ipsa quae ab illo inventore veritatis.
+                                    Para qualquer pessoa que não acredita em fibromialgia: eu te desafio a passar cinco minutos em meu corpo em um dia em que estou com dor e depois tentar dizer algo de novo. Essa doença produz dores físicas insurportáveis. É inadimissível aceitar que ainda existam pessoas que não acreditam e até fazem piadas.
                                 </p>
-                                <p class="name">
-                                    <span>Maikel Neris</span> / Diretor da Decode Web
+                                <p class="name text-end">
+                                    <span>Otávio Guimarães</span> / Desenvolvedor de jogos
                                 </p>
-                                <p class="mb-0">
+                                <p class="mb-0 d-flex justify-content-end">
+                                    <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="depoimento">
+                            <img class="w-25 rounded-circle" src="./frontend/assets/jpeg/MarlucedaSilva.jpg" />
+                            <div class="depoimento-texto ps-3">
+                                <p>
+                                    Quando descobri, a um mês, os médicos me disseram que eu tinha todos os sintomas da fibromialgia e que a dor poderia ser ameniza com remédios, mas que não teria cura. Tenho que tomar ansiolítico para a ansiedade, relaxante muscular e 1 grama de dipirona para ajudar na dor do corpo. Essa doença judia muito da gente porque temos dor no corpo inteiro, e não é uma dor localizada como uma dor de cabeça, dói o corpo todo, é como se eu tivesse levado uma surra. No dia a dia ela me impossibilita das coisas mais comuns, como cuidar da casa e trabalhar. As pessoas sempre pensam que estou exagerando, mas só quem tem sabe como é. Segundo o médico, no meu caso ela se desencadeia com o estresse, mas como não ter estresse e passar nervoso hoje em dia? A fibromialgia não tem hora para aparecer, as vezes durmo bem e acordo com o corpo todo dolorido.
+                                </p>
+                                <p class="name text-end">
+                                    <span>Marluce da Silva Souza</span> / Enfermeira
+                                </p>
+                                <p class="mb-0 d-flex justify-content-end">
                                     <img src="./frontend/assets/svg/quote.svg" class="quote float-right" />
                                 </p>
                             </div>
@@ -312,7 +324,7 @@
     <section id="contato" class="my-5 py-5">
         <div class="container-fluid">
             <div class="row position-relative mx-5">
-                <img src="./frontend/assets/svg/paperplane.svg" class="position-absolute translate-middle ms-4" alt="" style="width: 10em; top: -1em;">
+                <img src="./frontend/assets/svg/paperplane.svg" class="position-absolute translate-middle ms-4" alt="Paperlane (Aviãozinho de papel)" style="width: 10em; top: -1em;">
                 <div class="col-lg-7 align-self-center">
                     <h2 id="contatoTitle" class="fs-1 text-center my-4">Contato</h2>
                     <span class="text-center fs-5">
@@ -360,7 +372,7 @@
                 </div>
 
                 <div id="img_contactUs" class="col-lg-5 align-self-center">
-                    <img class="img-fluid" src="./frontend/assets/svg/Contact us-amico.svg" alt="">
+                    <img class="img-fluid" src="./frontend/assets/svg/Contact us-amico.svg" alt="Imagem de contato">
                 </div>
             </div>
         </div>

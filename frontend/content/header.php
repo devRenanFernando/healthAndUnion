@@ -4,7 +4,7 @@
             <nav class="navbar navbar-expand-xl navbar-light">
 
                 <a class="navbar-brand" href="./index.php">
-                    <img src="./frontend/assets/svg/logo.svg" class="img-fluid" width="60" height="auto" alt="">
+                    <img src="./frontend/assets/svg/logo.svg" class="img-fluid" width="60" height="auto" alt="Logo do site Health & Union">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <a class="dropdown-item " href="index.php?pg=posts">Todos Posts</a>
+                                    <a class="dropdown-item " href="index.php?pg=postsSituation">Posts</a>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -83,6 +83,12 @@
                                 Posts
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item " href="index.php?pg=posts">Todos Posts</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li>
                                     <a class="dropdown-item " href="index.php?pg=myPosts">Meus Posts</a>
                                 </li>

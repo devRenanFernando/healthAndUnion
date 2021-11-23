@@ -205,21 +205,56 @@
   color: var(--melon);
 }
 
-#registrationPosts label {
+#registrationPosts label,
+#editPost label {
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
 }
 
-#registrationPosts #inputScope{
-  height: 12em;
+#registrationPosts #inputScope,
+#editPost #inputScope {
+  height: 10em;
 }
 
-#myPosts .card-body > p, #posts .card-body > p {
+#myPosts .card-body > p,
+#posts .card-body > p {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+#myPosts a {
+  font-family: "Cormorant Garamond";
+  color: var(--blue-violet);
+}
+
+.tokenfield .token {
+  border: 2px solid var(--blue-violet);
+  background-color: var(--blue-violet);
+  color: var(--pink-lace);
+  white-space: nowrap;
+  margin: 5px 5px 5px 0;
+  padding: 10px;
+  height: 30px;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.tokenfield {
+  display: flex !important;
+}
+
+a.close {
+  font-size: 1.8em !important;
+  color: var(--pink-lace);
+  text-decoration: none;
+  display: flex !important;
+  align-items: center;
 }
 
 /*!/ POSTS */
@@ -242,6 +277,8 @@
   background-color: var(--pink-lace);
   border-radius: 5px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 30px;
 }
 
@@ -413,15 +450,6 @@ input#inlineRadio3 {
   color: var(--blue-violet);
 }
 
-#faq #resposta1,
-#resposta2,
-#resposta3,
-#resposta4,
-#resposta5,
-#resposta6 {
-  display: none;
-}
-
 /** /FAQ */
 
 /*TODO | PAGE PROFILE */
@@ -436,7 +464,8 @@ input#inlineRadio3 {
   color: var(--blue-violet);
 }
 
-#editProfile .content {
+#editProfile .content,
+#editPost .content {
   position: relative;
 }
 
@@ -446,7 +475,8 @@ input#inlineRadio3 {
   border-radius: 50%;
 }
 
-#editProfile .overlay {
+#editProfile .overlay,
+#editPost .overlay {
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -460,12 +490,14 @@ input#inlineRadio3 {
   transition: 0.5s ease;
 }
 
-#editProfile .content:hover .overlay {
+#editProfile .content:hover .overlay,
+#editPost .content:hover .overlay {
   bottom: 0;
   height: 100%;
 }
 
-#editProfile .text {
+#editProfile .text,
+#editPost .text {
   color: white;
   font-size: 20px;
   position: absolute;
@@ -477,7 +509,8 @@ input#inlineRadio3 {
   text-align: center;
 }
 
-#editProfile #alterarFoto {
+#editProfile #alterarFoto,
+#editPost #alterarFoto {
   color: var(--pink-lace);
   text-decoration: none;
 }
@@ -487,14 +520,16 @@ input#inlineRadio3 {
   border: solid 2px var(--blue-violet);
 }
 
-#editProfile input#inputFile {
+#editProfile input#inputFile,
+#editPost input.inputFile {
   border-radius: 50px;
   background: var(--pink-lace);
   outline: none;
   width: auto;
 }
 
-#editProfile input#inputFile::-webkit-file-upload-button {
+#editProfile input#inputFile::-webkit-file-upload-button,
+#editPost input.inputFile::-webkit-file-upload-button {
   color: white;
   background-color: var(--blue-violet);
   padding: 20px;
@@ -523,12 +558,13 @@ input#inlineRadio3 {
   background-color: var(--blue-violet);
 }
 
-#usersView table.table {
+#usersView table.table,
+#postsSituation table.table {
   height: 60vh;
   color: #fff;
-  /* color: #dee2e6; */
 }
-#usersView table th {
+#usersView table th,
+#postsSituation table th {
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
 }

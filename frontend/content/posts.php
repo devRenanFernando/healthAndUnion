@@ -3,18 +3,17 @@
         <div class="container">
             <!-- Recentes -->
             <div id="recentes" class="my-3">
-                <h2 class="fs-1 text-center mb-2">Todos od Posts</h2>
+                <h2 class="fs-1 text-center mb-2">Todos os Posts</h2>
                 <h4 class="fs-4 text-center mb-4">Veja os posts publicados por nossos colaboradores aqui em Health & Union</h4>
             </div>
 
-            <div class="button-group mb-3">
-                <button type="button" data-filter="*" class="active btn btn-sm fw-bold text-uppercase">Todos</button>
-                <button type="button" data-filter=".posts_recentes" class="btn btn-sm fw-bold text-uppercase">Últimos Posts</button>
+            <!-- <div class="button-group mb-3">
+                <button type="button" data-filter="*" class="active btn btn-sm fw-bold text-uppercase">Últimos Posts</button>
                 <button type="button" data-filter=".principais_posts" class="btn btn-sm fw-bold text-uppercase">Principais Posts</button>
                 <button type="button" data-filter=".pandemia" class="btn btn-sm fw-bold text-uppercase">Pandemia</button>
                 <button type="button" data-filter=".vacinacao" class="btn btn-sm fw-bold text-uppercase">Vacinação</button>
                 <button type="button" data-filter=".doenca" class="btn btn-sm fw-bold text-uppercase">Doença</button>
-            </div>
+            </div> -->
 
             <!-- //Recentes -->
             <div class="row grid mx-0">
@@ -36,10 +35,18 @@
                         $m = $date->format('m');
                 ?>
 
-                        <div class="col-lg-4 col-6 mb-4 element-item doenca pandemia">
+                        <div class="col-lg-4 col-6 mb-4 element-item doenca pandemia" data-mh="posts">
                             <div class="card mb-3 " style="max-width: 580px;">
-                                <a href="./frontend/assets/svg/img_posts.svg" class="popup-link mx-auto my-3">
-                                    <img src="./frontend/assets/svg/img_posts.svg" class="rounded-start img-fluid" alt="...">
+                                <a href="./frontend/assets/<?php if (isset($Img)) {
+                                                                echo "upload/$Img";
+                                                            } else {
+                                                                echo "svg/img_posts.svg";
+                                                            } ?>" class="popup-link mx-auto my-3">
+                                    <img src="./frontend/assets/<?php if (isset($Img)) {
+                                                                    echo "upload/$Img";
+                                                                } else {
+                                                                    echo "svg/img_posts.svg";
+                                                                } ?>" class="rounded-start img-fluid" alt="<?= $Caption ?>">
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-center"><?= $Title ?></h5>
@@ -121,7 +128,7 @@
                                     </p>
                                 </div>
                                 <div class="d-flex justify-content-start ms-3 mb-2">
-                                    <a href="http://localhost/www/tcc_site.1/index.php?pg=post&Id=<?= $Id ?>&Author=<?= $Author ?>">
+                                    <a href="http://localhost/www/tcc_site/index.php?pg=post&Id=<?= $IdPost ?>&Author=<?= $Author ?>">
                                         <button class="btn btn-sm btn-outline-dark fw-bold" role="button" style="width: 10em;">Leia mais <i class="fas fa-arrow-alt-circle-right ms-3"></i></button>
                                     </a>
                                 </div>

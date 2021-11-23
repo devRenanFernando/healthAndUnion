@@ -33,7 +33,6 @@ class UsersMySQL implements InterfaceUsers
         } catch (PDOException $err) {
             // echo "ERRO: Conexão com o banco de dados não realizada com sucesso. Erro gerado " . $err->getMessage();
         }
-
     }
 
     // Methods
@@ -52,7 +51,7 @@ class UsersMySQL implements InterfaceUsers
                                         Necessário prencher todos os campos!
                                     </div>
                                 </div>';
-                                return $user;
+                return $user;
                 header("Location: ../../frontend/content/registration.php");
                 exit;
             } else if (strlen($user['inputPassword']) < 6) {
@@ -78,11 +77,11 @@ class UsersMySQL implements InterfaceUsers
                 header("Location: ../../frontend/content/registration.php");
                 exit;
             } else {
-                $sql = "SELECT Id FROM users WHERE Email ='" . $user['inputEmail'] ."'";
+                $sql = "SELECT Id FROM users WHERE Email ='" . $user['inputEmail'] . "'";
                 $result_user = $this->connect->prepare($sql);
                 $result_user->execute();
 
-                if (($result_user) AND ($result_user->rowCount() != 0)) {
+                if (($result_user) and ($result_user->rowCount() != 0)) {
                     $empty_input = true;
                     $_SESSION['msg'] = '<div class="alert alert-warning d-flex align-items-center" role="alert">
                                     <span><i class="fas fa-exclamation-triangle fa-2x"></i></span>
@@ -156,7 +155,7 @@ class UsersMySQL implements InterfaceUsers
                                         Usuário não foi cadastrado!
                                     </div>
                                 </div>';
-                                return $user;
+                    return $user;
                     header("Location: ../../frontend/content/registration.php");
                     exit;
                 }

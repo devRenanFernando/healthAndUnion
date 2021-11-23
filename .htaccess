@@ -1,0 +1,1 @@
+ErrorDocument 404 http://localhost/www/tcc_site/error.php

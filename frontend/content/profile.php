@@ -58,17 +58,17 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
                     echo "<p class='fs-4'><strong>Telefone: </strong>({$code}) {$part1}-{$part2}</p>";
                 } else {
                     echo "<p class='fs-4'><strong>Telefone:</p>";
-                    }
+                }
                 ?>
                 <hr>
                 <p class="fs-4"><strong>Gênero:</strong> <?= $_SESSION['Gender']; ?></p>
                 <hr>
-                <p class="fs-4"><strong>Data de Nascimento:</strong> <?php 
-                if ($_SESSION['Birth'] != null) {
-                    $d = strtotime($_SESSION['Birth']);
-                    echo
-                    date("d-m-Y", $d); 
-                } ?></p>
+                <p class="fs-4"><strong>Data de Nascimento:</strong> <?php
+                                                                        if ($_SESSION['Birth'] != null) {
+                                                                            $d = strtotime($_SESSION['Birth']);
+                                                                            echo
+                                                                            date("d-m-Y", $d);
+                                                                        } ?></p>
                 <hr>
                 <p class="fs-4"><strong>Ocupação:</strong> <?= $_SESSION['Occupation']; ?></p>
                 <hr>

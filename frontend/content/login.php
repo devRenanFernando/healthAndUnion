@@ -18,6 +18,12 @@ if (isset($dados['SendLogin'])) {
     // Método para logar/entrar
     $usersMySQL->loginUser($dados);
 }
+
+$previous = "javascript:history.go(-1)";
+if (isset($_SERVER['HTTP_REFERER'])) {
+    $previous = $_SERVER['HTTP_REFERER'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -57,8 +63,12 @@ if (isset($dados['SendLogin'])) {
                             <button id="signin" class="btn btn-outline-primary fw-bold px-5">Cadastrar</button>
                         </a>
 
-                        <a href="../../index.php">
+                        <a href="<?= $previous ?>">
                             <button id="signin" class="btn btn-outline-primary fw-bold mt-3 px-5">Voltar</button>
+                        </a>
+
+                        <a href="../../index.php">
+                            <button id="signin" class="btn btn-outline-primary fw-bold mt-3 px-5">Home</button>
                         </a>
                     </div>
                 </div>

@@ -6,22 +6,22 @@ ob_start();
 require_once "./vendor/autoload.php";
 require_once "./helpers/whoops.php";
 
-  $host = 'localhost';
-  $user = 'root';
-  $password = '';
-  $db = 'tcc_site';
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$db = 'tcc_site';
 
-  // Aqui foi usado PHP PDO;
-  try {
-    $connect = new PDO("mysql:host=$host;dbname=" . $db, $user, $password);
-    // echo "Conexão com o banco de dados realizada com sucesso!";
-  } catch (PDOException $err) {
-    // echo "ERRO: Conexão com o banco de dados não realizada com sucesso. Erro gerado " . $err->getMessage();
-  }
+// Aqui foi usado PHP PDO;
+try {
+  $connect = new PDO("mysql:host=$host;dbname=" . $db, $user, $password);
+  // echo "Conexão com o banco de dados realizada com sucesso!";
+} catch (PDOException $err) {
+  // echo "ERRO: Conexão com o banco de dados não realizada com sucesso. Erro gerado " . $err->getMessage();
+}
 
-  $queryPosts = "SELECT * FROM posts";
-  $resultPosts = $connect->prepare($queryPosts);
-  $resultPosts->execute();
+$queryPosts = "SELECT * FROM posts WHERE BlockedPost = 0 ORDER BY Send_date DESC LIMIT 6";
+$resultPosts = $connect->prepare($queryPosts);
+$resultPosts->execute();
 
 ?>
 
@@ -77,6 +77,9 @@ require_once "./helpers/whoops.php";
     case 'post':
       require_once "./frontend/content/{$pg}.php";
       break;
+    case 'postsSituation':
+      require_once "./frontend/content/{$pg}.php";
+      break;
     default:
       require_once "./frontend/content/main.php";
   }
@@ -103,6 +106,9 @@ require_once "./helpers/whoops.php";
 
   <!-- Magnific -->
   <script src="./frontend/js/jquery.magnific-popup.min.js"></script>
+
+  <!-- MatchHeight -->
+  <script src="./frontend/js/jquery.matchHeight-min.js" type="text/javascript"></script>
 
   <!-- Main File Js -->
   <script src="./frontend/js/main.js"></script>
@@ -138,6 +144,12 @@ require_once "./helpers/whoops.php";
         }
       }
     }
+  </script>
+
+  <script type='text/javascript'>
+    document.addEventListener('DOMContentLoaded', function() {
+      window.setTimeout(document.querySelector('svg').classList.add('animated'), 1000);
+    })
   </script>
 
 </body>

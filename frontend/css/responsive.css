@@ -11,6 +11,25 @@
   #larger {
     width: 100% !important;
   }
+
+  #depoimentos .depoimento {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+  }
+
+  #depoimentos .depoimento-texto {
+    order: 2 !important;
+  }
+
+  #depoimentos .w-25.rounded-circle {
+    width: 50% !important;
+    margin-bottom: 1rem !important;
+  }
 }
 
 /* Medium devices (tablets, less than 992px) */

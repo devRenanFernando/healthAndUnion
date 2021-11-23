@@ -133,7 +133,6 @@ class User
     function setBlocked($Blocked): void
     {
         $this->Blocked = $Blocked;
-    
     }
     function setSendRegistration($SendRegistration): void
     {

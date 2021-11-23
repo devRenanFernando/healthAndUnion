@@ -17,6 +17,12 @@ if (!isset($dados['sendRegistration'])) {
     // Método para cadastrar usuário
     $usersMySQL->registrationUser($dados);
 }
+
+$previous = "javascript:history.go(-1)";
+if (isset($_SERVER['HTTP_REFERER'])) {
+    $previous = $_SERVER['HTTP_REFERER'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +62,12 @@ if (!isset($dados['sendRegistration'])) {
                             <button id="signin" class="btn btn-outline-primary fw-bold px-5">Entrar</button>
                         </a>
 
-                        <a href="../../index.php">
+                        <a href="<?= $previous ?>">
                             <button id="signin" class="btn btn-outline-primary fw-bold mt-3 px-5">Voltar</button>
+                        </a>
+
+                        <a href="../../index.php">
+                            <button id="signin" class="btn btn-outline-primary fw-bold mt-3 px-5">Home</button>
                         </a>
                     </div>
                 </div>
@@ -122,7 +132,7 @@ if (!isset($dados['sendRegistration'])) {
                             </span>
                         </label>
 
-                        <div id="form-check">
+                        <div id="form-check" class="needs-validation">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="inputGender" id="inlineRadio1" value="Masculino">
                                 <label class="form-check-label" for="inlineRadio1">Masculino</label>
@@ -132,7 +142,7 @@ if (!isset($dados['sendRegistration'])) {
                                 <label class="form-check-label" for="inlineRadio2">Feminino</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inputGender" id="inlineRadio3" value="Outro">
+                                <input class="form-check-input" type="radio" name="inputGender" id="inlineRadio3" value="Outro" required>
                                 <label class="form-check-label" for="inlineRadio3">Outro</label>
                             </div>
                         </div>
@@ -184,6 +194,27 @@ if (!isset($dados['sendRegistration'])) {
                 eyeSlash.classList.remove("d-none");
             }
         }
+
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
     </script>
 
 </body>

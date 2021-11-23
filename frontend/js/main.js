@@ -52,7 +52,9 @@ jQuery(document).ready(function ($) {
   $(".owl-carousel").owlCarousel({
     loop: false,
     margin: 30,
+    autoHeight: true,
     autoplay: true,
+    loop: true,
     autoplayTimeout: 6000,
     dots: true,
     lazyLoad: true,
@@ -64,8 +66,8 @@ jQuery(document).ready(function ($) {
       600: {
         items: 1,
       },
-      1000: {
-        items: 2,
+      1199.98: {
+        items: 1,
       },
     },
   });

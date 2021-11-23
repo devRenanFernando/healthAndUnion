@@ -12,7 +12,12 @@
 
 /* ? FONTS */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
 }
@@ -69,18 +74,17 @@ p {
   background-color: var(--pink-lace);
 }
 .btn-outline-secondary {
-  border-color: var(--blue-violet)!important;
+  border-color: var(--blue-violet) !important;
   color: var(--blue-violet);
-  border: 1px solid var(--blue-violet)!important;
+  border: 1px solid var(--blue-violet) !important;
   transition: background-color 1s;
 }
 
 .btn-outline-secondary:hover {
-  border-color: var(--pink-lace)!important;
+  border-color: var(--pink-lace) !important;
   color: var(--pink-lace);
-  background-color: var(--blue-violet)!important;
+  background-color: var(--blue-violet) !important;
 }
-
 
 .btn-secondary,
 .dropdown-menu-dark {
@@ -91,7 +95,7 @@ p {
 }
 
 a.dropdown-item:active {
-  background-color: var(--pink-lace)!important;
+  background-color: var(--pink-lace) !important;
   border-color: var(--blue-violet);
 }
 
@@ -107,13 +111,15 @@ a.dropdown-item:active {
   color: var(--blue-violet);
 }
 
-ul.dropdown-menu.dropdown-menu-start, .dropdown-menu-dark {
+ul.dropdown-menu.dropdown-menu-start,
+.dropdown-menu-dark {
   background: var(--blue-violet);
   width: 13em;
   border: solid 2px var(--pink-lace);
 }
 
-hr.dropdown-divider, hr.dropdown-menu-dark {
+hr.dropdown-divider,
+hr.dropdown-menu-dark {
   background-color: var(--pink-lace);
 }
 

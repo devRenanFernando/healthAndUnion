@@ -13,9 +13,11 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
     exit;
 }
 
-// echo "<pre>";
-// print_r($_SESSION);
-// echo "</pre>";
+$previous = "javascript:history.go(-1)";
+if (isset($_SERVER['HTTP_REFERER'])) {
+    $previous = $_SERVER['HTTP_REFERER'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -123,7 +125,7 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
                             <div class="row mb-3">
                                 <label for="inputBirth" class="col-sm-3 col-form-label">Nascimento:</label>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control" id="inputBirth" name="inputBirth" value="<?=$_SESSION['Birth']; ?>">
+                                    <input type="date" class="form-control" id="inputBirth" name="inputBirth" value="<?= $_SESSION['Birth']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -177,7 +179,7 @@ if ((!isset($_SESSION['Id'])) and (!isset($_SESSION['Name']))) {
 
                     <!-- Button Group -->
                     <div class="d-flex justify-content-center mt-3">
-                        <a href="../../index.php?pg=profile">
+                        <a href="<?= $previous ?>">
                             <button type="button" class="btn btn-lg btn-outline-dark fw-bold mx-4" style=" width: 10em" role="button">Cancelar</button>
                         </a>
                         <input type="submit" class="btn btn-lg btn-outline-dark fw-bold mx-4" name="inputSendEdit" style=" width: 10em" role="button" value="Salvar"></input>
