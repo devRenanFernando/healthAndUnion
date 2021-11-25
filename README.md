@@ -94,7 +94,7 @@
 </table>
 
 <h2 id="autor">👨‍💻 Autor</h2>
-<a style="display: flex; align-items: center; margin-bottom: 1rem;" href="https://https://github.com/devRenanFernando">
+<a style="display: flex; align-items: center; margin-bottom: 1rem;" href="https:github.com/devRenanFernando">
 <img src="frontend/assets/jpeg/RenanFernando.jpg" width="100px;" alt="Foto de Renan Fernando" style="margin-right: 1rem;" />
 <p align="center"> <strong>Renan Fernando - Web Developer</strong> </p>
 </a>
