@@ -46,8 +46,8 @@
 <h2 id="features">📝 Features</h2>
 
 <ul>
-    <li>Cadatro de usuários</li>
-    <li>Cadatro de posts</li>
+    <li>Cadastro de usuários</li>
+    <li>Cadastro de posts</li>
 </ul>
 
 <h2 id="bancoDados">🎲 Banco de Dados</h2>
