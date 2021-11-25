@@ -40,7 +40,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                     </button>
                     <div class="collapse mb-3 w-100" id="quest01">
                         <div class="card card-body">
-                            A resposta da primeira pergunta
+                            Entre em contato com a administração do site dentro de sete dias depois do desaparecimento ou da exclusão da conta. Caso tenha passado um período de tempo maior, não será possível recuperar os dados.
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                     </button>
                     <div class="collapse mb-3 w-100" id="quest02">
                         <div class="card card-body">
-                            Entre em contato com os administradores pelo Email e esclareça sua dúvida no título da mensagem da texto.
+                            Entre em contato com os administradores pelo Email e esclareça sua dúvida no título da mensagem de texto.
                         </div>
                     </div>
 
@@ -67,7 +67,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                     </button>
                     <div class="collapse mb-3 w-100" id="quest04">
                         <div class="card card-body">
-                            O objetivo do site é promover a transferência de informações sobre a Fibromialgia, no entanto não possuímos nenhuma parceria com profissionais de saúde.
+                            O objetivo do site é promover a transferência de informações sobre a Fibromialgia, no entanto não possuímos nenhuma parceria com profissionais da saúde.
                         </div>
                     </div>
 
@@ -77,15 +77,6 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                     <div class="collapse mb-3 w-100" id="quest05">
                         <div class="card card-body">
                             Para isso é necessário acessar sua página de usuário clicando no ícone de perfil. Lá você encontrará todos os seus dados.
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn border-4 button mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#quest06" aria-expanded="false" aria-controls="quest06">
-                        Sexta pergunta
-                    </button>
-                    <div class="collapse mb-3 w-100" id="quest06">
-                        <div class="card card-body">
-                            A resposta da sexta pergunta
                         </div>
                     </div>
 
